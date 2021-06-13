@@ -1,3 +1,6 @@
+import './HRC1155.sol';
+import './IHRC165.sol';
+
 function TncDapp() {
 
     //const ipfs = window.IpfsHttpClient('ipfs.infura.io', '5001', { protocol: 'https' });
