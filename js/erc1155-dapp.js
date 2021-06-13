@@ -1535,11 +1535,11 @@ function run(connected) {
         else if(window.web3){
             dapp.prevChainId = await web3.eth.net.getId();
         }
-        if(window.torus){
-            $('#torusAddress').css('display', 'inline-block')
-            $('#torusAddressPopover').data('content', tncLib.account);
-            $('#torusAddressPopover').popover();
-            $('#torusAddressPopover').on('click', function(){
+        if(window.onewallet){
+            $('#onewalletAddress').css('display', 'inline-block')
+            $('#onewalletAddressPopover').data('content', tncLib.account);
+            $('#onewalletAddressPopover').popover();
+            $('#onewalletAddressPopover').on('click', function(){
                 let input = document.createElement("textarea");
                 input.value = tncLib.account;
                 document.body.appendChild(input);
