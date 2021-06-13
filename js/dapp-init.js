@@ -473,7 +473,7 @@ function enableOnewallet(){
 
 function runReadableOnly(){
 
-    if(chain_id == '89' || chain_id == '38' || chain_id == '64' || chain_id == '4' || chain_id == '1' || chain_id == 'a4ec' || chain_id == 'a86a') {
+    if(chain_id == '89' || chain_id == '38' || chain_id == '64' || chain_id == '4' || chain_id == '1' || chain_id == 'a4ec' || chain_id == 'a86a' || chain_id == '1666600000') {
 
         let rpcUrl = '';
 
@@ -493,6 +493,9 @@ function runReadableOnly(){
             case '64':
                 rpcUrl = 'https://xdai1-rpc.unifty.cloud/';
                 break;
+            case '1666600000':
+                rpcUrl = 'https://api.harmony.one';
+                break;
             case '4':
                 rpcUrl = 'https://rinkeby.infura.io/v3/fb5477e6dc7145b8a89f4296d78c500a';
                 break;
@@ -506,7 +509,7 @@ function runReadableOnly(){
 
     }else{
 
-        _alert('Please install a one wallet to use this dapp.');
+        _alert('Please install a one wallet or metamask to use this dapp.');
     }
 
 }
