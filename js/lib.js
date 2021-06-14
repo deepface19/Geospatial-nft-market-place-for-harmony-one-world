@@ -2673,7 +2673,7 @@ function TncLib(){
         }
 
         // new DaVinci json uri pattern
-        if(nftUri.includes("https://davinci.gallery/")){
+        if(nftUri.includes("api.davinci.gallery")){
 
             nftUri = decodeURI(nftUri).replace("{id}", nftId);
             nftUri = nftUri.split("/");
