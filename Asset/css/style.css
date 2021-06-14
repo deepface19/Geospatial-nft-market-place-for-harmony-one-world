@@ -1,0 +1,1680 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 43.75%; } }
+
+body {
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; }
+
+body.dark-edition {
+  cursor: var(--cursor-default); }
+  body.dark-edition a:link,
+  body.dark-edition a:hover,
+  body.dark-edition a:active,
+  body.dark-edition .btn:not(:disabled):not(.disabled) {
+    cursor: var(--cursor-pointer); }
+
+body.light-edition {
+  cursor: var(--cursor-default); }
+  body.light-edition a:link,
+  body.light-edition a:hover,
+  body.light-edition a:active,
+  body.light-edition .btn:not(:disabled):not(.disabled) {
+    cursor: var(--cursor-pointer); }
+
+.dark-edition {
+  --primary-color: #fd79e2;
+  --primary-hover-light: rgba(253, 121, 226, .1);
+  --primary-hover-dark: #f047ce;
+  --title-color: #ec6fd2;
+  --bg-primary: #0d141a;
+  --bg-secondary: #121a21;
+  --bg-tertiary: #121a21;
+  --text-primary: #9d9db4;
+  --text-primary-light: rgba(157, 157, 180, .5);
+  --text-footer: #9d9db4;
+  --heading-color: #ffffff;
+  --subheading-color: rgba(255, 255, 255, .3);
+  --modal-border-text: #707070;
+  --modal-text: #f4f7fb;
+  --image-padding: #192027;
+  --traits-bg: rgba(13, 20, 26, .5);
+  --shadow-primary: 0 16px 38px -12px rgba(0, 0, 0, .56), 
+    0 4px 25px 0px rgba(0, 0, 0, .12), 
+    0 8px 10px -5px rgba(0, 0, 0, .20);
+  --cursor-default: url(../img/unifty-icons/cursor-default-dark.svg), auto;
+  --cursor-pointer: url(../img/unifty-icons/cursor-pointer-dark.svg), auto;
+  --cursor-text: url(../img/unifty-icons/cursor-text-dark-thin.svg), auto;
+  -scrollbar-track: rgba(253, 121, 226, 0.1);
+  --scrollbar-track-shadow: #121a21;
+  --scrollbar-track-hover: #666666;
+  --scrollbar-thumb: linear-gradient(0deg, #5c5c73 27%,rgba(253, 121, 226, .5) 60%);
+  --scrollbar-thumb-hover: linear-gradient(13deg, #414166 14%,#eb7bd6 64%); }
+
+.light-edition {
+  --primary-color: #202060;
+  --primary-hover-light: rgba(32, 32, 96, .1);
+  --primary-hover-dark: #06064a;
+  --title-color: #202040;
+  --bg-primary: #f4f7fb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef0f8;
+  --text-primary: #4c4c6f;
+  --text-primary-light: rgba(76, 76, 111, .5);
+  --text-footer: rgba(76, 76, 111, .5);
+  --heading-color: #202060;
+  --subheading-color: rgba(76, 76, 111, .3);
+  --modal-border-text: #a3abb2;
+  --modal-text: #202040;
+  --image-padding: #e2e3e8;
+  --traits-bg: #fff;
+  --shadow-primary: 0 16px 38px -12px rgba(225, 225, 225, .56), 
+    0 4px 25px 0px rgba(225, 225, 225, .12), 
+    0 8px 10px -5px rgba(225, 225, 225, .2);
+  --cursor-default: url(../img/unifty-icons/cursor-default-light.svg), auto;
+  --cursor-pointer: url(../img/unifty-icons/cursor-pointer-light.svg), auto;
+  --cursor-text: url(../img/unifty-icons/cursor-text-light-thin.svg), auto;
+  --scrolbar-track: rgba(32, 32, 96, .1);
+  --scrollbar-track-shadow: #f4f7fb;
+  --scrollbar-track-hover: #cdcfd6;
+  --scrollbar-thumb: linear-gradient(0deg, #ccccdd 27%, rgba(32, 32, 96, .5) 60%);
+  --scrollbar-thumb-hover: linear-gradient(13deg, #b8b8c5 14%, #202060 64%); }
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  color: var(--heading-color); }
+
+h1#nftContractNameTitle,
+h1.nftListingsTitle {
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  h1#nftContractNameTitle::before,
+  h1.nftListingsTitle::before {
+    font-family: "Material Icons Round";
+    content: "push_pin";
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-right: .5rem;
+    transform: rotate(-45deg); }
+
+h1#nftContractNameTitle {
+  margin-top: 4rem; }
+
+h1.nftListingsTitle {
+  justify-content: flex-start;
+  margin-bottom: 1rem; }
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.32px;
+  color: var(--text-primary);
+  margin: 0 0 1rem; }
+
+.text-muted a {
+  color: var(--heading-color); }
+
+textarea, input {
+  cursor: var(--cursor-text); }
+
+.light-edition #chainSelectionDropdown,
+.light-edition #walletActions,
+.light-edition #bridgeActions,
+.light-edition #categoryDropdown,
+.light-edition .dropdown-primary, .dark-edition #chainSelectionDropdown,
+.dark-edition #walletActions,
+.dark-edition #bridgeActions,
+.dark-edition #categoryDropdown,
+.dark-edition .dropdown-primary {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+  border-radius: .8rem;
+  box-shadow: none;
+  font-size: 1.8rem;
+  text-transform: none;
+  padding: 1rem 1.8rem;
+  font-weight: 700; }
+
+.light-edition .dropdown-item.active, .light-edition .dropdown-item:active, .dark-edition .dropdown-item.active, .dark-edition .dropdown-item:active {
+  color: #ffffff !important;
+  background-color: var(--primary-color); }
+
+.light-edition #walletActions,
+.light-edition #bridgeActions,
+.light-edition #categoryDropdown, .dark-edition #walletActions,
+.dark-edition #bridgeActions,
+.dark-edition #categoryDropdown {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: .8rem 1.2rem; }
+  .light-edition #walletActions span,
+  .light-edition #bridgeActions span,
+  .light-edition #categoryDropdown span, .dark-edition #walletActions span,
+  .dark-edition #bridgeActions span,
+  .dark-edition #categoryDropdown span {
+    font-size: 1.4rem;
+    margin-right: .3rem; }
+
+.light-edition .dropdown-menu, .dark-edition .dropdown-menu {
+  background-color: var(--bg-secondary); }
+  .light-edition .dropdown-menu a.dropdown-item, .dark-edition .dropdown-menu a.dropdown-item {
+    font-size: 1.4rem; }
+
+.light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
+  color: var(--text-primary);
+  padding: 1rem 1.2rem; }
+  .light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover {
+    color: var(--text-primary);
+    background: none;
+    box-shadow: none;
+    background-color: var(--primary-hover-light); }
+
+.dark-edition .card.farm-card,
+.light-edition .card.farm-card {
+  margin: 0; }
+  .dark-edition .card.farm-card .card-body,
+  .light-edition .card.farm-card .card-body {
+    box-shadow: var(--shadow-primary); }
+    .dark-edition .card.farm-card .card-body a,
+    .light-edition .card.farm-card .card-body a {
+      font-size: 1.4rem;
+      color: var(--text-primary); }
+      .dark-edition .card.farm-card .card-body a:active,
+      .light-edition .card.farm-card .card-body a:active {
+        color: var(--text-primary); }
+      .dark-edition .card.farm-card .card-body a i,
+      .light-edition .card.farm-card .card-body a i {
+        margin-right: .5rem; }
+    .dark-edition .card.farm-card .card-body .card-title,
+    .light-edition .card.farm-card .card-body .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: .32px;
+      margin-bottom: 1rem;
+      color: var(--heading-color);
+      display: flex;
+      width: calc(100% - 10rem);
+      height: 6rem; }
+    .dark-edition .card.farm-card .card-body .card-description,
+    .light-edition .card.farm-card .card-body .card-description {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--text-primary); }
+
+.card.card.farm-card {
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 1rem; }
+  .card.card.farm-card [class*="card-header-"] {
+    margin: 0;
+    background-color: none; }
+  .card.card.farm-card .card-header.card-header-info.card-header-icon {
+    box-shadow: none; }
+    .card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10rem;
+      height: 10rem;
+      border-radius: .3rem;
+      margin: 0;
+      padding: 1rem;
+      background-color: none;
+      background: none;
+      box-shadow: none; }
+      .card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon a {
+        width: 100%;
+        height: 100%; }
+      .card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: .3rem; }
+  .card.card.farm-card .card-body {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: .8rem; }
+    .card.card.farm-card .card-body .btn.btn-primary.card-toggler {
+      display: flex;
+      align-items: center;
+      text-transform: none;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      width: calc(100% - 10rem); }
+      .card.card.farm-card .card-body .btn.btn-primary.card-toggler[aria-expanded="false"]::after {
+        font-family: "Material Icons Round";
+        content: "keyboard_arrow_down";
+        font-size: 1.8rem; }
+      .card.card.farm-card .card-body .btn.btn-primary.card-toggler[aria-expanded="true"]::after {
+        font-family: "Material Icons Round";
+        content: "keyboard_arrow_up";
+        font-size: 1.8rem; }
+
+@media only screen and (max-width: 990px) {
+  .card.card.farm-card {
+    width: 671px; } }
+
+.dark-edition .card.roadmap,
+.light-edition .card.roadmap {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-primary); }
+  .dark-edition .card.roadmap .card-body,
+  .light-edition .card.roadmap .card-body {
+    padding: 3rem 2rem; }
+    .dark-edition .card.roadmap .card-body .main-timeline::before,
+    .light-edition .card.roadmap .card-body .main-timeline::before {
+      background: var(--primary-color); }
+
+.main-timeline .year,
+.main-timeline .month {
+  color: var(--bg-primary); }
+
+.main-timeline h5.title {
+  font-family: "Poppins", sans-serif;
+  color: var(--heading-color);
+  font-size: 2rem;
+  font-weight: 400; }
+
+.main-timeline p.description {
+  font-size: 1.6rem;
+  color: var(--text-footer);
+  font-weight: 400; }
+
+.main-timeline .date-outer:before {
+  background: var(--primary-color);
+  border: 0.2rem solid var(--bg-secondary); }
+
+.main-timeline .date-outer::after {
+  border: 0.3rem solid var(--title-color); }
+
+.main-timeline .date-content:before {
+  background: var(--primary-color); }
+
+.dark-edition .card.faq,
+.light-edition .card.faq {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-primary); }
+  .dark-edition .card.faq .card-body,
+  .light-edition .card.faq .card-body {
+    padding: 2rem; }
+    .dark-edition .card.faq .card-body .card-description,
+    .light-edition .card.faq .card-body .card-description {
+      font-size: 1.6rem;
+      color: var(--text-primary);
+      font-weight: 300; }
+      .dark-edition .card.faq .card-body .card-description a,
+      .light-edition .card.faq .card-body .card-description a {
+        font-weight: 400;
+        color: var(--primary-color); }
+        .dark-edition .card.faq .card-body .card-description a:hover,
+        .light-edition .card.faq .card-body .card-description a:hover {
+          color: var(--primary-hover-dark); }
+      .dark-edition .card.faq .card-body .card-description h5,
+      .light-edition .card.faq .card-body .card-description h5 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+        letter-spacing: 0.32px;
+        color: var(--heading-color);
+        margin: 2rem 0 .5rem !important; }
+        .dark-edition .card.faq .card-body .card-description h5:nth-of-type(1),
+        .light-edition .card.faq .card-body .card-description h5:nth-of-type(1) {
+          margin-top: 0 !important; }
+
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around !important;
+  background-color: var(--bg-tertiary);
+  padding: 2.4rem 3.6rem 1.3rem;
+  border-radius: .8rem;
+  box-shadow: var(--shadow-primary); }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3, .dark-edition .nftHeader-stakingOptions-container #stakingOptions .my-3,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .my-3 {
+    margin: 0 !important; }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 {
+    border: 0.1rem solid var(--text-footer);
+    border-radius: .8rem;
+    background-color: #0d141a;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-footer);
+    font-size: 1.6rem;
+    letter-spacing: .32px;
+    font-weight: 700;
+    text-transform: none; }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 span,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 span {
+      font-weight: 400; }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row {
+    display: flex;
+    width: 100%; }
+    @media only screen and (max-width: 26em) {
+      .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+      .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row {
+        flex-direction: column; } }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider {
+      width: 1rem; }
+    @media only screen and (max-width: 26em) {
+      .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a:not(:last-child),
+      .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a:not(:last-child) {
+        margin-bottom: .5rem !important; } }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a {
+      flex: 1;
+      margin: 0 !important;
+      padding: 1rem 1.5rem; }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row, .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row {
+    margin-bottom: 1.5rem; }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row {
+    width: 100%; }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown > a,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown > a {
+      width: 100%;
+      box-shadow: none;
+      background-color: var(--primary-color);
+      color: var(--bg-secondary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: .32px;
+      border-radius: .8rem; }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show {
+      width: 100%; }
+      .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show a,
+      .light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show a {
+        justify-content: center; }
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .third-row,
+  .light-edition .nftHeader-stakingOptions-container #stakingOptions .third-row {
+    font-size: 1.4rem;
+    color: var(--text-primary); }
+    .dark-edition .nftHeader-stakingOptions-container #stakingOptions .third-row a,
+    .light-edition .nftHeader-stakingOptions-container #stakingOptions .third-row a {
+      color: var(--primary-color); }
+
+.card-text {
+  font-size: 1.4rem; }
+
+.card-title {
+  font-size: 2rem; }
+
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
+  background-color: var(--bg-tertiary);
+  flex: 1;
+  margin-right: 2rem;
+  box-shadow: var(--shadow-primary);
+  border-radius: .8rem; }
+  @media only screen and (max-width: 87.5em) {
+    .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
+    .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
+      margin-right: 0;
+      margin-bottom: 3rem; } }
+  .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4,
+  .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4 {
+    padding: 0 !important;
+    margin: 0 !important; }
+  .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader,
+  .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader {
+    margin: 0 !important; }
+    .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card,
+    .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card {
+      margin: 0;
+      border-radius: .8rem;
+      height: 100%;
+      color: var(--text-primary);
+      word-wrap: normal;
+      padding: .5rem 2rem;
+      box-shadow: none; }
+      .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content,
+      .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content {
+        display: flex; }
+        .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3,
+        .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 {
+          min-width: 10rem;
+          max-width: 20rem; }
+          .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 img,
+          .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 img {
+            margin: 2rem 0; }
+        .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9,
+        .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 {
+          padding: 0; }
+          .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body,
+          .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body {
+            padding: 2rem 0; }
+            .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body p,
+            .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body p {
+              font-size: 1.6rem; }
+      .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links,
+      .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links {
+        padding: 0 1rem; }
+        .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a,
+        .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a {
+          display: inline-flex;
+          align-items: center;
+          margin: 0;
+          padding: .5rem;
+          font-size: 1.2rem;
+          color: var(--text-footer); }
+          .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:hover, .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:active,
+          .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:hover,
+          .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:active {
+            color: var(--heading-color); }
+          .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a i,
+          .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a i {
+            font-size: 1.6rem;
+            margin-right: .5rem; }
+        .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links .mt-2,
+        .light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links .mt-2 {
+          font-size: 1.2rem;
+          margin: 1rem 0 1rem .5rem;
+          color: var(--text-footer); }
+
+.nftListing,
+.farmListing,
+.nftHeader {
+  display: flex;
+  padding: 0;
+  margin: 0 !important;
+  min-width: unset; }
+  .nftListing .btn,
+  .farmListing .btn,
+  .nftHeader .btn {
+    font-size: 1.2rem; }
+  .nftListing .card .traits-collapse,
+  .farmListing .card .traits-collapse,
+  .nftHeader .card .traits-collapse {
+    font-size: 1.4rem; }
+  .nftListing .card-profile, .nftListing .header-profile,
+  .farmListing .card-profile,
+  .farmListing .header-profile,
+  .nftHeader .card-profile,
+  .nftHeader .header-profile {
+    position: relative;
+    margin-top: 0;
+    box-shadow: var(--shadow-primary); }
+    .nftListing .card-profile .card-avatar, .nftListing .header-profile .card-avatar,
+    .farmListing .card-profile .card-avatar,
+    .farmListing .header-profile .card-avatar,
+    .nftHeader .card-profile .card-avatar,
+    .nftHeader .header-profile .card-avatar {
+      min-width: 15.6rem;
+      min-height: 15.6rem;
+      max-width: 15.6rem;
+      max-height: 15.6rem;
+      padding: .8rem !important;
+      margin: 1.5rem auto .5rem;
+      background-color: var(--image-padding);
+      border-radius: .6rem !important;
+      object-fit: cover;
+      /*
+            -webkit-filter: blur(5px); // Safari 6.0 - 9.0
+            filter: blur(5px);
+            */
+      transition: transform .2s; }
+    .nftListing .card-profile .card-avatar:hover, .nftListing .header-profile .card-avatar:hover,
+    .farmListing .card-profile .card-avatar:hover,
+    .farmListing .header-profile .card-avatar:hover,
+    .nftHeader .card-profile .card-avatar:hover,
+    .nftHeader .header-profile .card-avatar:hover {
+      transform: scale(1.3);
+      /*
+          -webkit-filter: blur(0px); // Safari 6.0 - 9.0
+          filter: blur(0px);
+          */ }
+    .nftListing .card-profile .card-body, .nftListing .card-profile .header-left, .nftListing .header-profile .card-body, .nftListing .header-profile .header-left,
+    .farmListing .card-profile .card-body,
+    .farmListing .card-profile .header-left,
+    .farmListing .header-profile .card-body,
+    .farmListing .header-profile .header-left,
+    .nftHeader .card-profile .card-body,
+    .nftHeader .card-profile .header-left,
+    .nftHeader .header-profile .card-body,
+    .nftHeader .header-profile .header-left {
+      position: static; }
+      .nftListing .card-profile .card-body .text-truncate a, .nftListing .card-profile .header-left .text-truncate a, .nftListing .header-profile .card-body .text-truncate a, .nftListing .header-profile .header-left .text-truncate a,
+      .farmListing .card-profile .card-body .text-truncate a,
+      .farmListing .card-profile .header-left .text-truncate a,
+      .farmListing .header-profile .card-body .text-truncate a,
+      .farmListing .header-profile .header-left .text-truncate a,
+      .nftHeader .card-profile .card-body .text-truncate a,
+      .nftHeader .card-profile .header-left .text-truncate a,
+      .nftHeader .header-profile .card-body .text-truncate a,
+      .nftHeader .header-profile .header-left .text-truncate a {
+        color: var(--heading-color); }
+      .nftListing .card-profile .card-body .text-truncate button, .nftListing .card-profile .header-left .text-truncate button, .nftListing .header-profile .card-body .text-truncate button, .nftListing .header-profile .header-left .text-truncate button,
+      .farmListing .card-profile .card-body .text-truncate button,
+      .farmListing .card-profile .header-left .text-truncate button,
+      .farmListing .header-profile .card-body .text-truncate button,
+      .farmListing .header-profile .header-left .text-truncate button,
+      .nftHeader .card-profile .card-body .text-truncate button,
+      .nftHeader .card-profile .header-left .text-truncate button,
+      .nftHeader .header-profile .card-body .text-truncate button,
+      .nftHeader .header-profile .header-left .text-truncate button {
+        color: var(--heading-color); }
+      .nftListing .card-profile .card-body h5.card-title, .nftListing .card-profile .header-left h5.card-title, .nftListing .header-profile .card-body h5.card-title, .nftListing .header-profile .header-left h5.card-title,
+      .farmListing .card-profile .card-body h5.card-title,
+      .farmListing .card-profile .header-left h5.card-title,
+      .farmListing .header-profile .card-body h5.card-title,
+      .farmListing .header-profile .header-left h5.card-title,
+      .nftHeader .card-profile .card-body h5.card-title,
+      .nftHeader .card-profile .header-left h5.card-title,
+      .nftHeader .header-profile .card-body h5.card-title,
+      .nftHeader .header-profile .header-left h5.card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: .28px;
+        margin: 0 0 1rem 0; }
+        .nftListing .card-profile .card-body h5.card-title a, .nftListing .card-profile .header-left h5.card-title a, .nftListing .header-profile .card-body h5.card-title a, .nftListing .header-profile .header-left h5.card-title a,
+        .farmListing .card-profile .card-body h5.card-title a,
+        .farmListing .card-profile .header-left h5.card-title a,
+        .farmListing .header-profile .card-body h5.card-title a,
+        .farmListing .header-profile .header-left h5.card-title a,
+        .nftHeader .card-profile .card-body h5.card-title a,
+        .nftHeader .card-profile .header-left h5.card-title a,
+        .nftHeader .header-profile .card-body h5.card-title a,
+        .nftHeader .header-profile .header-left h5.card-title a {
+          color: var(--heading-color); }
+      .nftListing .card-profile .card-body .collection-name, .nftListing .card-profile .header-left .collection-name, .nftListing .header-profile .card-body .collection-name, .nftListing .header-profile .header-left .collection-name,
+      .farmListing .card-profile .card-body .collection-name,
+      .farmListing .card-profile .header-left .collection-name,
+      .farmListing .header-profile .card-body .collection-name,
+      .farmListing .header-profile .header-left .collection-name,
+      .nftHeader .card-profile .card-body .collection-name,
+      .nftHeader .card-profile .header-left .collection-name,
+      .nftHeader .header-profile .card-body .collection-name,
+      .nftHeader .header-profile .header-left .collection-name {
+        font-size: 1.2rem;
+        margin: -.8rem 0 1rem 0; }
+      .nftListing .card-profile .card-body a.video-btn-link, .nftListing .card-profile .header-left a.video-btn-link, .nftListing .header-profile .card-body a.video-btn-link, .nftListing .header-profile .header-left a.video-btn-link,
+      .farmListing .card-profile .card-body a.video-btn-link,
+      .farmListing .card-profile .header-left a.video-btn-link,
+      .farmListing .header-profile .card-body a.video-btn-link,
+      .farmListing .header-profile .header-left a.video-btn-link,
+      .nftHeader .card-profile .card-body a.video-btn-link,
+      .nftHeader .card-profile .header-left a.video-btn-link,
+      .nftHeader .header-profile .card-body a.video-btn-link,
+      .nftHeader .header-profile .header-left a.video-btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        border: none;
+        font-size: 1.4rem;
+        text-transform: none;
+        padding: 0;
+        margin: 0 0 1rem 0 !important; }
+        .nftListing .card-profile .card-body a.video-btn-link:hover, .nftListing .card-profile .header-left a.video-btn-link:hover, .nftListing .header-profile .card-body a.video-btn-link:hover, .nftListing .header-profile .header-left a.video-btn-link:hover,
+        .farmListing .card-profile .card-body a.video-btn-link:hover,
+        .farmListing .card-profile .header-left a.video-btn-link:hover,
+        .farmListing .header-profile .card-body a.video-btn-link:hover,
+        .farmListing .header-profile .header-left a.video-btn-link:hover,
+        .nftHeader .card-profile .card-body a.video-btn-link:hover,
+        .nftHeader .card-profile .header-left a.video-btn-link:hover,
+        .nftHeader .header-profile .card-body a.video-btn-link:hover,
+        .nftHeader .header-profile .header-left a.video-btn-link:hover {
+          color: var(--primary-hover-dark); }
+        .nftListing .card-profile .card-body a.video-btn-link span, .nftListing .card-profile .header-left a.video-btn-link span, .nftListing .header-profile .card-body a.video-btn-link span, .nftListing .header-profile .header-left a.video-btn-link span,
+        .farmListing .card-profile .card-body a.video-btn-link span,
+        .farmListing .card-profile .header-left a.video-btn-link span,
+        .farmListing .header-profile .card-body a.video-btn-link span,
+        .farmListing .header-profile .header-left a.video-btn-link span,
+        .nftHeader .card-profile .card-body a.video-btn-link span,
+        .nftHeader .card-profile .header-left a.video-btn-link span,
+        .nftHeader .header-profile .card-body a.video-btn-link span,
+        .nftHeader .header-profile .header-left a.video-btn-link span {
+          font-size: 2rem;
+          margin-right: .5rem; }
+      .nftListing .card-profile .card-body audio, .nftListing .card-profile .header-left audio, .nftListing .header-profile .card-body audio, .nftListing .header-profile .header-left audio,
+      .farmListing .card-profile .card-body audio,
+      .farmListing .card-profile .header-left audio,
+      .farmListing .header-profile .card-body audio,
+      .farmListing .header-profile .header-left audio,
+      .nftHeader .card-profile .card-body audio,
+      .nftHeader .card-profile .header-left audio,
+      .nftHeader .header-profile .card-body audio,
+      .nftHeader .header-profile .header-left audio {
+        height: 3.2rem;
+        margin: 0 0 1rem 0 !important; }
+      .nftListing .card-profile .card-body .badge, .nftListing .card-profile .header-left .badge, .nftListing .header-profile .card-body .badge, .nftListing .header-profile .header-left .badge,
+      .farmListing .card-profile .card-body .badge,
+      .farmListing .card-profile .header-left .badge,
+      .farmListing .header-profile .card-body .badge,
+      .farmListing .header-profile .header-left .badge,
+      .nftHeader .card-profile .card-body .badge,
+      .nftHeader .card-profile .header-left .badge,
+      .nftHeader .header-profile .card-body .badge,
+      .nftHeader .header-profile .header-left .badge {
+        padding: .5rem;
+        font-size: 1rem;
+        font-weight: 300;
+        position: relative; }
+        .nftListing .card-profile .card-body .badge.badge-info, .nftListing .card-profile .header-left .badge.badge-info, .nftListing .header-profile .card-body .badge.badge-info, .nftListing .header-profile .header-left .badge.badge-info,
+        .farmListing .card-profile .card-body .badge.badge-info,
+        .farmListing .card-profile .header-left .badge.badge-info,
+        .farmListing .header-profile .card-body .badge.badge-info,
+        .farmListing .header-profile .header-left .badge.badge-info,
+        .nftHeader .card-profile .card-body .badge.badge-info,
+        .nftHeader .card-profile .header-left .badge.badge-info,
+        .nftHeader .header-profile .card-body .badge.badge-info,
+        .nftHeader .header-profile .header-left .badge.badge-info {
+          color: var(--text-primary);
+          background-color: transparent; }
+          .nftListing .card-profile .card-body .badge.badge-info:not(:last-child)::before, .nftListing .card-profile .header-left .badge.badge-info:not(:last-child)::before, .nftListing .header-profile .card-body .badge.badge-info:not(:last-child)::before, .nftListing .header-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .farmListing .card-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .farmListing .card-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .farmListing .header-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .farmListing .header-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .nftHeader .card-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .nftHeader .card-profile .header-left .badge.badge-info:not(:last-child)::before,
+          .nftHeader .header-profile .card-body .badge.badge-info:not(:last-child)::before,
+          .nftHeader .header-profile .header-left .badge.badge-info:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 80%;
+            background: #c2cad1;
+            right: -2px;
+            top: 50%;
+            transform: translateY(-50%); }
+          .nftListing .card-profile .card-body .badge.badge-info a, .nftListing .card-profile .header-left .badge.badge-info a, .nftListing .header-profile .card-body .badge.badge-info a, .nftListing .header-profile .header-left .badge.badge-info a,
+          .farmListing .card-profile .card-body .badge.badge-info a,
+          .farmListing .card-profile .header-left .badge.badge-info a,
+          .farmListing .header-profile .card-body .badge.badge-info a,
+          .farmListing .header-profile .header-left .badge.badge-info a,
+          .nftHeader .card-profile .card-body .badge.badge-info a,
+          .nftHeader .card-profile .header-left .badge.badge-info a,
+          .nftHeader .header-profile .card-body .badge.badge-info a,
+          .nftHeader .header-profile .header-left .badge.badge-info a {
+            color: var(--heading-color); }
+      .nftListing .card-profile .card-body a.redeemButton, .nftListing .card-profile .header-left a.redeemButton, .nftListing .header-profile .card-body a.redeemButton, .nftListing .header-profile .header-left a.redeemButton,
+      .farmListing .card-profile .card-body a.redeemButton,
+      .farmListing .card-profile .header-left a.redeemButton,
+      .farmListing .header-profile .card-body a.redeemButton,
+      .farmListing .header-profile .header-left a.redeemButton,
+      .nftHeader .card-profile .card-body a.redeemButton,
+      .nftHeader .card-profile .header-left a.redeemButton,
+      .nftHeader .header-profile .card-body a.redeemButton,
+      .nftHeader .header-profile .header-left a.redeemButton {
+        font-size: 1.4rem;
+        box-shadow: none;
+        border: none;
+        text-transform: none;
+        border-radius: .6rem;
+        background-color: var(--primary-color);
+        color: var(--bg-secondary);
+        padding: .3rem .8rem;
+        font-weight: 500;
+        width: 90%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap; }
+        .nftListing .card-profile .card-body a.redeemButton:active, .nftListing .card-profile .header-left a.redeemButton:active, .nftListing .header-profile .card-body a.redeemButton:active, .nftListing .header-profile .header-left a.redeemButton:active,
+        .farmListing .card-profile .card-body a.redeemButton:active,
+        .farmListing .card-profile .header-left a.redeemButton:active,
+        .farmListing .header-profile .card-body a.redeemButton:active,
+        .farmListing .header-profile .header-left a.redeemButton:active,
+        .nftHeader .card-profile .card-body a.redeemButton:active,
+        .nftHeader .card-profile .header-left a.redeemButton:active,
+        .nftHeader .header-profile .card-body a.redeemButton:active,
+        .nftHeader .header-profile .header-left a.redeemButton:active {
+          color: var(--bg-secondary);
+          background-color: var(--primary-hover-dark);
+          font-weight: 400; }
+      .nftListing .card-profile .card-body a.traits, .nftListing .card-profile .header-left a.traits, .nftListing .header-profile .card-body a.traits, .nftListing .header-profile .header-left a.traits,
+      .farmListing .card-profile .card-body a.traits,
+      .farmListing .card-profile .header-left a.traits,
+      .farmListing .header-profile .card-body a.traits,
+      .farmListing .header-profile .header-left a.traits,
+      .nftHeader .card-profile .card-body a.traits,
+      .nftHeader .card-profile .header-left a.traits,
+      .nftHeader .header-profile .card-body a.traits,
+      .nftHeader .header-profile .header-left a.traits {
+        font-size: 1.4rem;
+        border: 0.1rem solid var(--text-primary);
+        border-radius: .6rem;
+        background-color: var(--image-padding) !important;
+        text-transform: none;
+        color: var(--text-primary);
+        padding: .3rem .8rem;
+        width: 90%; }
+      .nftListing .card-profile .card-body .popover-description, .nftListing .card-profile .header-left .popover-description, .nftListing .header-profile .card-body .popover-description, .nftListing .header-profile .header-left .popover-description,
+      .farmListing .card-profile .card-body .popover-description,
+      .farmListing .card-profile .header-left .popover-description,
+      .farmListing .header-profile .card-body .popover-description,
+      .farmListing .header-profile .header-left .popover-description,
+      .nftHeader .card-profile .card-body .popover-description,
+      .nftHeader .card-profile .header-left .popover-description,
+      .nftHeader .header-profile .card-body .popover-description,
+      .nftHeader .header-profile .header-left .popover-description {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: var(--text-primary);
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin: 0; }
+        .nftListing .card-profile .card-body .popover-description span, .nftListing .card-profile .header-left .popover-description span, .nftListing .header-profile .card-body .popover-description span, .nftListing .header-profile .header-left .popover-description span,
+        .farmListing .card-profile .card-body .popover-description span,
+        .farmListing .card-profile .header-left .popover-description span,
+        .farmListing .header-profile .card-body .popover-description span,
+        .farmListing .header-profile .header-left .popover-description span,
+        .nftHeader .card-profile .card-body .popover-description span,
+        .nftHeader .card-profile .header-left .popover-description span,
+        .nftHeader .header-profile .card-body .popover-description span,
+        .nftHeader .header-profile .header-left .popover-description span {
+          font-size: 1.8rem; }
+        .nftListing .card-profile .card-body .popover-description:hover span, .nftListing .card-profile .card-body .popover-description:active span, .nftListing .card-profile .header-left .popover-description:hover span, .nftListing .card-profile .header-left .popover-description:active span, .nftListing .header-profile .card-body .popover-description:hover span, .nftListing .header-profile .card-body .popover-description:active span, .nftListing .header-profile .header-left .popover-description:hover span, .nftListing .header-profile .header-left .popover-description:active span,
+        .farmListing .card-profile .card-body .popover-description:hover span,
+        .farmListing .card-profile .card-body .popover-description:active span,
+        .farmListing .card-profile .header-left .popover-description:hover span,
+        .farmListing .card-profile .header-left .popover-description:active span,
+        .farmListing .header-profile .card-body .popover-description:hover span,
+        .farmListing .header-profile .card-body .popover-description:active span,
+        .farmListing .header-profile .header-left .popover-description:hover span,
+        .farmListing .header-profile .header-left .popover-description:active span,
+        .nftHeader .card-profile .card-body .popover-description:hover span,
+        .nftHeader .card-profile .card-body .popover-description:active span,
+        .nftHeader .card-profile .header-left .popover-description:hover span,
+        .nftHeader .card-profile .header-left .popover-description:active span,
+        .nftHeader .header-profile .card-body .popover-description:hover span,
+        .nftHeader .header-profile .card-body .popover-description:active span,
+        .nftHeader .header-profile .header-left .popover-description:hover span,
+        .nftHeader .header-profile .header-left .popover-description:active span {
+          color: var(--text-primary-light); }
+      .nftListing .card-profile .card-body .dropdown, .nftListing .card-profile .header-left .dropdown, .nftListing .header-profile .card-body .dropdown, .nftListing .header-profile .header-left .dropdown,
+      .farmListing .card-profile .card-body .dropdown,
+      .farmListing .card-profile .header-left .dropdown,
+      .farmListing .header-profile .card-body .dropdown,
+      .farmListing .header-profile .header-left .dropdown,
+      .nftHeader .card-profile .card-body .dropdown,
+      .nftHeader .card-profile .header-left .dropdown,
+      .nftHeader .header-profile .card-body .dropdown,
+      .nftHeader .header-profile .header-left .dropdown {
+        position: absolute;
+        top: 1rem;
+        left: 1rem; }
+        .nftListing .card-profile .card-body .dropdown a, .nftListing .card-profile .header-left .dropdown a, .nftListing .header-profile .card-body .dropdown a, .nftListing .header-profile .header-left .dropdown a,
+        .farmListing .card-profile .card-body .dropdown a,
+        .farmListing .card-profile .header-left .dropdown a,
+        .farmListing .header-profile .card-body .dropdown a,
+        .farmListing .header-profile .header-left .dropdown a,
+        .nftHeader .card-profile .card-body .dropdown a,
+        .nftHeader .card-profile .header-left .dropdown a,
+        .nftHeader .header-profile .card-body .dropdown a,
+        .nftHeader .header-profile .header-left .dropdown a {
+          padding: 0;
+          margin: 0;
+          background-color: transparent;
+          box-shadow: none; }
+          .nftListing .card-profile .card-body .dropdown a::after, .nftListing .card-profile .header-left .dropdown a::after, .nftListing .header-profile .card-body .dropdown a::after, .nftListing .header-profile .header-left .dropdown a::after,
+          .farmListing .card-profile .card-body .dropdown a::after,
+          .farmListing .card-profile .header-left .dropdown a::after,
+          .farmListing .header-profile .card-body .dropdown a::after,
+          .farmListing .header-profile .header-left .dropdown a::after,
+          .nftHeader .card-profile .card-body .dropdown a::after,
+          .nftHeader .card-profile .header-left .dropdown a::after,
+          .nftHeader .header-profile .card-body .dropdown a::after,
+          .nftHeader .header-profile .header-left .dropdown a::after {
+            content: none; }
+          .nftListing .card-profile .card-body .dropdown a span, .nftListing .card-profile .header-left .dropdown a span, .nftListing .header-profile .card-body .dropdown a span, .nftListing .header-profile .header-left .dropdown a span,
+          .farmListing .card-profile .card-body .dropdown a span,
+          .farmListing .card-profile .header-left .dropdown a span,
+          .farmListing .header-profile .card-body .dropdown a span,
+          .farmListing .header-profile .header-left .dropdown a span,
+          .nftHeader .card-profile .card-body .dropdown a span,
+          .nftHeader .card-profile .header-left .dropdown a span,
+          .nftHeader .header-profile .card-body .dropdown a span,
+          .nftHeader .header-profile .header-left .dropdown a span {
+            color: var(--text-primary);
+            font-size: 1.8rem; }
+          .nftListing .card-profile .card-body .dropdown a:hover span, .nftListing .card-profile .card-body .dropdown a:active span, .nftListing .card-profile .header-left .dropdown a:hover span, .nftListing .card-profile .header-left .dropdown a:active span, .nftListing .header-profile .card-body .dropdown a:hover span, .nftListing .header-profile .card-body .dropdown a:active span, .nftListing .header-profile .header-left .dropdown a:hover span, .nftListing .header-profile .header-left .dropdown a:active span,
+          .farmListing .card-profile .card-body .dropdown a:hover span,
+          .farmListing .card-profile .card-body .dropdown a:active span,
+          .farmListing .card-profile .header-left .dropdown a:hover span,
+          .farmListing .card-profile .header-left .dropdown a:active span,
+          .farmListing .header-profile .card-body .dropdown a:hover span,
+          .farmListing .header-profile .card-body .dropdown a:active span,
+          .farmListing .header-profile .header-left .dropdown a:hover span,
+          .farmListing .header-profile .header-left .dropdown a:active span,
+          .nftHeader .card-profile .card-body .dropdown a:hover span,
+          .nftHeader .card-profile .card-body .dropdown a:active span,
+          .nftHeader .card-profile .header-left .dropdown a:hover span,
+          .nftHeader .card-profile .header-left .dropdown a:active span,
+          .nftHeader .header-profile .card-body .dropdown a:hover span,
+          .nftHeader .header-profile .card-body .dropdown a:active span,
+          .nftHeader .header-profile .header-left .dropdown a:hover span,
+          .nftHeader .header-profile .header-left .dropdown a:active span {
+            color: var(--text-primary-light); }
+      .nftListing .card-profile .card-body .dropdown.show a, .nftListing .card-profile .header-left .dropdown.show a, .nftListing .header-profile .card-body .dropdown.show a, .nftListing .header-profile .header-left .dropdown.show a,
+      .farmListing .card-profile .card-body .dropdown.show a,
+      .farmListing .card-profile .header-left .dropdown.show a,
+      .farmListing .header-profile .card-body .dropdown.show a,
+      .farmListing .header-profile .header-left .dropdown.show a,
+      .nftHeader .card-profile .card-body .dropdown.show a,
+      .nftHeader .card-profile .header-left .dropdown.show a,
+      .nftHeader .header-profile .card-body .dropdown.show a,
+      .nftHeader .header-profile .header-left .dropdown.show a {
+        background-color: transparent; }
+        .nftListing .card-profile .card-body .dropdown.show a span, .nftListing .card-profile .header-left .dropdown.show a span, .nftListing .header-profile .card-body .dropdown.show a span, .nftListing .header-profile .header-left .dropdown.show a span,
+        .farmListing .card-profile .card-body .dropdown.show a span,
+        .farmListing .card-profile .header-left .dropdown.show a span,
+        .farmListing .header-profile .card-body .dropdown.show a span,
+        .farmListing .header-profile .header-left .dropdown.show a span,
+        .nftHeader .card-profile .card-body .dropdown.show a span,
+        .nftHeader .card-profile .header-left .dropdown.show a span,
+        .nftHeader .header-profile .card-body .dropdown.show a span,
+        .nftHeader .header-profile .header-left .dropdown.show a span {
+          color: var(--text-primary-light); }
+
+.dark-edition .popover.bs-popover-bottom,
+.dark-edition .popover.bs-popover-top,
+.light-edition .popover.bs-popover-bottom,
+.light-edition .popover.bs-popover-top {
+  background-color: var(--bg-tertiary);
+  box-shadow: var(--shadow-primary); }
+  .dark-edition .popover.bs-popover-bottom .arrow, .dark-edition .popover.bs-popover-bottom .arrow::before,
+  .dark-edition .popover.bs-popover-top .arrow,
+  .dark-edition .popover.bs-popover-top .arrow::before,
+  .light-edition .popover.bs-popover-bottom .arrow,
+  .light-edition .popover.bs-popover-bottom .arrow::before,
+  .light-edition .popover.bs-popover-top .arrow,
+  .light-edition .popover.bs-popover-top .arrow::before {
+    display: none; }
+  .dark-edition .popover.bs-popover-bottom .popover-header, .dark-edition .popover.bs-popover-bottom .popover-body,
+  .dark-edition .popover.bs-popover-top .popover-header,
+  .dark-edition .popover.bs-popover-top .popover-body,
+  .light-edition .popover.bs-popover-bottom .popover-header,
+  .light-edition .popover.bs-popover-bottom .popover-body,
+  .light-edition .popover.bs-popover-top .popover-header,
+  .light-edition .popover.bs-popover-top .popover-body {
+    padding: 1rem;
+    max-height: 15rem;
+    overflow: auto;
+    color: var(--text-primary); }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
+    .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar,
+    .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar,
+    .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar,
+    .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar,
+    .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar,
+    .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar {
+      width: .5rem;
+      height: .3rem; }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb,
+    .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb,
+    .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb,
+    .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb,
+    .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb,
+    .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb,
+    .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 10px; }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb:hover, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb:hover,
+    .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb:hover,
+    .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb:hover,
+    .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-thumb:hover,
+    .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-thumb:hover,
+    .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-thumb:hover,
+    .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover); }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track,
+    .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track,
+    .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track,
+    .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track,
+    .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track,
+    .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track,
+    .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track {
+      background: var(--scrolbar-track);
+      border-radius: 10px;
+      box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
+    .dark-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track:hover, .dark-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track:hover,
+    .dark-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track:hover,
+    .dark-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track:hover,
+    .light-edition .popover.bs-popover-bottom .popover-header::-webkit-scrollbar-track:hover,
+    .light-edition .popover.bs-popover-bottom .popover-body::-webkit-scrollbar-track:hover,
+    .light-edition .popover.bs-popover-top .popover-header::-webkit-scrollbar-track:hover,
+    .light-edition .popover.bs-popover-top .popover-body::-webkit-scrollbar-track:hover {
+      background: var(--scrollbar-track-hover); }
+  .dark-edition .popover.bs-popover-bottom .popover-header,
+  .dark-edition .popover.bs-popover-top .popover-header,
+  .light-edition .popover.bs-popover-bottom .popover-header,
+  .light-edition .popover.bs-popover-top .popover-header {
+    background-color: transparent;
+    border-bottom: 0.1rem solid var(--modal-border-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    font-weight: 500; }
+    .dark-edition .popover.bs-popover-bottom .popover-header::before,
+    .dark-edition .popover.bs-popover-top .popover-header::before,
+    .light-edition .popover.bs-popover-bottom .popover-header::before,
+    .light-edition .popover.bs-popover-top .popover-header::before {
+      content: none; }
+  .dark-edition .popover.bs-popover-bottom .popover-body,
+  .dark-edition .popover.bs-popover-top .popover-body,
+  .light-edition .popover.bs-popover-bottom .popover-body,
+  .light-edition .popover.bs-popover-top .popover-body {
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-primary);
+    font-weight: 400; }
+
+.dark-edition .tooltip.bs-tooltip-bottom .tooltip-inner,
+.dark-edition .tooltip.bs-tooltip-top .tooltip-inner,
+.light-edition .tooltip.bs-tooltip-bottom .tooltip-inner,
+.light-edition .tooltip.bs-tooltip-top .tooltip-inner {
+  background-color: var(--subheading-color); }
+
+.nftHeader {
+  width: 100%; }
+
+.dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline,
+.light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline {
+  background: var(--primary-color) !important;
+  border-radius: .6rem;
+  border: 0.1rem solid var(--bg-primary);
+  font-size: 1.6rem;
+  color: var(--bg-secondary);
+  font-weight: 700;
+  padding: .3rem .8rem;
+  width: 90%; }
+  .dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:hover, .dark-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:active,
+  .light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:hover,
+  .light-edition .main-panel .content .container-fluid #offersPage.row .nftListing .card.card-profile .card-body button.btn-outline:active {
+    background-color: var(--primary-hover-dark) !important; }
+
+.dark-edition .main-panel .modal-dialog .modal-content,
+.light-edition .main-panel .modal-dialog .modal-content {
+  border: 0.1rem solid var(--modal-border-text);
+  background-color: var(--bg-tertiary); }
+  .dark-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled),
+  .light-edition .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled) {
+    cursor: var(--cursor-pointer); }
+  .dark-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a,
+  .light-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a {
+    color: var(--primary-color);
+    font-weight: 400; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a:hover, .dark-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a:active,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a:hover,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-non-nft-content a:active {
+      color: var(--primary-hover-dark); }
+  .dark-edition .main-panel .modal-dialog .modal-content .modal-header,
+  .light-edition .main-panel .modal-dialog .modal-content .modal-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    color: var(--modal-text);
+    border-bottom: 0.1rem solid var(--modal-border-text); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-header h5.modal-title {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: .48px; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-header .close {
+      color: var(--modal-text);
+      opacity: 1;
+      text-shadow: none; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close:focus,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-header .close:focus {
+        outline: none; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-header .close span,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-header .close span {
+        font-size: 2rem; }
+  .dark-edition .main-panel .modal-dialog .modal-content .modal-body,
+  .light-edition .main-panel .modal-dialog .modal-content .modal-body {
+    padding: 1rem 2rem;
+    color: var(--modal-border-text);
+    font-size: 1.3rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .container,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .container {
+      border-radius: .4rem;
+      background-color: var(--bg-primary);
+      margin-bottom: 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body select,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body select {
+      background-color: transparent;
+      height: auto;
+      background-image: none;
+      border: 0.1rem solid #3b414c;
+      border-radius: .8rem;
+      font-size: 1.3rem;
+      color: var(--modal-text);
+      padding: 1rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body select:hover,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body select:hover {
+        cursor: var(--cursor-pointer); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body select option,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body select option {
+        background-color: var(--bg-tertiary);
+        padding: .5rem 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .col {
+      padding: 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button {
+      min-width: 10rem;
+      padding: .8rem .5rem;
+      font-size: 1.2rem;
+      border: 0.1rem solid var(--primary-color);
+      border-radius: .4rem;
+      background-color: transparent;
+      color: var(--primary-color);
+      box-shadow: none; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button:hover,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body.modal-non-nft-content button:hover {
+        border: 0.1rem solid var(--primary-hover-dark);
+        color: var(--primary-hover-dark);
+        cursor: var(--cursor-pointer) !important; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: .32px;
+      color: var(--modal-text); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover {
+        cursor: var(--cursor-pointer); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required {
+        color: var(--primary-color);
+        margin-left: .3rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round {
+        font-size: 2.2rem;
+        color: var(--modal-border-text);
+        margin-left: .5rem; }
+        .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover,
+        .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover {
+          color: var(--primary-color);
+          cursor: var(--cursor-pointer); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input,
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input {
+      height: auto;
+      background-color: transparent !important;
+      background-image: none;
+      border: 0.1rem solid var(--modal-border-text);
+      border-radius: .8rem;
+      padding: 1rem;
+      font-size: 1.3rem;
+      color: var(--modal-text);
+      transition: all .3s; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder,
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input::placeholder,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input::placeholder {
+        font-size: 1.3rem;
+        color: var(--modal-border-text); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input:focus,
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input:focus,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group input:focus,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input:focus {
+        border: 0.1rem solid var(--primary-color); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body .col-3 input {
+      padding: .5rem 1rem; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea {
+      height: auto;
+      background-color: transparent;
+      background-image: none;
+      border: 0.1rem solid var(--modal-border-text);
+      border-radius: .8rem;
+      padding: 1rem;
+      font-size: 1.3rem;
+      color: var(--modal-text);
+      transition: all .3s; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus {
+        border: 0.1rem solid var(--primary-color); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset {
+      margin-top: 2.5rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset legend,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset legend {
+        color: #a3abb2;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 1rem;
+        font-weight: 700; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row {
+        margin: 0; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input, .dark-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select {
+        height: auto;
+        margin-bottom: 1rem; }
+  .dark-edition .main-panel .modal-dialog .modal-content .modal-footer,
+  .light-edition .main-panel .modal-dialog .modal-content .modal-footer {
+    border-top: 0.1rem solid var(--modal-border-text);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    line-height: 1.3; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child),
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child) {
+      margin-left: 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .footer-description,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .footer-description {
+      margin: 0 0 1rem 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .buttons-container,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .buttons-container {
+      width: 100%;
+      display: flex; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer div,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer div {
+      font-size: 1.4rem;
+      color: var(--modal-border-text); }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn {
+      box-shadow: none;
+      font-size: 1.4rem;
+      flex: 1;
+      border-radius: .8rem;
+      margin: 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary {
+      flex: 1;
+      background-color: transparent;
+      border: 0.1rem solid var(--modal-border-text);
+      color: var(--modal-border-text);
+      margin-right: 2rem; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:hover, .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:active,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:hover,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:active {
+        background-color: var(--bg-secondary);
+        border: 0.1rem solid var(--primary-color);
+        color: var(--primary-color); }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:only-child,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:only-child {
+        margin-right: 0; }
+    .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary,
+    .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary {
+      flex: 1;
+      background-color: var(--primary-color);
+      color: var(--bg-secondary);
+      font-weight: 700; }
+      .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:hover, .dark-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:hover,
+      .light-edition .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active {
+        background-color: var(--primary-hover-dark); }
+
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center; }
+  .dark-edition .main-panel .content .container-fluid.wallet .title-options-container h1,
+  .light-edition .main-panel .content .container-fluid.wallet .title-options-container h1 {
+    margin-bottom: 0; }
+  .dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions,
+  .light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions {
+    margin: 0 !important;
+    background-color: transparent;
+    color: var(--heading-color);
+    border: none; }
+    .dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions:hover,
+    .light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions:hover {
+      color: var(--primary-color); }
+    .dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after,
+    .light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after {
+      display: none; }
+
+.dark-edition .main-panel .content .container-fluid.wallet .wallet-container,
+.light-edition .main-panel .content .container-fluid.wallet .wallet-container {
+  padding: 2rem 0;
+  background-color: transparent;
+  box-shadow: none; }
+  .dark-edition .main-panel .content .container-fluid.wallet .wallet-container .row,
+  .light-edition .main-panel .content .container-fluid.wallet .wallet-container .row {
+    margin: 0;
+    color: #c2cad1; }
+    .dark-edition .main-panel .content .container-fluid.wallet .wallet-container .row .container-fluid,
+    .light-edition .main-panel .content .container-fluid.wallet .wallet-container .row .container-fluid {
+      font-size: 1.4rem; }
+
+.dark-edition .main-panel .content .custom-header__dropdowns,
+.light-edition .main-panel .content .custom-header__dropdowns {
+  display: flex;
+  align-items: center; }
+
+.dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
+.light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
+  position: relative;
+  width: 80px;
+  background-color: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2px;
+  height: 36px;
+  margin-left: 5px;
+  user-select: none;
+  box-shadow: var(--shadow-primary); }
+  @media only screen and (max-width: 991px) {
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler {
+      width: 58px;
+      height: 28px; } }
+  .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler input,
+  .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler input {
+    opacity: 0; }
+  .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options,
+  .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: var(--cursor-pointer); }
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span {
+      font-size: 32px;
+      border-radius: 20px;
+      color: var(--bg-primary); }
+      @media only screen and (max-width: 991px) {
+        .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span,
+        .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span {
+          font-size: 24px; } }
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span.light-mode.active,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span.light-mode.active {
+      color: var(--primary-color); }
+    .dark-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span.dark-mode.active,
+    .light-edition .main-panel .content .custom-header__dropdowns .theme-toggler .theme-options span.dark-mode.active {
+      background-color: var(--primary-color); }
+
+.dark-edition .sidebar,
+.light-edition .sidebar {
+  width: 30rem;
+  background-color: var(--bg-secondary);
+  opacity: 1;
+  font-size: 1.6rem;
+  box-shadow: var(--shadow-primary); }
+  .dark-edition .sidebar::before,
+  .light-edition .sidebar::before {
+    background-color: var(--bg-secondary);
+    font-size: 1.6rem; }
+  @media only screen and (min-width: 112.5em) {
+    .dark-edition .sidebar,
+    .light-edition .sidebar {
+      width: 33rem; } }
+  @media only screen and (max-width: 991px) {
+    .dark-edition .sidebar,
+    .light-edition .sidebar {
+      width: 260px; } }
+  .dark-edition .sidebar .sidebar-wrapper,
+  .light-edition .sidebar .sidebar-wrapper {
+    width: 100%;
+    height: calc(100vh - 16rem);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem; }
+    @media only screen and (min-width: 112.5em) {
+      .dark-edition .sidebar .sidebar-wrapper,
+      .light-edition .sidebar .sidebar-wrapper {
+        padding-bottom: .7rem; } }
+    @media only screen and (max-width: 75em) {
+      .dark-edition .sidebar .sidebar-wrapper,
+      .light-edition .sidebar .sidebar-wrapper {
+        padding-bottom: 2.7rem; } }
+    @media only screen and (max-width: 991px) {
+      .dark-edition .sidebar .sidebar-wrapper,
+      .light-edition .sidebar .sidebar-wrapper {
+        padding-bottom: 4rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .dark-edition .sidebar .sidebar-wrapper,
+      .light-edition .sidebar .sidebar-wrapper {
+        padding-bottom: 5.5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .dark-edition .sidebar .sidebar-wrapper,
+      .light-edition .sidebar .sidebar-wrapper {
+        padding-bottom: 8rem; } }
+    .dark-edition .sidebar .sidebar-wrapper .sidebar-bottom,
+    .light-edition .sidebar .sidebar-wrapper .sidebar-bottom {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul,
+      .light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul {
+        text-align: center;
+        font-size: 1.4rem; }
+        .dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul a,
+        .light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul a {
+          color: #a3abb2; }
+        .dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul li:nth-child(2),
+        .light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul li:nth-child(2) {
+          margin: 1rem 0; }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav,
+.light-edition .sidebar .sidebar-wrapper ul.nav {
+  overflow: auto; }
+  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar,
+  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar {
+    width: .8rem;
+    height: .1rem; }
+  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb,
+  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px; }
+  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover,
+  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover); }
+  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track,
+  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track {
+    background: var(--scrolbar-track);
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow); }
+  .dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover,
+  .light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover {
+    background: var(--scrollbar-track-hover); }
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu,
+.light-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu {
+  display: none; }
+
+.dark-edition .sidebar .logo,
+.light-edition .sidebar .logo {
+  padding: 1.5rem 0; }
+  .dark-edition .sidebar .logo::after,
+  .light-edition .sidebar .logo::after {
+    content: none; }
+  .dark-edition .sidebar .logo a.simple-text:hover,
+  .light-edition .sidebar .logo a.simple-text:hover {
+    background-color: transparent; }
+
+.sidebar .nav {
+  margin-top: 0; }
+  .sidebar .nav i {
+    font-size: 2.1rem;
+    color: var(--primary-color);
+    margin-right: 1.3rem; }
+  .sidebar .nav p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    color: #a3abb2; }
+  .sidebar .nav li:first-child > a {
+    margin: 0 2.4rem; }
+  .sidebar .nav li:not(:first-child) > a {
+    margin: 1rem 2.4rem 0; }
+  .sidebar .nav li.active > a {
+    background-color: var(--primary-color); }
+  .sidebar .nav li.active a i,
+  .sidebar .nav li.active a p {
+    color: var(--bg-secondary); }
+  .sidebar .nav .nav-item:not(.nav-item.active) a:hover {
+    background-color: var(--primary-hover-light); }
+  .sidebar .nav li a,
+  .sidebar .nav li .dropdown-menu a {
+    padding: .5rem;
+    border-radius: .8rem; }
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-footer); }
+  .sidebar-text.icons {
+    margin: 4rem 0 1rem; }
+    .sidebar-text.icons span a {
+      margin: 0 1rem; }
+    .sidebar-text.icons span a:hover {
+      color: var(--heading-color); }
+  .sidebar-text.rights span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.24px;
+    text-align: center; }
+    .sidebar-text.rights span i {
+      font-size: 1rem;
+      vertical-align: middle; }
+
+.sidebar-divider {
+  border-bottom: 0.1rem solid #4c4c6f;
+  margin: 1.5rem 2.4rem; }
+
+.main-panel .content__welcome-text {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  padding: .8rem 0;
+  margin-bottom: 2rem;
+  width: 80%; }
+
+.main-panel .content .custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  @media only screen and (max-width: 991px) {
+    .main-panel .content .custom-header {
+      margin-top: -3rem;
+      margin-left: 2rem; }
+      .main-panel .content .custom-header__dropdowns {
+        z-index: 1050; } }
+  .main-panel .content .custom-header__title {
+    color: var(--title-color);
+    font-size: 4rem;
+    font-weight: 700; }
+
+.dark-edition .main-panel,
+.light-edition .main-panel {
+  width: calc(100% - 30rem);
+  background-color: var(--bg-primary); }
+  @media only screen and (min-width: 112.5em) {
+    .dark-edition .main-panel,
+    .light-edition .main-panel {
+      width: calc(100% - 33rem); } }
+  @media only screen and (max-width: 991px) {
+    .dark-edition .main-panel,
+    .light-edition .main-panel {
+      width: 100%; } }
+  .dark-edition .main-panel .content,
+  .light-edition .main-panel .content {
+    margin-top: .5rem;
+    padding: 3rem 5rem 7rem;
+    min-height: calc(100vh - .5rem); }
+  .dark-edition .main-panel .content .add-new-card-container,
+  .light-edition .main-panel .content .add-new-card-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin: 2rem 0 3rem 0;
+    transition: all 1s; }
+    .dark-edition .main-panel .content .add-new-card-container span,
+    .light-edition .main-panel .content .add-new-card-container span {
+      margin-left: .5rem;
+      font-size: 1.8rem; }
+    .dark-edition .main-panel .content .add-new-card-container:hover,
+    .light-edition .main-panel .content .add-new-card-container:hover {
+      cursor: var(--cursor-pointer); }
+      .dark-edition .main-panel .content .add-new-card-container:hover span,
+      .light-edition .main-panel .content .add-new-card-container:hover span {
+        transform: scale(1.1); }
+  .dark-edition .main-panel .navbar.navbar-absolute,
+  .light-edition .main-panel .navbar.navbar-absolute {
+    padding-top: 2rem; }
+  .dark-edition .main-panel .container-fluid,
+  .light-edition .main-panel .container-fluid {
+    padding: 0; }
+    .dark-edition .main-panel .container-fluid.featured-farms,
+    .light-edition .main-panel .container-fluid.featured-farms {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+      align-items: flex-start;
+      margin-top: 2rem; }
+      @media only screen and (max-width: 990px) {
+        .dark-edition .main-panel .container-fluid.featured-farms .card.card.farm-card,
+        .light-edition .main-panel .container-fluid.featured-farms .card.card.farm-card {
+          width: unset; } }
+  .dark-edition .main-panel .card,
+  .light-edition .main-panel .card {
+    background: var(--bg-tertiary);
+    border-radius: .8rem;
+    z-index: 0;
+    margin: 0; }
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+  .light-edition .main-panel .nftHeader-stakingOptions-container {
+    display: flex;
+    margin-bottom: 3rem; }
+    @media only screen and (max-width: 87.5em) {
+      .dark-edition .main-panel .nftHeader-stakingOptions-container,
+      .light-edition .main-panel .nftHeader-stakingOptions-container {
+        flex-direction: column; } }
+  .dark-edition .main-panel .content .row,
+  .light-edition .main-panel .content .row {
+    margin: 0 0 1rem 0; }
+  .dark-edition .main-panel .content #farmsPage.row,
+  .light-edition .main-panel .content #farmsPage.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 2rem; }
+  .dark-edition .main-panel .content .container-fluid.wallet h1, .dark-edition .main-panel .content .container-fluid.bridge h1,
+  .light-edition .main-panel .content .container-fluid.wallet h1,
+  .light-edition .main-panel .content .container-fluid.bridge h1 {
+    margin-bottom: 2rem; }
+  .dark-edition .main-panel .content .container-fluid .row,
+  .light-edition .main-panel .content .container-fluid .row {
+    margin: 0 0 1rem 0; }
+  .dark-edition .main-panel .content .container-fluid #farmPage.row,
+  .dark-edition .main-panel .content .container-fluid #collectiblesPage.row,
+  .dark-edition .main-panel .content .container-fluid #offersPage.row,
+  .dark-edition .main-panel .content .container-fluid #myPoolsPage.row,
+  .dark-edition .main-panel .content .container-fluid #bridgedPage.row,
+  .light-edition .main-panel .content .container-fluid #farmPage.row,
+  .light-edition .main-panel .content .container-fluid #collectiblesPage.row,
+  .light-edition .main-panel .content .container-fluid #offersPage.row,
+  .light-edition .main-panel .content .container-fluid #myPoolsPage.row,
+  .light-edition .main-panel .content .container-fluid #bridgedPage.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 2rem; }
+  .dark-edition .main-panel .content .container-fluid .col-xl-12,
+  .dark-edition .main-panel .content .container-fluid .col-lg-12,
+  .light-edition .main-panel .content .container-fluid .col-xl-12,
+  .light-edition .main-panel .content .container-fluid .col-lg-12 {
+    padding: 0; }
+  .dark-edition .main-panel .content .container-fluid .wallet-container .row,
+  .dark-edition .main-panel .content .container-fluid .bridge-container .row,
+  .light-edition .main-panel .content .container-fluid .wallet-container .row,
+  .light-edition .main-panel .content .container-fluid .bridge-container .row {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    color: var(--text-primary); }
+    .dark-edition .main-panel .content .container-fluid .wallet-container .row .container-fluid,
+    .dark-edition .main-panel .content .container-fluid .bridge-container .row .container-fluid,
+    .light-edition .main-panel .content .container-fluid .wallet-container .row .container-fluid,
+    .light-edition .main-panel .content .container-fluid .bridge-container .row .container-fluid {
+      font-size: 1.4rem; }
+  .dark-edition .main-panel .content .container-fluid .wallet-container, .dark-edition .main-panel .content .container-fluid .bridge-container,
+  .light-edition .main-panel .content .container-fluid .wallet-container,
+  .light-edition .main-panel .content .container-fluid .bridge-container {
+    padding: 2rem;
+    background-color: var(--bg-tertiary);
+    box-shadow: var(--shadow-primary);
+    border-radius: .8rem; }
+    .dark-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary, .dark-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary,
+    .light-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary,
+    .light-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary {
+      border: 0.2rem solid var(--subheading-color);
+      border-radius: .8rem;
+      background-color: var(--bg-tertiary);
+      box-shadow: none;
+      color: var(--heading-color);
+      font-size: 1.2rem;
+      letter-spacing: .32px;
+      padding: .8rem 1.2rem; }
+  .dark-edition .main-panel .footer,
+  .light-edition .main-panel .footer {
+    border-top: none; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 30rem;
+  width: calc(100% - 40rem);
+  margin: 0 5rem;
+  padding: .5rem 0;
+  background: var(--bg-tertiary);
+  border-top-left-radius: .8rem;
+  border-top-right-radius: .8rem;
+  box-shadow: var(--shadow-primary); }
+  @media only screen and (min-width: 112.5em) {
+    .footer {
+      left: 33rem;
+      width: calc(100% - 43rem); } }
+  @media only screen and (max-width: 991px) {
+    .footer {
+      left: 0;
+      width: -moz-available;
+      width: -webkit-fill-available;
+      width: fill-available; } }
+  .footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; }
+    .footer ul li.nav-item a {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      color: var(--text-footer);
+      padding: 0; }
+      .footer ul li.nav-item a:hover {
+        color: var(--primary-color); }
+      .footer ul li.nav-item a span {
+        font-size: 2rem;
+        margin-right: .3rem; }
