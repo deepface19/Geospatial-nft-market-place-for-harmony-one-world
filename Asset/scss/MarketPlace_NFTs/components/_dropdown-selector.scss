@@ -1,0 +1,63 @@
+.light-edition,
+.dark-edition {
+  #chainSelectionDropdown,
+  #walletActions,
+  #bridgeActions,
+  #categoryDropdown,
+  .dropdown-primary {
+    background-color: var(--bg-secondary);
+    color: var(--primary-color);
+    border: 0.2rem solid var(--primary-color);
+    border-radius: 0.8rem;
+    box-shadow: none;
+    font-size: 1.8rem;
+    text-transform: none;
+    padding: 1rem 1.8rem;
+    font-weight: 700;
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    color: #ffffff !important;
+    background-color: var(--primary-color);
+  }
+
+  #walletActions,
+  #bridgeActions,
+  #categoryDropdown {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0.8rem 1.2rem;
+
+    span {
+      font-size: 1.4rem;
+      margin-right: 0.3rem;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: var(--bg-secondary);
+
+    a.dropdown-item {
+      font-size: 1.4rem;
+    }
+  }
+
+  .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
+    color: var(--text-primary);
+    padding: 1rem 1.2rem;
+
+    &:hover {
+      color: var(--text-primary);
+      background: none;
+      box-shadow: none;
+      background-color: var(--primary-hover-light);
+    }
+
+    img {
+      margin-right: 10px;
+    }
+  }
+}

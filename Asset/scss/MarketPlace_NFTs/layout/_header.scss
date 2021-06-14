@@ -1,0 +1,30 @@
+.main-panel .content {
+  &__welcome-text {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    padding: .8rem 0;
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(nav-collapse) {
+      margin-top: -3rem;
+      margin-left: 2rem;
+
+      &__dropdowns {
+        z-index: 1050;
+      }
+    }
+  
+    &__title {
+      color: var(--title-color);
+      font-size: 4rem;
+      font-weight: 700;
+    }
+  }
+}

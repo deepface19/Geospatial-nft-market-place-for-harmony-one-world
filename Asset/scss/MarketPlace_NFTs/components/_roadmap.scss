@@ -1,0 +1,48 @@
+.dark-edition .card.roadmap,
+.light-edition .card.roadmap {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-primary);
+
+  .card-body {
+    padding: 3rem 2rem;
+
+    .main-timeline {
+      &::before {
+        background: var(--primary-color);
+      }
+    }
+  }
+}
+
+.main-timeline .year, 
+.main-timeline .month {
+  color: var(--bg-primary);
+}
+
+.main-timeline h5.title{
+  font-family: "Poppins", sans-serif;
+  color: var(--heading-color);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main-timeline p.description {
+  font-size: 1.6rem;
+  color: var(--text-footer);
+  font-weight: 400;
+}
+
+.main-timeline .date-outer {
+  &:before {
+    background: var(--primary-color);
+    border: .2rem solid var(--bg-secondary);
+  }
+  &::after {
+    border: .3rem solid var(--title-color);
+  }
+}
+
+.main-timeline .date-content:before {
+  background: var(--primary-color);
+}

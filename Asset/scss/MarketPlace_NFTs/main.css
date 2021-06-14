@@ -1,0 +1,1410 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  cursor: url(../img/unifty-icons/cursor-default.svg), auto;
+}
+body a:link,
+body a:hover,
+body a:active,
+body .btn:not(:disabled):not(.disabled) {
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+
+.dark-edition {
+  --primary-color: #fd79e2;
+  --primary-hover-light: rgba(253, 121, 226, .1);
+  --primary-hover-dark: #f047ce;
+  --title-color: #ec6fd2;
+  --bg-primary: #0d141a;
+  --bg-secondary: #121a21;
+  --bg-tertiary: #121a21;
+  --text-primary: #9d9db4;
+  --text-footer: #9d9db4;
+  --heading-color: #ffffff;
+  --subheading-color: rgba(255, 255, 255, .3);
+  --modal-border-text: #707070;
+  --modal-text: #f4f7fb;
+  --image-padding: #192027;
+}
+
+.light-edition {
+  --primary-color: #202060;
+  --primary-hover-light: rgba(32, 32, 96, .1);
+  --primary-hover-dark: #06064a;
+  --title-color: #202040;
+  --bg-primary: #f4f7fb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef0f8;
+  --text-primary: #4c4c6f;
+  --text-footer: rgba(76, 76, 111, .5);
+  --heading-color: #202060;
+  --subheading-color: rgba(76, 76, 111, .3);
+  --modal-border-text: #a3abb2;
+  --modal-text: #202040;
+  --image-padding: #e2e3e8;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  color: var(--heading-color);
+}
+
+h1#nftContractNameTitle,
+h1.nftListingsTitle {
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1#nftContractNameTitle::before,
+h1.nftListingsTitle::before {
+  font-family: "Material Icons Round";
+  content: "push_pin";
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+  transform: rotate(-45deg);
+}
+
+h1.nftListingsTitle {
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.32px;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+}
+
+.light-edition #chainSelectionDropdown,
+.light-edition #walletActions,
+.light-edition #bridgeActions, .dark-edition #chainSelectionDropdown,
+.dark-edition #walletActions,
+.dark-edition #bridgeActions {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+  border-radius: 0.8rem;
+  box-shadow: none;
+  font-size: 1.8rem;
+  text-transform: none;
+  padding: 1rem 1.8rem;
+  font-weight: 700;
+}
+.light-edition #walletActions,
+.light-edition #bridgeActions, .dark-edition #walletActions,
+.dark-edition #bridgeActions {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.8rem 1.2rem;
+}
+.light-edition #walletActions span,
+.light-edition #bridgeActions span, .dark-edition #walletActions span,
+.dark-edition #bridgeActions span {
+  font-size: 1.4rem;
+  margin-right: 0.3rem;
+}
+.light-edition .dropdown-menu, .dark-edition .dropdown-menu {
+  background-color: var(--bg-secondary);
+}
+.light-edition .dropdown-menu a.dropdown-item, .dark-edition .dropdown-menu a.dropdown-item {
+  font-size: 1.4rem;
+}
+.light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item {
+  color: var(--text-primary);
+  padding: 1rem 1.2rem;
+}
+.light-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover, .dark-edition .dropdown:not(.show-dropdown) .dropdown-menu .dropdown-item:hover {
+  color: var(--text-primary);
+  background: none;
+  box-shadow: none;
+  background-color: var(--primary-hover-light);
+}
+
+.dark-edition .card.farm-card,
+.light-edition .card.farm-card {
+  margin: 1rem 2rem 1rem 0;
+}
+.dark-edition .card.farm-card .card-body,
+.light-edition .card.farm-card .card-body {
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .card.farm-card .card-body a,
+.light-edition .card.farm-card .card-body a {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+.dark-edition .card.farm-card .card-body a:active,
+.light-edition .card.farm-card .card-body a:active {
+  color: var(--text-primary);
+}
+.dark-edition .card.farm-card .card-body a i,
+.light-edition .card.farm-card .card-body a i {
+  margin-right: 0.5rem;
+}
+.dark-edition .card.farm-card .card-body .card-title,
+.light-edition .card.farm-card .card-body .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  display: flex;
+  width: calc(100% - 10rem);
+  height: 6rem;
+}
+.dark-edition .card.farm-card .card-body .card-description,
+.light-edition .card.farm-card .card-body .card-description {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-primary);
+}
+
+.card.card.farm-card {
+  width: 25rem;
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 1rem;
+}
+.card.card.farm-card [class*=card-header-] {
+  margin: 0;
+  background-color: none;
+}
+.card.card.farm-card .card-header.card-header-info.card-header-icon {
+  box-shadow: none;
+}
+.card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.3rem;
+  margin: 0;
+  padding: 1rem;
+  background-color: none;
+  background: none;
+  box-shadow: none;
+}
+.card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon a {
+  width: 100%;
+  height: 100%;
+}
+.card.card.farm-card .card-header.card-header-info.card-header-icon .card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 0.3rem;
+}
+.card.card.farm-card .card-body {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+}
+.card.card.farm-card .card-body .btn.btn-primary.card-toggler {
+  display: flex;
+  align-items: center;
+  text-transform: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: calc(100% - 10rem);
+}
+.card.card.farm-card .card-body .btn.btn-primary.card-toggler[aria-expanded=false]::after {
+  font-family: "Material Icons Round";
+  content: "keyboard_arrow_down";
+  font-size: 1.8rem;
+}
+.card.card.farm-card .card-body .btn.btn-primary.card-toggler[aria-expanded=true]::after {
+  font-family: "Material Icons Round";
+  content: "keyboard_arrow_up";
+  font-size: 1.8rem;
+}
+
+.dark-edition .main-panel .content .container-fluid.featured-farms .card.farm-card:nth-of-type(3n+1) .card-body {
+  background: linear-gradient(30deg, #121a21 50%, rgba(48, 178, 211, 0.15) 73%, rgba(64, 190, 240, 0.35) 100%);
+}
+.dark-edition .main-panel .content .container-fluid.featured-farms .card.farm-card:nth-of-type(3n+2) .card-body {
+  background: linear-gradient(30deg, #121a21 50%, rgba(155, 153, 41, 0.15) 73%, rgba(247, 225, 31, 0.35) 100%);
+}
+.dark-edition .main-panel .content .container-fluid.featured-farms .card.farm-card:nth-of-type(3n+3) .card-body {
+  background: linear-gradient(30deg, #121a21 50%, rgba(255, 118, 226, 0.15) 73%, rgba(255, 118, 226, 0.35) 100%);
+}
+
+.dark-edition .card.roadmap,
+.light-edition .card.roadmap {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .card.roadmap .card-body,
+.light-edition .card.roadmap .card-body {
+  padding: 3rem 2rem;
+}
+.dark-edition .card.roadmap .card-body .main-timeline::before,
+.light-edition .card.roadmap .card-body .main-timeline::before {
+  background: var(--primary-color);
+}
+
+.main-timeline .year,
+.main-timeline .month {
+  color: var(--bg-primary);
+}
+
+.main-timeline h5.title {
+  font-family: "Poppins", sans-serif;
+  color: var(--heading-color);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main-timeline p.description {
+  font-size: 1.2rem;
+  color: var(--text-footer);
+  font-weight: 400;
+}
+
+.main-timeline .date-outer:before {
+  background: var(--primary-color);
+  border: 0.2rem solid var(--bg-secondary);
+}
+.main-timeline .date-outer::after {
+  border: 0.3rem solid var(--title-color);
+}
+
+.main-timeline .date-content:before {
+  background: var(--primary-color);
+}
+
+.dark-edition .card.faq,
+.light-edition .card.faq {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .card.faq .card-body,
+.light-edition .card.faq .card-body {
+  padding: 2rem;
+}
+.dark-edition .card.faq .card-body .card-description,
+.light-edition .card.faq .card-body .card-description {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 300;
+}
+.dark-edition .card.faq .card-body .card-description a,
+.light-edition .card.faq .card-body .card-description a {
+  font-weight: 400;
+  color: var(--primary-color);
+}
+.dark-edition .card.faq .card-body .card-description a:hover,
+.light-edition .card.faq .card-body .card-description a:hover {
+  color: var(--primary-hover-dark);
+}
+.dark-edition .card.faq .card-body .card-description h5,
+.light-edition .card.faq .card-body .card-description h5 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  color: var(--heading-color);
+  margin: 2rem 0 0.5rem !important;
+}
+.dark-edition .card.faq .card-body .card-description h5:nth-of-type(1),
+.light-edition .card.faq .card-body .card-description h5:nth-of-type(1) {
+  margin-top: 0 !important;
+}
+
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions {
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-tertiary);
+  padding: 2.4rem 3.6rem 1.3rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3, .dark-edition .nftHeader-stakingOptions-container #stakingOptions .my-3,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .mb-3,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .my-3 {
+  margin: 0 !important;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 {
+  border: 0.1rem solid var(--text-footer);
+  border-radius: 0.8rem;
+  background-color: #0d141a;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--text-footer);
+  font-size: 1.6rem;
+  letter-spacing: 0.32px;
+  font-weight: 700;
+  text-transform: none;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 span,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions a.btn.btn-secondary.mb-3.mr-1 span {
+  font-weight: 400;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row {
+  display: flex;
+}
+@media only screen and (max-width: 26em) {
+  .dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row {
+    flex-direction: column;
+  }
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row .divider {
+  width: 1rem;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row a {
+  margin: 0 !important;
+  padding: 1rem 1.5rem;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .first-row, .dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .first-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row {
+  margin-bottom: 1.5rem;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row {
+  width: 100%;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown > a,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown > a {
+  width: 100%;
+  box-shadow: none;
+  background-color: var(--primary-color);
+  color: var(--bg-secondary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  border-radius: 0.8rem;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show {
+  width: 100%;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show a,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .second-row .dropdown.show .dropdown-menu.show a {
+  justify-content: center;
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .third-row,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .third-row {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions .third-row a,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions .third-row a {
+  color: var(--primary-color);
+}
+
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
+  margin-right: 4.8rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+}
+@media only screen and (max-width: 87.5em) {
+  .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader.col-md-12.mb-4 {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader {
+  margin: 0 !important;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card {
+  margin: 0;
+  border-radius: 0.8rem;
+  height: 100%;
+  color: var(--text-primary);
+  word-wrap: normal;
+  padding: 0.5rem 2rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content {
+  display: flex;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 {
+  min-width: 5rem;
+  max-width: 10rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 img,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-3 img {
+  margin: 2rem 0;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 {
+  padding: 0;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-content .col-9 .card-body {
+  padding: 2rem 0;
+  font-size: 1.4rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links {
+  padding: 0 1rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--text-footer);
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:hover, .dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:active,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:hover,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a:active {
+  color: var(--heading-color);
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a i,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links a i {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links .mt-2,
+.light-edition .main-panel .nftHeader-stakingOptions-container #farmHeader .nftHeader .card .card-links .mt-2 {
+  font-size: 1.1rem;
+  margin: 1rem 0 1rem 0.5rem;
+  color: var(--text-footer);
+}
+
+.nftListing,
+.farmListing {
+  min-width: 20rem;
+  width: 50.5rem;
+  padding: 0;
+  margin-right: 2rem !important;
+}
+.nftListing .card-profile,
+.farmListing .card-profile {
+  position: relative;
+  margin-top: 0;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.nftListing .card-profile .card-avatar,
+.farmListing .card-profile .card-avatar {
+  min-width: 15.6rem;
+  min-height: 15.6rem;
+  max-width: 15.6rem;
+  max-height: 15.6rem;
+  padding: 0.8rem !important;
+  margin: 1.5rem auto 0.5rem;
+  background-color: var(--image-padding);
+}
+.nftListing .card-profile .card-body,
+.farmListing .card-profile .card-body {
+  position: static;
+}
+.nftListing .card-profile .card-body h5.card-title,
+.farmListing .card-profile .card-body h5.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28px;
+}
+.nftListing .card-profile .card-body h5.card-title a,
+.farmListing .card-profile .card-body h5.card-title a {
+  color: var(--heading-color);
+}
+.nftListing .card-profile .card-body .collection-name,
+.farmListing .card-profile .card-body .collection-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.nftListing .card-profile .card-body a.video-btn-link,
+.farmListing .card-profile .card-body a.video-btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  border: none;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+.nftListing .card-profile .card-body a.video-btn-link:hover,
+.farmListing .card-profile .card-body a.video-btn-link:hover {
+  color: var(--primary-hover-dark);
+}
+.nftListing .card-profile .card-body a.video-btn-link span,
+.farmListing .card-profile .card-body a.video-btn-link span {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+.nftListing .card-profile .card-body audio,
+.farmListing .card-profile .card-body audio {
+  height: 3.2rem;
+  margin-top: 0 !important;
+}
+.nftListing .card-profile .card-body .badge,
+.farmListing .card-profile .card-body .badge {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  position: relative;
+}
+.nftListing .card-profile .card-body .badge.badge-info,
+.farmListing .card-profile .card-body .badge.badge-info {
+  color: var(--text-primary);
+  background-color: transparent;
+}
+.nftListing .card-profile .card-body .badge.badge-info:not(:last-child)::before,
+.farmListing .card-profile .card-body .badge.badge-info:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 80%;
+  background: #c2cad1;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nftListing .card-profile .card-body a.redeemButton,
+.farmListing .card-profile .card-body a.redeemButton {
+  font-size: 1.4rem;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
+  border-radius: 0.6rem;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 0.3rem 0.8rem;
+  font-weight: 500;
+  width: 90%;
+}
+.nftListing .card-profile .card-body a.redeemButton:active,
+.farmListing .card-profile .card-body a.redeemButton:active {
+  color: #fff;
+  background-color: var(--primary-hover-dark);
+  font-weight: 400;
+}
+.nftListing .card-profile .card-body a.traits,
+.farmListing .card-profile .card-body a.traits {
+  font-size: 1.4rem;
+  border: 0.1rem solid #707070;
+  border-radius: 0.6rem;
+  background-color: #0d141a !important;
+  text-transform: none;
+  color: #707070;
+  padding: 0.3rem 0.8rem;
+  width: 90%;
+}
+.nftListing .card-profile .card-body .popover-description,
+.farmListing .card-profile .card-body .popover-description {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #a3abb2;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.nftListing .card-profile .card-body .popover-description span,
+.farmListing .card-profile .card-body .popover-description span {
+  font-size: 1.8rem;
+}
+.nftListing .card-profile .card-body .popover-description:hover span, .nftListing .card-profile .card-body .popover-description:active span,
+.farmListing .card-profile .card-body .popover-description:hover span,
+.farmListing .card-profile .card-body .popover-description:active span {
+  color: #fff;
+}
+.nftListing .card-profile .card-body .dropdown,
+.farmListing .card-profile .card-body .dropdown {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.nftListing .card-profile .card-body .dropdown a,
+.farmListing .card-profile .card-body .dropdown a {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.nftListing .card-profile .card-body .dropdown a::after,
+.farmListing .card-profile .card-body .dropdown a::after {
+  content: none;
+}
+.nftListing .card-profile .card-body .dropdown a:hover span, .nftListing .card-profile .card-body .dropdown a:active span,
+.farmListing .card-profile .card-body .dropdown a:hover span,
+.farmListing .card-profile .card-body .dropdown a:active span {
+  color: #fff;
+}
+.nftListing .card-profile .card-body .dropdown a span,
+.farmListing .card-profile .card-body .dropdown a span {
+  color: #a3abb2;
+  font-size: 1.8rem;
+}
+.nftListing .card-profile .card-body .dropdown.show a,
+.farmListing .card-profile .card-body .dropdown.show a {
+  background-color: transparent;
+}
+.nftListing .card-profile .card-body .dropdown.show a span,
+.farmListing .card-profile .card-body .dropdown.show a span {
+  color: #fff;
+}
+
+.dark-edition .popover.fade.bs-popover-bottom {
+  background-color: #121a21;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .popover.fade.bs-popover-bottom .arrow, .dark-edition .popover.fade.bs-popover-bottom .arrow::before {
+  display: none;
+}
+.dark-edition .popover.fade.bs-popover-bottom .popover-header, .dark-edition .popover.fade.bs-popover-bottom .popover-body {
+  padding: 1rem;
+  color: #a3abb2;
+}
+.dark-edition .popover.fade.bs-popover-bottom .popover-header {
+  background-color: transparent;
+  border-bottom: 0.1rem solid #707070;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+}
+.dark-edition .popover.fade.bs-popover-bottom .popover-header::before {
+  content: none;
+}
+.dark-edition .popover.fade.bs-popover-bottom .popover-body {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content {
+  border: 0.1rem solid var(--modal-border-text);
+  background-color: var(--bg-tertiary);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled),
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .close:not(:disabled):not(.disabled) {
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content a,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content a {
+  color: var(--primary-color);
+  font-weight: 400;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content a:hover, .dark-edition.modal-open .main-panel .modal-dialog .modal-content a:active,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content a:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content a:active {
+  color: var(--primary-hover-dark);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  color: var(--modal-text);
+  border-bottom: 0.1rem solid var(--modal-border-text);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header h5.modal-title,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header h5.modal-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close {
+  color: var(--modal-text);
+  opacity: 1;
+  text-shadow: none;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close:focus,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close:focus {
+  outline: none;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close span,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-header .close span {
+  font-size: 2rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body {
+  padding: 1rem 2rem;
+  color: var(--modal-border-text);
+  font-size: 1.3rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select {
+  background-color: transparent;
+  height: auto;
+  background-image: none;
+  border: 0.1rem solid #3b414c;
+  border-radius: 0.8rem;
+  font-size: 1.3rem;
+  color: var(--modal-text);
+  padding: 1rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select:hover {
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select option,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body select option {
+  background-color: var(--bg-tertiary);
+  padding: 0.5rem 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body .col,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body .col {
+  padding: 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body button,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body button {
+  min-width: 10rem;
+  padding: 0.8rem 0.5rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: var(--primary-color);
+  box-shadow: none;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body button:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body button:hover {
+  border: 0.1rem solid var(--primary-hover-dark);
+  color: var(--primary-hover-dark);
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto !important;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  color: var(--modal-text);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label:hover {
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.required {
+  color: var(--primary-color);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round {
+  font-size: 2.2rem;
+  color: var(--modal-border-text);
+  margin-left: 0.5rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group label span.material-icons-round:hover {
+  color: var(--primary-color);
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input {
+  height: auto;
+  background-color: transparent !important;
+  background-image: none;
+  border: 0.1rem solid var(--modal-border-text);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: var(--modal-text);
+  transition: all 0.3s;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input::placeholder {
+  font-size: 1.3rem;
+  color: var(--modal-border-text);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input:focus,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group input:focus {
+  border: 0.1rem solid var(--primary-color);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea {
+  height: auto;
+  background-color: transparent;
+  background-image: none;
+  border: 0.1rem solid var(--modal-border-text);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: var(--modal-text);
+  transition: all 0.3s;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form .form-group textarea:focus {
+  border: 0.1rem solid var(--primary-color);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset {
+  margin-top: 2.5rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset legend,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset legend {
+  color: #a3abb2;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-row {
+  margin: 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input, .dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group input,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-body form fieldset .form-group select {
+  height: auto;
+  margin-bottom: 1rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer {
+  border-top: 0.1rem solid var(--modal-border-text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  line-height: 1.3;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child),
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer > :not(:first-child) {
+  margin-left: 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .footer-description,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .footer-description {
+  margin: 0 0 1rem 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .buttons-container,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .buttons-container {
+  width: 100%;
+  display: flex;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer div,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer div {
+  font-size: 1.4rem;
+  color: var(--modal-border-text);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn {
+  box-shadow: none;
+  font-size: 1.4rem;
+  flex: 1;
+  border-radius: 0.8rem;
+  margin: 0;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary {
+  flex: 1;
+  background-color: transparent;
+  border: 0.1rem solid var(--modal-border-text);
+  color: var(--modal-border-text);
+  margin-right: 2rem;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:hover, .dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:active,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-secondary:active {
+  background-color: var(--bg-secondary);
+  border: 0.1rem solid var(--primary-color);
+  color: var(--primary-color);
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary {
+  flex: 1;
+  background-color: var(--primary-color);
+  color: var(--bg-secondary);
+  font-weight: 700;
+}
+.dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:hover, .dark-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:hover,
+.light-edition.modal-open .main-panel .modal-dialog .modal-content .modal-footer .btn.btn-primary:active {
+  background-color: var(--primary-hover-dark);
+}
+
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container h1,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container h1 {
+  margin-bottom: 0;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions {
+  margin: 0 !important;
+  background-color: transparent;
+  color: var(--heading-color);
+  border: none;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions:hover,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions:hover {
+  color: var(--primary-color);
+}
+.dark-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after,
+.light-edition .main-panel .content .container-fluid.wallet .title-options-container a#walletActions::after {
+  display: none;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .wallet-container,
+.light-edition .main-panel .content .container-fluid.wallet .wallet-container {
+  padding: 2rem 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .wallet-container .row,
+.light-edition .main-panel .content .container-fluid.wallet .wallet-container .row {
+  margin: 0;
+  color: #c2cad1;
+}
+.dark-edition .main-panel .content .container-fluid.wallet .wallet-container .row .container-fluid,
+.light-edition .main-panel .content .container-fluid.wallet .wallet-container .row .container-fluid {
+  font-size: 1.4rem;
+}
+
+.dark-edition .sidebar,
+.light-edition .sidebar {
+  width: 30rem;
+  background-color: var(--bg-secondary);
+  opacity: 1;
+  font-size: 1.6rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.dark-edition .sidebar::before,
+.light-edition .sidebar::before {
+  background-color: var(--bg-secondary);
+  font-size: 1.6rem;
+}
+@media only screen and (min-width: 112.5em) {
+  .dark-edition .sidebar,
+.light-edition .sidebar {
+    width: 33rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .dark-edition .sidebar,
+.light-edition .sidebar {
+    width: 260px;
+  }
+}
+.dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+  width: 100%;
+  height: calc(100vh - 16rem);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+@media only screen and (min-width: 112.5em) {
+  .dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+    padding-bottom: 0.7rem;
+  }
+}
+@media only screen and (max-width: 75em) {
+  .dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+    padding-bottom: 2.7rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+    padding-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+    padding-bottom: 5.5rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .dark-edition .sidebar .sidebar-wrapper,
+.light-edition .sidebar .sidebar-wrapper {
+    padding-bottom: 8rem;
+  }
+}
+.dark-edition .sidebar .sidebar-wrapper .sidebar-bottom,
+.light-edition .sidebar .sidebar-wrapper .sidebar-bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul,
+.light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul {
+  text-align: center;
+  font-size: 1.4rem;
+}
+.dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul a,
+.light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul a {
+  color: #a3abb2;
+}
+.dark-edition .sidebar .sidebar-wrapper .sidebar-bottom ul li:nth-child(2),
+.light-edition .sidebar .sidebar-wrapper .sidebar-bottom ul li:nth-child(2) {
+  margin: 1rem 0;
+}
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav,
+.light-edition .sidebar .sidebar-wrapper ul.nav {
+  height: 65%;
+  max-height: 30rem;
+  overflow: auto;
+}
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.1rem;
+}
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, #5c5c73 27%, #8b6084 60%);
+  border-radius: 10px;
+}
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #414166 14%, #eb7bd6 64%);
+}
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track {
+  background: rgba(253, 121, 226, 0.1);
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #121a21;
+}
+.dark-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover,
+.light-edition .sidebar .sidebar-wrapper ul.nav::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+.dark-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu,
+.light-edition .sidebar .sidebar-wrapper ul.nav.navbar-nav.nav-mobile-menu {
+  display: none;
+}
+
+.dark-edition .sidebar .logo,
+.light-edition .sidebar .logo {
+  padding: 1.5rem 0;
+}
+.dark-edition .sidebar .logo::after,
+.light-edition .sidebar .logo::after {
+  content: none;
+}
+.dark-edition .sidebar .logo a.simple-text:hover,
+.light-edition .sidebar .logo a.simple-text:hover {
+  background-color: transparent;
+}
+
+.sidebar .nav {
+  margin-top: 0;
+}
+.sidebar .nav i {
+  font-size: 2.1rem;
+  color: var(--primary-color);
+  margin-right: 1.3rem;
+}
+.sidebar .nav p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  color: #a3abb2;
+}
+.sidebar .nav li:first-child > a {
+  margin: 0 2.4rem;
+}
+.sidebar .nav li:not(:first-child) > a {
+  margin: 1rem 2.4rem 0;
+}
+.sidebar .nav li.active > a {
+  background-color: var(--primary-color);
+}
+.sidebar .nav li.active a i,
+.sidebar .nav li.active a p {
+  color: var(--bg-secondary);
+}
+.sidebar .nav .nav-item:not(.nav-item.active) a:hover {
+  background-color: var(--primary-hover-light);
+}
+.sidebar .nav li a,
+.sidebar .nav li .dropdown-menu a {
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+}
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-footer);
+}
+.sidebar-text.icons {
+  margin: 4rem 0 1rem;
+}
+.sidebar-text.icons span a {
+  margin: 0 1rem;
+}
+.sidebar-text.icons span a:hover {
+  color: var(--heading-color);
+}
+.sidebar-text.rights span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.24px;
+}
+.sidebar-text.rights span i {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.sidebar-divider {
+  border-bottom: 0.1rem solid #4c4c6f;
+  margin: 1.5rem 2.4rem;
+}
+
+.main-panel .content__welcome-text {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  padding: 0.8rem 0;
+  margin-bottom: 2rem;
+}
+.main-panel .content .custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 991px) {
+  .main-panel .content .custom-header {
+    margin-top: -3rem;
+    margin-left: 2rem;
+  }
+  .main-panel .content .custom-header__dropdowns {
+    z-index: 1050;
+  }
+}
+.main-panel .content .custom-header__title {
+  color: var(--title-color);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.dark-edition .main-panel,
+.light-edition .main-panel {
+  width: calc(100% - 30rem);
+  background-color: var(--bg-primary);
+}
+@media only screen and (min-width: 112.5em) {
+  .dark-edition .main-panel,
+.light-edition .main-panel {
+    width: calc(100% - 33rem);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .dark-edition .main-panel,
+.light-edition .main-panel {
+    width: 100%;
+  }
+}
+.dark-edition .main-panel .content,
+.light-edition .main-panel .content {
+  margin-top: 0.5rem;
+  padding: 3rem 5rem 7rem;
+  min-height: calc(100vh - .5rem);
+}
+.dark-edition .main-panel .content .add-new-card-container,
+.light-edition .main-panel .content .add-new-card-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin: 2rem 0 3rem 0;
+  transition: all 1s;
+}
+.dark-edition .main-panel .content .add-new-card-container span,
+.light-edition .main-panel .content .add-new-card-container span {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+}
+.dark-edition .main-panel .content .add-new-card-container:hover,
+.light-edition .main-panel .content .add-new-card-container:hover {
+  cursor: url(../img/unifty-icons/cursor-pointer.svg), auto;
+}
+.dark-edition .main-panel .content .add-new-card-container:hover span,
+.light-edition .main-panel .content .add-new-card-container:hover span {
+  transform: scale(1.1);
+}
+.dark-edition .main-panel .navbar.navbar-absolute,
+.light-edition .main-panel .navbar.navbar-absolute {
+  padding-top: 2rem;
+}
+.dark-edition .main-panel .container-fluid,
+.light-edition .main-panel .container-fluid {
+  padding: 0;
+}
+.dark-edition .main-panel .container-fluid.featured-farms,
+.light-edition .main-panel .container-fluid.featured-farms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.dark-edition .main-panel .card,
+.light-edition .main-panel .card {
+  background: var(--bg-tertiary);
+  border-radius: 0.8rem;
+}
+.dark-edition .main-panel .nftHeader-stakingOptions-container,
+.light-edition .main-panel .nftHeader-stakingOptions-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 87.5em) {
+  .dark-edition .main-panel .nftHeader-stakingOptions-container,
+.light-edition .main-panel .nftHeader-stakingOptions-container {
+    flex-direction: column;
+  }
+}
+.dark-edition .main-panel .content .container-fluid.wallet h1, .dark-edition .main-panel .content .container-fluid.bridge h1,
+.light-edition .main-panel .content .container-fluid.wallet h1,
+.light-edition .main-panel .content .container-fluid.bridge h1 {
+  margin-bottom: 2rem;
+}
+.dark-edition .main-panel .content .container-fluid .row,
+.light-edition .main-panel .content .container-fluid .row {
+  margin: 0 0 1rem 0;
+}
+.dark-edition .main-panel .content .container-fluid .col-xl-12,
+.dark-edition .main-panel .content .container-fluid .col-lg-12,
+.light-edition .main-panel .content .container-fluid .col-xl-12,
+.light-edition .main-panel .content .container-fluid .col-lg-12 {
+  padding: 0;
+}
+.dark-edition .main-panel .content .container-fluid .wallet-container .row,
+.dark-edition .main-panel .content .container-fluid .bridge-container .row,
+.light-edition .main-panel .content .container-fluid .wallet-container .row,
+.light-edition .main-panel .content .container-fluid .bridge-container .row {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+.dark-edition .main-panel .content .container-fluid .wallet-container .row .container-fluid,
+.dark-edition .main-panel .content .container-fluid .bridge-container .row .container-fluid,
+.light-edition .main-panel .content .container-fluid .wallet-container .row .container-fluid,
+.light-edition .main-panel .content .container-fluid .bridge-container .row .container-fluid {
+  font-size: 1.4rem;
+}
+.dark-edition .main-panel .content .container-fluid .wallet-container, .dark-edition .main-panel .content .container-fluid .bridge-container,
+.light-edition .main-panel .content .container-fluid .wallet-container,
+.light-edition .main-panel .content .container-fluid .bridge-container {
+  padding: 2rem;
+  background-color: var(--bg-tertiary);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+}
+.dark-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary, .dark-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary,
+.light-edition .main-panel .content .container-fluid .wallet-container #stakingOptions a.btn-secondary,
+.light-edition .main-panel .content .container-fluid .bridge-container #stakingOptions a.btn-secondary {
+  border: 0.2rem solid var(--subheading-color);
+  border-radius: 0.8rem;
+  background-color: var(--bg-tertiary);
+  box-shadow: none;
+  color: var(--heading-color);
+  font-size: 1.2rem;
+  letter-spacing: 0.32px;
+  padding: 0.8rem 1.2rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 10rem);
+  margin: 0 5rem;
+  padding: 0.5rem 0;
+  background: var(--bg-tertiary);
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.footer ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.footer ul li.nav-item a {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--text-footer);
+  padding: 0;
+}
+.footer ul li.nav-item a:hover {
+  color: var(--primary-color);
+}
+.footer ul li.nav-item a span {
+  font-size: 2rem;
+  margin-right: 0.3rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,155 @@
+.dark-edition .main-panel,
+.light-edition .main-panel {
+  width: calc(100% - 30rem);
+  background-color: var(--bg-primary);
+
+  @include respond(big-desktop) {
+    width: calc(100% - 33rem);
+  }
+  @include respond(nav-collapse) {
+    width: 100%;
+  }
+
+  .content {
+    margin-top: .5rem;
+    padding: 3rem 5rem 7rem;
+    min-height: calc(100vh - .5rem);
+  }
+
+  .content .add-new-card-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin: 2rem 0 3rem 0;
+    transition: all 1s;
+
+    span {
+      margin-left: .5rem;
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      cursor: var(--cursor-pointer);
+      span {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  //navbar toggle
+  .navbar.navbar-absolute {
+    padding-top: 2rem;
+  }
+
+  .container-fluid {
+    padding: 0;
+
+    &.featured-farms {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+      align-items: flex-start;
+      margin-top: 2rem;
+
+      @media only screen and (max-width: 990px) {
+        .card.card.farm-card {
+          width: unset;
+        }
+      }
+    }
+  }
+
+  //card general style
+  .card {
+    background: var(--bg-tertiary);
+    border-radius: .8rem;
+    z-index: 0;
+    margin: 0;
+  }
+
+  //nft header + staking options
+  .nftHeader-stakingOptions-container {
+    display: flex;
+    margin-bottom: 3rem;
+
+    @include respond(bootstrap-xxl) {
+      flex-direction: column;
+    }
+  }
+
+  //grid farm builder
+  .content {
+    .row {
+      margin: 0 0 1rem 0;
+    }
+
+    #farmsPage.row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+    }
+  }
+
+  .content .container-fluid {
+    &.wallet, &.bridge {
+      h1 {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .row {
+      margin: 0 0 1rem 0;
+    }
+    
+    //grid farms
+    #farmPage.row,
+    #collectiblesPage.row,
+    #offersPage.row,
+    #myPoolsPage.row,
+    #bridgedPage.row  {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      grid-gap: 2rem;
+
+    }
+
+    .col-xl-12,
+    .col-lg-12 {
+      padding: 0;
+    }
+
+    .wallet-container .row, 
+    .bridge-container .row {
+      margin: 0 0 1rem 0;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      
+      .container-fluid {
+        font-size: 1.4rem;
+      }
+    }
+
+    .wallet-container, .bridge-container {
+      padding: 2rem;
+      background-color: var(--bg-tertiary);
+      box-shadow: var(--shadow-primary);
+      border-radius: .8rem;
+
+      #stakingOptions a.btn-secondary {
+        border:.2rem solid var(--subheading-color);
+        border-radius: .8rem;
+        background-color: var(--bg-tertiary);
+        box-shadow: none;
+        color: var(--heading-color);
+        font-size: 1.2rem;
+        letter-spacing: .32px;
+        padding: .8rem 1.2rem
+      }
+    }
+  }
+
+  .footer {
+    border-top: none;
+  }
+}

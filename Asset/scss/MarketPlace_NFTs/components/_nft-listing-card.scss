@@ -1,0 +1,308 @@
+.nftListing,
+.farmListing,
+.nftHeader {
+  display: flex;
+  padding: 0;
+  margin: 0 !important;
+  min-width: unset;
+
+  .btn{
+    font-size: 1.2rem;
+  }
+
+  .card .traits-collapse{
+    font-size: 1.4rem;
+  }
+
+  .card-profile, .header-profile {
+    position: relative;
+    margin-top: 0;
+    box-shadow: var(--shadow-primary);
+
+    //image
+    .card-avatar {
+      min-width: 15.6rem;
+      min-height: 15.6rem;
+      max-width: 15.6rem;
+      max-height: 15.6rem;
+      padding: .8rem !important;
+      margin: 1.5rem auto .5rem;
+      background-color: var(--image-padding);
+
+      border-radius: .6rem !important;
+      object-fit: cover;
+
+      /*
+            -webkit-filter: blur(5px); // Safari 6.0 - 9.0
+            filter: blur(5px);
+            */
+
+      transition: transform .2s;
+
+    }
+    .card-avatar:hover{
+      transform: scale(1.3);
+          
+          /*
+          -webkit-filter: blur(0px); // Safari 6.0 - 9.0
+          filter: blur(0px);
+          */
+    }
+    
+    .card-body, .header-left {
+      position: static;
+
+      //copy address
+      .text-truncate {
+        a {
+          color: var(--heading-color);
+        }
+        //copy to clipboard icon
+        button {
+          color: var(--heading-color);
+        }
+      }
+
+      //title
+      h5.card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: .28px;
+        margin: 0 0 1rem 0;
+        a {
+          color: var(--heading-color);
+        }
+      }
+
+      .collection-name {
+        font-size: 1.2rem;
+        margin: -.8rem 0 1rem 0;
+      }
+
+      a.video-btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        border: none;
+        font-size: 1.4rem;
+        text-transform: none;
+        padding: 0;
+        margin: 0 0 1rem 0 !important;
+
+        &:hover {
+          color: var(--primary-hover-dark);
+        }
+  
+        span {
+          font-size: 2rem;
+          margin-right: .5rem;
+        }
+      }
+
+      audio {
+        height: 3.2rem;
+        margin: 0 0 1rem 0 !important;
+      }
+
+      //stocks
+      .badge {
+        padding: .5rem;
+        font-size: 1rem;
+        font-weight: 300;
+        position: relative;
+
+        &.badge-info {
+          color: var(--text-primary);
+          background-color: transparent;
+
+          &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 80%;
+            background: $grey-secondary;
+            right: -2px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          a {
+            color: var(--heading-color);
+          }
+        }
+      }
+
+      //points
+      a.redeemButton {
+        font-size: 1.4rem;
+        box-shadow: none;
+        border: none;
+        text-transform: none;
+        border-radius: .6rem;
+        background-color: var(--primary-color);
+        color: var(--bg-secondary);
+        padding: .3rem .8rem;
+        font-weight: 500;
+        width: 90%;
+        text-overflow: ellipsis;
+        overflow : hidden;
+        white-space: nowrap;
+
+        &:active {
+          color: var(--bg-secondary);
+          background-color: var(--primary-hover-dark);
+          font-weight: 400;
+        }
+      }
+
+      //traits
+      a.traits {
+        font-size: 1.4rem;
+        border: .1rem solid var(--text-primary);
+        border-radius: .6rem;
+        background-color: var(--image-padding) !important;
+        text-transform: none;
+        color: var(--text-primary);
+        padding: .3rem .8rem;
+        width: 90%;
+      }
+
+      //description
+      .popover-description {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: var(--text-primary);
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+
+        span {
+          font-size: 1.8rem;
+        }
+
+        &:hover, &:active {
+          span {
+            color: var(--text-primary-light);
+          }
+        }
+      }
+
+      //options
+      .dropdown {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+
+        a {
+          padding: 0;
+          margin: 0;
+          background-color: transparent;
+          box-shadow: none;
+
+          &::after {
+            content: none;
+          }
+
+          span {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+          }
+
+          &:hover, &:active {
+            span {
+              color: var(--text-primary-light);
+            }
+          }
+        }
+      }
+
+      .dropdown.show a {
+        background-color: transparent;
+
+        span {
+          color: var(--text-primary-light);;
+        }        
+      }
+    }
+  }
+}
+
+
+.dark-edition .popover.bs-popover-bottom,
+.dark-edition .popover.bs-popover-top,
+.light-edition .popover.bs-popover-bottom,
+.light-edition .popover.bs-popover-top {
+  background-color: var(--bg-tertiary);
+  box-shadow: var(--shadow-primary);
+
+  .arrow, .arrow::before {
+    display: none;
+  }
+
+  .popover-header, .popover-body {
+    padding: 1rem;
+    max-height: 15rem;
+    overflow: auto;
+    color: var(--text-primary);
+
+    &::-webkit-scrollbar {
+      width: .5rem;
+      height: .3rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--scrolbar-track);
+      border-radius: 10px;
+      box-shadow: inset 7px 10px 12px var(--scrollbar-track-shadow);
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: var(--scrollbar-track-hover);
+    }
+  }
+  
+  .popover-header {
+    background-color: transparent;
+    border-bottom: .1rem solid var(--modal-border-text);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    font-weight: 500;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .popover-body {
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-primary);
+    font-weight: 400;
+  }
+}
+
+//tooltip when copy to clipboard
+.dark-edition .tooltip.bs-tooltip-bottom,
+.dark-edition .tooltip.bs-tooltip-top,
+.light-edition .tooltip.bs-tooltip-bottom,
+.light-edition .tooltip.bs-tooltip-top {
+  
+
+  .tooltip-inner {
+    background-color: var(--subheading-color);
+  }
+}
+
+.nftHeader {
+  width: 100%;
+}

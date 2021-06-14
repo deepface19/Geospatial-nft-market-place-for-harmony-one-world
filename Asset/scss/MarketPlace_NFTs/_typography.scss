@@ -1,0 +1,47 @@
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  color: var(--heading-color);
+}
+
+h1#nftContractNameTitle,
+h1.nftListingsTitle {
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    font-family: "Material Icons Round";
+    content: "push_pin";
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-right: .5rem;
+    transform: rotate(-45deg);
+  }
+}
+
+h1#nftContractNameTitle {
+  margin-top: 4rem;
+}
+
+h1.nftListingsTitle {
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.32px;
+  color: var(--text-primary);
+  // color: var(--subheading-color);
+  margin: 0 0 1rem;
+}
+
+.text-muted a {
+  color: var(--heading-color);
+}

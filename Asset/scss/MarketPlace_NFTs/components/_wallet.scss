@@ -1,0 +1,50 @@
+.dark-edition .main-panel .content .container-fluid.wallet,
+.light-edition .main-panel .content .container-fluid.wallet {
+  
+  .title-options-container {
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0;
+    }
+    
+    a#walletActions {
+      margin: 0 !important;
+      background-color: transparent;
+      color: var(--heading-color);
+      // border: .2rem solid $grey-secondary;
+      border: none;
+
+      &:hover {
+        color: var(--primary-color);
+        // border: .2rem solid $pink;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .wallet-container {
+    padding: 2rem 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    .row {
+      margin: 0;
+  
+      color: $grey-secondary;
+  
+      .container-fluid {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  
+
+
+}

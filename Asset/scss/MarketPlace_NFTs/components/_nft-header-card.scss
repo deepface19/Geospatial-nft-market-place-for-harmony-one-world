@@ -1,0 +1,98 @@
+.card-text{
+  font-size: 1.4rem;
+}
+.card-title{
+  font-size: 2rem;
+}
+
+.dark-edition .main-panel .nftHeader-stakingOptions-container,
+.light-edition .main-panel .nftHeader-stakingOptions-container {
+  #farmHeader {
+    background-color: var(--bg-tertiary);
+    flex: 1;
+    margin-right: 2rem;
+    box-shadow: var(--shadow-primary);
+    border-radius: .8rem;
+
+    @include respond (bootstrap-xxl) {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }
+
+    .nftHeader.col-md-12.mb-4 {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    //reset paddings and margins
+    .nftHeader {
+      margin: 0 !important;
+
+      .card {        
+        margin: 0;
+        border-radius: .8rem;
+        height: 100%;
+        color: var(--text-primary);
+        word-wrap: normal;
+        padding: .5rem 2rem;
+        box-shadow: none;
+
+        .card-content {
+          display: flex;
+
+          //image
+          .col-3 {
+            min-width: 10rem;
+            max-width: 20rem;
+            img {
+              margin: 2rem 0;
+            }
+          }
+
+          //title and description
+          .col-9 {
+            padding: 0;
+
+            .card-body {
+              padding: 2rem 0;
+              
+              //description
+              p {
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+
+        .card-links {
+          padding: 0 1rem;          
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+            padding: .5rem;
+            font-size: 1.2rem;
+            color: var(--text-footer);
+
+            &:hover, &:active {
+              color: var(--heading-color);
+            }
+
+            i {
+              font-size: 1.6rem;
+              margin-right: .5rem;
+            }
+          }
+
+          //phone number
+          .mt-2 {
+            font-size: 1.2rem;
+            margin: 1rem 0 1rem .5rem;
+            color: var(--text-footer);
+          }
+        }
+      }
+    }
+  }
+}

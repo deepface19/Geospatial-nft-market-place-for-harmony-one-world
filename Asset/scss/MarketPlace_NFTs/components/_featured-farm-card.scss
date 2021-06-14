@@ -1,0 +1,133 @@
+.dark-edition .card.farm-card,
+.light-edition .card.farm-card {
+  margin: 0;
+
+  .card-body {
+    box-shadow: var(--shadow-primary);
+
+    a {
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      
+      //fix for dark mode on (toggler on click white)
+      &:active {
+        color: var(--text-primary);
+      }
+      // &:hover {
+      //   color: var(--title-color);
+      // }
+      
+      i {
+        margin-right: .5rem;
+      }
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: .32px;
+      margin-bottom: 1rem;
+      color: var(--heading-color);
+      display: flex;
+      width: calc(100% - 10rem);
+      height: 6rem;
+    }
+
+    .card-description {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--text-primary);
+    }
+  }
+}
+
+.card.card.farm-card {
+  display: flex;
+  flex-direction: row-reverse;
+  border-radius: 1rem;
+
+  [class*="card-header-"] {
+    margin: 0;
+    background-color: none;
+  }
+
+  //card picture
+  .card-header.card-header-info.card-header-icon {
+    box-shadow: none;
+
+    .card-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      width: 10rem;
+      height: 10rem;
+      border-radius: .3rem;
+
+      margin: 0;
+      padding: 1rem;
+      background-color: none;
+      background: none;
+      box-shadow: none;
+
+      a {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: .3rem;
+      }
+    }
+  }
+
+  .card-body {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: .8rem;
+
+    //toggler collapsible
+    .btn.btn-primary.card-toggler {
+      display: flex;
+      align-items: center;
+      text-transform: none;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      width: calc(100% - 10rem);
+
+      //collapsible carets switch
+      &[aria-expanded="false"] {
+        &::after {
+          font-family: "Material Icons Round";
+          content: "keyboard_arrow_down";
+          font-size: 1.8rem;
+        }
+      }
+      &[aria-expanded="true"] {
+        &::after {
+          font-family: "Material Icons Round";
+          content: "keyboard_arrow_up";
+          font-size: 1.8rem;
+        }
+      }
+
+      // &:hover {
+      //   color: var(--title-color);
+      // }
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .card.card.farm-card {
+    width: 671px;
+  }
+}

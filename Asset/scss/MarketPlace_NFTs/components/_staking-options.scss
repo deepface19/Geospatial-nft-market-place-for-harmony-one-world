@@ -1,0 +1,96 @@
+.dark-edition .nftHeader-stakingOptions-container #stakingOptions,
+.light-edition .nftHeader-stakingOptions-container #stakingOptions {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around !important;
+  background-color: var(--bg-tertiary);
+  padding: 2.4rem 3.6rem 1.3rem;
+  border-radius: .8rem;
+  box-shadow: var(--shadow-primary);
+
+  //reset margins
+  .mb-3, .my-3 {
+    margin: 0 !important;
+  }
+
+  //staking and earned
+  a.btn.btn-secondary.mb-3.mr-1{
+    border:.1rem solid var(--text-footer);
+    border-radius: .8rem;
+    background-color: $dark-primary;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-footer);
+    font-size: 1.6rem;
+    letter-spacing: .32px;
+    font-weight: 700;
+    text-transform: none;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .first-row {
+    display: flex;
+    width: 100%;
+
+    @media only screen and (max-width: 26em) {
+      flex-direction: column;
+    }
+
+    .divider {
+      width: 1rem;
+    }
+
+    a:not(:last-child) {
+      @media only screen and (max-width: 26em) {
+        margin-bottom: .5rem !important;
+      }
+    }
+
+    a {
+      flex: 1;
+      margin: 0 !important;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  .first-row, .second-row {
+    margin-bottom: 1.5rem;
+  }
+
+  .second-row {
+    width: 100%;
+
+    .dropdown > a {
+      width: 100%;
+      box-shadow: none;
+      background-color: var(--primary-color);
+      color: var(--bg-secondary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: .32px;
+      border-radius: .8rem;
+    }
+
+    //dropdown links
+    .dropdown.show .dropdown-menu.show{
+      width: 100%;
+
+      a {
+        justify-content: center;
+      }
+    }
+  }
+
+  .third-row {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+
+    a {
+      color: var(--primary-color);
+    }
+  }
+
+}
