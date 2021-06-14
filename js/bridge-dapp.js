@@ -1,5 +1,12 @@
 import './HRC1155.sol';
+import './HRC1155Metadata.sol';
+import './HRC1155MintBurn.sol';
+import './HRC1155Tradable.sol';
+import './IHRC1155.sol';
+import './IHRC1155TokenReceiver.sol';
 import './IHRC165.sol';
+import './Roles.sol';
+import './Strings.sol';
 import './HRC20.sol';
 
 function TncDapp() {
