@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+  <title>Farm Builder - Unifty</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href=".png">
+  <link rel="icon" type="image/png" sizes="16x16" href=".png">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/web3.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script type="text/javascript" src="js/ipfs.js"></script>
+  <script type="text/javascript" src="js/buffer.js"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/nifABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/HRC1155ABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/genesisABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/farmABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/farmShopABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/HRC20ABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/univ2ABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/uniftyverseABI.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/lib-bridge.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/bridge-dapp.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.5"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script src="contracts/HRC1155Metadata.sol"></script>
+  <script src="contracts/HRC1155MintBurn.sol"></script>
+  <script src="contracts/HRC1155Tradable.sol"></script>
+  <script src="contracts/IHRC1155.sol"></script>
+  <script src="contracts/IHRC1155TokenReceiver.sol"></script>
+  <script src="contracts/IHRC165.sol"></script>
+  <script src="contracts/HRC1155.sol"></script>
+  <script src="contracts/HRC20.sol"></script>
+  <script src="contracts/HRC721.sol"></script>
+  <script src="contracts/HRC721Crowdsale.sol"></script>
+  <script src="contracts/HarmonyNFT.sol"></script>
+  <script src="contracts/Migrations.sol"></script>
+  <script src="contracts/NFT.sol"></script>
+  <script src="contracts/geospatial.marketplaceNFT.sol"></script>
+  <script src="contracts/geospatial_location.sol"></script>
+  <script src="contracts/Counter.sol"></script>
+  <script src="contracts/Deploy.js"></script>
+  <script src="contracts/compile.js"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="assets/js/plugins/chartist.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+ 
+  <script>
+    $(document).ready(function () {
+      new ClipboardJS('.btn-clipboard');
+    });
+  </script>
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+  <style type="text/css">
+    .dark-edition .modal .form-control {
+      color: #8b92a9;
+    }
+
+    .dark-edition .modal a {
+      color: #8b92a9;
+      font-weight: 700;
+    }
+
+    .dark-edition .modal .form-control,
+    .is-focused .dark-edition .modal .form-control {
+      background-color: #eee;
+      padding: 5px;
+    }
+
+    .dark-edition .modal select {
+      height: 36px !important;
+    }
+
+    .nftListing {
+      min-width: 300px;
+    }
+
+    .btn-outline {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      -o-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+    }
+
+    .btn-clipboard {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      -o-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .fa-clipboard,
+    .fa-external-link {
+      font-size: 0.8rem !important;
+    }
+
+    .traits-collapse ul li {
+      border-bottom: 1px solid #8b92a9;
+    }
+
+    .traits-collapse ul li:last-child {
+      border-bottom: none;
+    }
+
+    .dark-edition .card .card-body .card-description {
+      color: #8b92a9;
+    }
+
+    .description,
+    .card-description,
+    .footer-big p {
+      color: #8b92a9;
+    }
+
+    .title,
+    .title a,
+    .card-title,
+    .card-title a,
+    .info-title,
+    .info-title a,
+    .footer-brand,
+    .footer-brand a,
+    .footer-big h5,
+    .footer-big h5 a,
+    .footer-big h4,
+    .footer-big h4 a,
+    .media .media-heading,
+    .media .media-heading a {
+      color: #8b92a9;
+    }
+
+    body {
+      color: #8b92a9;
+    }
+
+    .navbar,
+    .navbar-text a {
+      color: inherit;
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <script src="js/themeDefault.js"></script>
+
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://harmony.com" class="simple-text logo-normal">
+        <img src="_" width="125" border="0" />
+        <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+          Binance Smart Chain
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="material-icons-round">home</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item" id="marketNavLink">
+          <a class="nav-link" href="market.html">
+            <i class="material-icons-round">storefront</i>
+            <p>NFT Market</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="collectibles.html">
+            <i class="material-icons-round">account_balance_wallet</i>
+            <p>Your Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager.html">
+            <i class="material-icons-round">collections</i>
+            <p>Collection Manager</p>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item bridgeNav active">
+          <a class="nav-link" href="bridge.html">
+            <i class="material-icons-round">360</i>
+            <p>NFT Bridge</p>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-text">
+          <div class="sidebar-text icons">
+            <span class="navbar-text">              
+              <a href="https://www.linkedin.com/company/harmony-one" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://t.me/harmony_one" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCDfuhS7xu69IhK5AJSyiF0g" target="_blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+              <a href="https://twitter.com/harmonyprotocol" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="https://github.com/harmony-one"  target="_blank">
+                <i class="fa fa-github"></i> 
+              </a>
+              <a href="https://medium.com/harmony-one"  target="_blank">
+                <i class="fa fa-medium"></i> 
+              </a>
+              <a href="https://discord.com/invite/rdCmBpe"  target="_blank">
+                <i class="fa fa-discord"></i> 
+              </a>
+              </span>
+          </div>
+
+          <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+            Deepface19 Development d.o.o.<br/>All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- SIDEBAR END -->
+
+  <div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+          aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+      <!-- HEADER -->
+      <div class="custom-header">
+        <div class="custom-header__title">Unifty.io</div>
+        <div class="custom-header__dropdowns">
+          <script>
+            // fix for initial doubleclick required upon page load
+            // $(document).ready(function () {
+            //   $('#chainSelectionDropdown').click();
+            // });
+          </script>
+
+          <div class="dropdown ml-3 mr-3 dropdown--chains">
+            <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select chain
+            </button>
+            <a class="dropdown-item" href="https://url/">Ethereum</a>
+                <a class="dropdown-item" href="https://url/xdai/">xDai</a>
+                <a class="dropdown-item" href="https://url/bsc/">Binance Smart Chain</a>
+                <a class="dropdown-item" href="https://url/avalanche/">Avalanche</a>
+                <a class="dropdown-item" href="https://url/celo/">Celo</a>
+                <a class="dropdown-item" href="https://url/matic/">Polygon (Matic)</a>
+                <a class="dropdown-item" href="https://url/harmony/">Harmony (ONE)</a>
+                <!--<a class="dropdown-item" href="https://url/moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+                <a class="dropdown-item" href="https://url/rinkeby/">Rinkeby (Testnet)</a>
+            </div>            
+          </div>
+
+          <div class="theme-toggler">
+            <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+              <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+            </label>
+            <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+          </div>
+
+        </div>
+      </div>
+      <!-- HEADER END -->
+
+      <div class="content__welcome-text">
+        <p>
+          Here you may fund gas for bridging as well as claim bridged NFTs.
+        </p>
+      </div>
+
+      <div class="container-fluid bridge">
+
+        <h1>NFT Bridge</h1>
+
+        <div class="bridge-container">
+
+          <div id="stakingOptions" class="row">
+            
+            <div class="dropdown mr-3">
+              <a href="javascript:void(0);" class="btn btn-primary dropdown-toggle" id="bridgeActions"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="material-icons">
+                  settings
+                </span>
+                Bridge Options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="bridgeActions">
+                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#depositFundsModal"
+                  id="depositFundsModalButton">Deposit Gas Funds</a>
+                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal"
+                  data-target="#withdrawFundsModal" id="withdrawFundsModalButton">Withdraw Gas Funds</a>
+                <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal"
+                  data-target="#cancelRestoreModal" id="cancelRestoreModalButton">Cancel NFT Restore</a>
+              </div>
+            </div>
+
+            <a href="javascript:void(0);" class="btn btn-secondary mr-1">
+              Gas Funds: <span id="gasFunds"></span> ETH
+            </a>
+          </div>
+
+          <div class="row">
+            0.50 NIF fees per bridging job. 50% of NIF fees will be burned.
+          </div>
+
+          <script id="no-bridged" type="text/x-handlebars-template">
+                          <div class="container-fluid">
+                              <div>
+                                  No bridged NFTs found. Please add gas funds first, then bridge NFTs from within your preferred chain's NFT wallet.<br/>
+                                  There are no minimum gas funds. 2x of gas costs for regular NFT minting are recommended to have enough reserves.<br/><br/>
+                                  If the bridging fails, you will be able to restore the affected NFT after 2 hours by using its Job ID.<br/>
+                                  Fee per bridging job is 0.50 $NIF. 50% from the fee will be burned.<br/><br/>
+                                  You can check the progress of your bridging jobs in our <a href="https://discord.gg/" target="_blank">Discord</a> by looking up the bridge logs channels with your Job ID.
+                              </div>
+                          </div>
+                      </script>
+
+          <!-- Collectible View -->
+          <script id="bridged-template" type="text/x-handlebars-template">
+                          <div class="nftListing mb-3">
+                              <div class="card card-profile">
+          
+                                  {{#ifNotEquals image ""}}
+                                      <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                                  {{/ifNotEquals}}
+          
+                                  {{#ifEquals checkOpenSea "Check on OpenSea"}}
+                                      <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
+                                  {{/ifEquals}}
+          
+                                  {{#ifEquals checkOpenSea "Open Details"}}
+                                      <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}">{{checkOpenSea}}</a>
+                                  {{/ifEquals}}
+                                  
+                                  <div class="card-body">
+          
+                                      {{#ifNotEquals animation_url ""}}
+                                      <a class="btn btn-outline mb-3" data-toggle="collapse" href="#collapseVideo{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapseVideo{{erc1155}}{{id}}">
+                                          Open Video
+                                      </a>
+                                      <div class="collapse traits-collapse" id="collapseVideo{{erc1155}}{{id}}">
+                                          <ul class="list-group">
+                                              <li class="list-group-item">
+                                                  <video style="width: 100%" src="{{animation_url}}" preload="auto" muted="muted" controls="controls" loop="loop" poster="{{image}}">
+                                                      Your browser does not support the video tag.
+                                                  </video>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      {{/ifNotEquals}}
+          
+                                      {{#ifNotEquals audio_url ""}}
+                                          <audio class="mb-3" style="width: 90%;" controls="controls" preload="auto" loop="loop">
+                                              <source src="{{audio_url}}" type="audio/mp3">
+                                              Your browser does not support the audio tag.
+                                          </audio>
+                                      {{/ifNotEquals}}
+
+                                    {{#ifNotEquals interactive_url ""}}
+                                      <a class="btn btn-outline mb-3 video-btn-link" style="cursor: pointer;" data-toggle="modal" data-target="#nftInteractiveModal" data-interactive-url="{{interactive_url}}">
+                                        <span class="material-icons">
+                                          play_circle
+                                        </span>
+                                        RUN NFT
+                                      </a>
+                                    {{/ifNotEquals}}
+          
+                                      <div class="mb-3">
+                                          <span class="badge badge-info">Job ID: {{jobid}}</span>
+                                          <span class="badge badge-info">Amount: {{amount}}</span>
+                                      </div>
+
+                                      <h5 class="card-title"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+
+                                      {{{collectionName}}}
+          
+                                      <p class="card-text text-truncate">{{description}}</p>
+          
+                                      <div>
+                                          <button class="redeemButton btn btn-outline mb-3" data-token-id="{{id}}" id="redeemButton{{index}}" role="button" aria-expanded="false">Claim</button>
+                                      </div>
+
+                                      <a class="traits btn btn-outline" data-toggle="collapse" href="#collapse{{index}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
+                                          Traits
+                                      </a>
+          
+                                      <div class="collapse traits-collapse" id="collapse{{index}}">
+                                          <ul class="list-group">
+                                              <li class="list-group-item">
+                                                  <sub>Source Chain ID</sub><br />
+                                                  <div>{{srcChainid}}</div>
+                                              </li>
+                                              <li class="list-group-item">
+                                                  <sub>Source Collection</sub><br />
+                                                  <div class="text-truncate">
+                                                      <button class="btn btn-sm btn-clipboard btn-clipboard{{id}}" data-clipboard-text="{{srcCollection}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                                                          <i class="fa fa-clipboard"></i>
+                                                      </button>
+                                                      <a style="font-size: 1.2rem !important;" href="{{explorer}}{{erc1155}}" target="_blank">{{srcCollection}}</a>
+                                                      <a style="font-size: 1.2rem !important;" href="{{explorer}}{{hrc1155}}" target="_blank">{{srcCollection}}</a>
+                                                  </div>
+                                              </li>
+                                              <li class="list-group-item">
+                                                  <sub>Source NFT ID</sub><br />
+                                                  <div>{{srcId}}</div>
+                                              </li>
+                                              {{#each attributes}}
+                                                  <li class="list-group-item">
+                                                      <sub>{{this.trait_type}}</sub><br />
+                                                      <div>{{this.value}}</div>
+                                                  </li>
+                                              {{/each}}
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </script>
+
+          <div class="row" id="bridgedPage" style="display: none;"></div>
+
+          <!-- RESTORE -->
+          <div class="modal fade" style="overflow-y: scroll;" id="cancelRestoreModal" tabindex="-1" role="dialog"
+            aria-labelledby="cancelRestoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="cancelRestoreModalLabel">Cancel NFT Restore</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                  <form onsubmit="return false;">
+
+                    <p>
+                      Please enter your Job ID to cancel the restore job.<br />
+                      If the cancellation fails it means you either restored the NFT already or the 2-hour grace-time
+                      didn't expire yet.
+                    </p>
+
+                    <div class="form-group">
+                      <label for="jobId">Job ID</label>
+                      <input type="text" placeholder="Enter the Job ID for cancelling the restore" class="form-control"
+                        id="jobId">
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <div class="buttons-container">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                    id="restoreCancelButton">Restore</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DEPOSIT FUNDS -->
+          <div class="modal fade" style="overflow-y: scroll;" id="depositFundsModal" tabindex="-1" role="dialog"
+            aria-labelledby="depositFundsModallLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="depositFundsModalLabel">Deposit Gas Funds</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                  <form onsubmit="return false;">
+
+                    <div class="form-group">
+                      <label for="fundsAmount">Gas Funds Amount (ETH)</label>
+                      <input type="text" placeholder="Enter the amount for gas reserves in ETH" class="form-control"
+                        id="fundsAmount">
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <div class="buttons-container">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                    id="depositFundsButton">Deposit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WITHDRAW FUNDS -->
+          <div class="modal fade" style="overflow-y: scroll;" id="withdrawFundsModal" tabindex="-1" role="dialog"
+            aria-labelledby="withdrawFundsModalModallLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="withdrawFundsModalModallLabel">Withdraw Gas Funds</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+                  Please click on the button below to withdraw your current funds.
+                </div>
+                <div class="modal-footer">
+                  <div class="buttons-container">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                    id="withdrawFundsButton">Withdraw</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive -->
+          <div class="modal fade" style="overflow-y: scroll;" id="nftInteractiveModal" tabindex="-1" role="dialog"
+            aria-labelledby="nftInteractiveModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="nftInteractiveModalLabel">Run NFT</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-non-nft-content" id="interactiveBody">
+
+                  Click the run button below to start this interactive NFT.<br /><br />
+                  Only run this if you trust the NFT creator.<br /><br />
+                  In doubts, please ask the creator of this NFT about potential risks prior running it.<br /><br />
+                  <button class="btn btn-primary" type="button" id="runNftNewTab">Run NFT</button>
+
+                  <input type="hidden" name="nftInteractiveUrl" id="nftInteractiveUrl" value="" />
+
+                </div>
+                <div class="modal-footer">
+                  <div class="buttons-container">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                      id="closeInteractive">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Interactive END -->
+
+          <!-- ALERT -->
+          <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+            aria-labelledby="alertModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-non-nft-content">
+
+                </div>
+                <div class="modal-footer">
+                  <div class="buttons-container">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODALS END -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" href="roadmap.html">
+            <span class="material-icons-round">
+              swap_calls
+            </span>
+            Roadmap
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">
+            <span class="material-icons-round">
+              help_outline
+            </span>
+            FAQ
+          </a>
+        </li>
+
+        <li class="nav-item" id="onewallet">
+          <a class="nav-link" href="javascript:enableOnewallet();">
+                    <span class="material-icons-round">
+                      account_balance_wallet
+                    </span>
+            Connect Wallet
+          </a>
+        </li>
+
+        <li class="nav-item" style="display:none;" id="onewalletAddress">
+          <a href="javascript:void(0);" id="onewalletAddressPopover" type="button" class="btn btn-clipboard" style="cursor: pointer;" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" title="Your Address" data-html="true" data-content="">
+                      <span class="material-icons-round">
+                        account_balance_wallet
+                      </span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- FOOTER END -->
+
+  </div>
+  <script src="js/themeSwitch.js"></script>
+</body>
+
+</html>
