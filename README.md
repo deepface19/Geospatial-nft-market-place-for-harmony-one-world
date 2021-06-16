@@ -1,5 +1,5 @@
-## Geospatial-nft-market-place-for-harmony-one-world
-this is a geospatial nft market place Dapps build with web3
+## Example Geospatial Base View Select Location And Coordinate Latitude And Longtitude
+
 
 ## Available Connect to wallet
 - ONE WALLET
