@@ -41,5 +41,7 @@ this is a geospatial nft market place Dapps build with web3
 - Custom RPC Network
 
 ## Clone Repo
+```
 git clone https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world.git
 cd Geospatial-nft-market-place-for-harmony-one-world
+```
