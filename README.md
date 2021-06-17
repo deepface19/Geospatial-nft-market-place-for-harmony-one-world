@@ -52,3 +52,12 @@ https://youtu.be/9RzkEUPakZ0
 git clone https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world.git
 cd Geospatial-nft-market-place-for-harmony-one-world
 ```
+## Demo 
+```
+cd demo
+npm install 
+npm run dev
+./demo
+./demo.css
+./demo.js
+```
