@@ -54,9 +54,6 @@ cd Geospatial-nft-market-place-for-harmony-one-world
 ```
 ## Demo 
 ```
-cd demo
-npm install 
-npm run dev
 ./demo
 ./demo.css
 ./demo.js
