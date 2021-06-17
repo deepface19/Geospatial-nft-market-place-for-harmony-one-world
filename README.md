@@ -54,7 +54,7 @@ cd Geospatial-nft-market-place-for-harmony-one-world
 ```
 ## Demo 
 ```
-./demo
+./Asset/demo
 ./demo.css
 ./demo.js
 ```
