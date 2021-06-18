@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#f3ba2f}
+        </style>
+    </defs>
+    <g id="binance_logo" transform="translate(7259 -94)">
+        <g id="Binance_logo-2" transform="translate(-7257.453 95)">
+            <path id="Path_341" d="M26.35 9.244l4.272-4.272L34.9 9.247l2.486-2.486L30.622 0l-6.758 6.758z" class="cls-1" transform="translate(-20.169)"/>
+            <path id="Rectangle_775" d="M0 0H3.516V3.516H0z" class="cls-1" transform="rotate(45 -9.308 6.598)"/>
+            <path id="Path_342" d="M26.333 73.4l4.267 4.27 4.279-4.27 2.487 2.485-6.766 6.758-6.758-6.758z" class="cls-1" transform="translate(-20.152 -60.643)"/>
+            <path id="Rectangle_776" d="M0 0H3.516V3.516H0z" class="cls-1" transform="rotate(135 8.448 9.944)"/>
+            <path id="Path_343" d="M53.279 51.3l-2.521-2.52-1.864 1.864-.214.214-.442.442 2.52 2.52 2.523-2.523z" class="cls-1" transform="translate(-40.305 -40.304)"/>
+        </g>
+        <path id="Rectangle_2" fill="none" d="M0 0H24V24H0z" transform="translate(-7259 94)"/>
+    </g>
+</svg>

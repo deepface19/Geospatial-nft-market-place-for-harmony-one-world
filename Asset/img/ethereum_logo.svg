@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-3{fill:#8c8c8c}
+        </style>
+    </defs>
+    <g id="ethereum_logo" transform="translate(-1086 -128)">
+        <path id="Rectangle_1" fill="none" d="M0 0H24V24H0z" transform="translate(1086 128)"/>
+        <g id="Ethereum_logo_2014" transform="translate(1091 129)">
+            <path id="Path_1" fill="#343434" d="M125.313 0l-.147.5v14.548l.147.147 6.753-3.991z" transform="translate(-118.561)"/>
+            <path id="Path_2" d="M6.752 0L0 11.2l6.752 4V0z" class="cls-3"/>
+            <path id="Path_3" fill="#3c3c3b" d="M126.469 240.576l-.083.1v5.182l.083.243 6.757-9.515z" transform="translate(-119.717 -224.102)"/>
+            <path id="Path_4" d="M6.752 246.1v-5.526L0 236.585z" class="cls-3" transform="translate(0 -224.101)"/>
+            <path id="Path_5" fill="#141414" d="M127.961 161.22l6.752-3.991-6.752-3.069z" transform="translate(-121.209 -146.024)"/>
+            <path id="Path_6" fill="#393939" d="M0 157.228l6.752 3.991v-7.061z" transform="translate(-.001 -146.024)"/>
+        </g>
+    </g>
+</svg>
