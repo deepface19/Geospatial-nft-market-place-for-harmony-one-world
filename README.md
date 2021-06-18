@@ -47,7 +47,7 @@ https://youtu.be/9RzkEUPakZ0
 - Rinkeby ( TestNet)
 - Custom RPC Network
 
-## Clone Repo
+## Clone & build Repo
 ```
 git clone https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world.git
 cd Geospatial-nft-market-place-for-harmony-one-world
