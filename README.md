@@ -56,6 +56,10 @@ cd Geospatial-nft-market-place-for-harmony-one-world
 npm install
 npm run dev
 ```
+```
+npm install
+npm run build
+```
 ## Demo 
 ```
 ./Asset/demo
