@@ -1,0 +1,28 @@
+{
+  "name": "geospatial-nft-market-place",
+  "version": "1.0.0",
+  "description": "This is Dapp Geospatial nft market place for hackathon:harmony one love round 2  one world ",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^8.6.8",
+    "node-sass": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "truffle-config.js",
+    "compile:sass": "node-sass Assets/scss/MarketPlace_NFTs/main.scss Assets/css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world.git"
+  },
+  "author": "deepface19",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world/issues"
+  },
+  "homepage": "https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world#readme",
+  "directories": {
+    "test": "test"
+  }
+}
