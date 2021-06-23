@@ -4,7 +4,6 @@
   "description": "This is Dapp Geospatial nft market place for hackathon:harmony one love round 2  one world ",
   "main": "index.js",
   "dependencies": {
-    "firebase": "^8.6.8",
     "node-sass": "^5.0.0"
   },
   "devDependencies": {},
