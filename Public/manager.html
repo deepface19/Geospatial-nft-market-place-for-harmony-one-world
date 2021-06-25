@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+  <title>Your Collections - Market Place NFTs</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href=".png">
+  <link rel="icon" type="image/png" sizes="16x16" href=".png">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="Asset/css/material-dashboard.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/web3.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script type="text/javascript" src="js/ipfs.js"></script>
+  <script type="text/javascript" src="js/buffer.js"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/oneABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/hrc1155ABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/marketABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/swapABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/hrc20ABI.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/lib-market.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/erc1155-dapp.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script src="Asset/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="Asset/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="Asset/js/plugins/chartist.min.js"></script>
+  <script src="Asset/js/plugins/bootstrap-notify.js"></script>
+  <script src="Asset/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      new ClipboardJS('.btn-clipboard');
+    });
+  </script>
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+  <style type="text/css">
+    .dark-edition .modal .form-control {
+      color: #8b92a9;
+    }
+
+    .dark-edition .modal a {
+      color: #8b92a9;
+      font-weight: 700;
+    }
+
+    .dark-edition .modal .form-control,
+    .is-focused .dark-edition .modal .form-control {
+      background-color: #eee;
+      padding: 5px;
+    }
+
+    .nftListing {
+      min-width: 300px;
+    }
+
+    .btn-outline {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      -o-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+    }
+
+    .btn-clipboard {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      -o-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .fa-clipboard {
+      font-size: 1.2rem !important;
+    }
+
+    .traits-collapse ul li {
+      border-bottom: 1px solid #8b92a9;
+    }
+
+    .traits-collapse ul li:last-child {
+      border-bottom: none;
+    }
+
+    .dark-edition .card .card-body .card-description {
+      color: #8b92a9;
+    }
+
+    .description,
+    .card-description,
+    .footer-big p {
+      color: #8b92a9;
+    }
+
+    .title,
+    .title a,
+    .card-title,
+    .card-title a,
+    .info-title,
+    .info-title a,
+    .footer-brand,
+    .footer-brand a,
+    .footer-big h5,
+    .footer-big h5 a,
+    .footer-big h4,
+    .footer-big h4 a,
+    .media .media-heading,
+    .media .media-heading a {
+      color: #8b92a9;
+    }
+
+    body {
+      color: #8b92a9;
+    }
+
+    .navbar,
+    .navbar-text a {
+      color: inherit;
+    }
+
+    #addedAttributes .col {
+      margin-top: auto;
+      margin-bottom: auto;
+
+      margin-right: 5px;
+    }
+
+    #addedAttributes .col .addedAttributeDelete {
+      margin-bottom: 0px;
+      margin-top: 0px !important;
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+  <link href="Asset/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <script src="js/themeDefault.js"></script>
+
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://harmony.com" class="simple-text logo-normal">
+        <img src="assets/img/Harmony.png" width="125" border="0" />
+        <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+          Binance Smart Chain
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="material-icons-round">home</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item" id="marketNavLink">
+          <a class="nav-link" href="market.html">
+            <i class="material-icons-round">storefront</i>
+            <p>NFT Market</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="collectibles.html">
+            <i class="material-icons-round">account_balance_wallet</i>
+            <p>Your Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="manager.html">
+            <i class="material-icons-round">collections</i>
+            <p>Collection Manager</p>
+          </a>
+        <li class="nav-item bridgeNav">
+          <a class="nav-link" href="bridge.html">
+            <i class="material-icons-round">360</i>
+            <p>NFT Bridge</p>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-text">
+          <div class="sidebar-text icons">
+            <span class="navbar-text">
+              <a href="https://www.linkedin.com/company/harmony-one" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://t.me/harmony_one" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCDfuhS7xu69IhK5AJSyiF0g" target="_blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+              <a href="https://twitter.com/harmonyprotocol" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="https://github.com/harmony-one" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+              <a href="https://medium.com/harmony-one" target="_blank">
+                <i class="fa fa-medium"></i>
+              </a>
+              <a href="https://discord.com/invite/rdCmBpe" target="_blank">
+                <i class="fa fa-discord"></i>
+              </a>
+            </span>
+          </div>
+
+          <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Deepface19 Development <br />All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- SIDEBAR END -->
+
+  <div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+          aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+      <!-- HEADER -->
+      <div class="custom-header">
+        <div class="custom-header__title"></div>
+        <div class="custom-header__dropdowns">
+
+          <div class="dropdown ml-3 mr-3 dropdown--chains">
+            <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Harmony (One)
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Ethereum</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">xDai</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Binance Smart Chain</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Avalanche</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Celo</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Polygon (Matic)</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Harmony (ONE)</a>
+              <!--<a class="dropdown-item" href="https://geospatial-nft-market-place.web.app//moonbeam-alpha/">Moonbeam (Alpha/Test)</a>-->
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/rinkeby/">Rinkeby (Testnet)</a>
+            </div>
+          </div>
+
+          <div class="theme-toggler">
+            <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+              <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+            </label>
+            <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+          </div>
+
+        </div>
+      </div>
+      <!-- HEADER END -->
+
+      <div class="content__welcome-text">
+        <p>
+          This is the administration panel for all of your collections and NFTs that you manage.
+        </p>
+      </div>
+
+      <h1>Collections</h1>
+      <p>
+      </p>
+
+      <div class="add-new-card-container" data-toggle="modal" data-target="#nftContractModal"
+        id="nftNewCollectionModalButton">
+        <span class="material-icons">
+          add_circle
+        </span>
+        Add new collection
+      </div>
+
+      <div class="add-new-card-container" data-toggle="modal" data-target="#nftTransferMultiBatchModal"
+        id="nftTransferMultiBatchModalButton">
+        <span class="material-icons">
+          add_circle
+        </span>
+        Multi Batch Transfer
+      </div>
+
+      <div class="container-fluid">
+
+        <!-- My Pools -->
+        <script id="mypool-template" type="text/x-handlebars-template">
+        <div class="nftListing mb-3">
+            <div class="card card-profile">
+                {{#ifNotEquals image ""}}
+                <img class="card-avatar" src="{{image}}" alt="{{name}}"/>
+                {{/ifNotEquals}}
+                <div class="card-body">
+                    <div class="mt-5">
+                        <p class="text-truncate">
+                            <button class="btn btn-sm btn-clipboard btn-clipboard{{index}}" data-clipboard-text="{{erc1155}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                                <i class="fa fa-clipboard"></i>
+                            </button>
+                            <a style="font-size: 1.2rem !important;" href="{{explorer}}{{erc1155}}" target="_blank">{{erc1155}}</a>
+                        </p>
+                    </div>
+                    <div class="dropdown">
+                        <a href="javascript:void(0);" class="btn btn-secondary dropdown-toggle mb-3" id="nftActionSelection{{erc1155}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="material-icons-round">
+                            create
+                          </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="nftActionSelection{{erc1155}}">
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftNewModal" data-contract-address="{{erc1155}}">New NFT</a>
+                            {{#if hasNfts}}
+                            <a href="javascript:void(0);" class="dropdown-item manageNftsButton manageNftsButton{{index}}" data-contract-name="{{name}}" data-contract-address="{{erc1155}}">Manage NFTs</a>
+                            {{/if}}
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftContractModal" data-edit="true" data-contract-address="{{erc1155}}">Edit Collection</a>
+                        </div>     
+                    </div>
+                    <h5 class="card-title"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+
+                    {{#ifNotEquals description ""}}
+                      <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                        <span class="material-icons-round">
+                          info
+                        </span>
+                      </button>
+                    {{/ifNotEquals}}
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+        <script id="no-pools" type="text/x-handlebars-template">
+        <div class="container-fluid">
+            <div style="text-align: center" class="justify-content-center content-center">
+                You don't own a collection yet. Why not create one?
+                <br />
+                <!-- <button class="btn btn-secondary" onclick="$('#nftNewCollectionModalButton').trigger('click');">Create Collection</button>
+                <br />
+                (The contracts behind your collections are fully owned and controlled by you) -->
+            </div>
+        </div>
+    </script>
+
+        <script id="next-button" type="text/x-handlebars-template">
+        <div id="loadMore" class="container-fluid">
+            <div style="text-align: center" class="justify-content-center content-center">
+                <button class="btn btn-outline" id="loadMoreButton">Load More</button>
+            </div>
+        </div>
+    </script>
+
+        <button id="view-collections" class="btn btn-outline" style="font-size: initial; display: none;"> View
+          collections
+        </button>
+        <div class="row" id="myPoolsPage" style="display: none;"></div>
+
+        <!-- My NFTs -->
+        <script id="mynft-template" type="text/x-handlebars-template">
+        <div class="nftListing mb-3">
+            <div class="card card-profile">
+
+                {{#ifNotEquals image ""}}
+                <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                {{/ifNotEquals}}
+
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+
+                    {{#ifNotEquals animation_url ""}}
+                    <a class="btn btn-outline mb-3 video-btn-link" data-toggle="collapse" href="#collapseVideo{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapseVideo{{erc1155}}{{id}}">
+                      <span class="material-icons">
+                        play_circle
+                      </span>
+                      Play video
+                    </a>
+                    <div class="collapse traits-collapse" id="collapseVideo{{erc1155}}{{HRC1155}}{{id}}">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <video style="width: 100%" src="{{animation_url}}" preload="auto" muted="muted" controls="controls" loop="loop" poster="{{image}}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/ifNotEquals}}
+
+                    {{#ifNotEquals audio_url ""}}
+                        <audio class="mb-3 mt-3" style="width: 90%;" controls="controls" preload="auto" loop="loop">
+                            <source src="{{audio_url}}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    {{/ifNotEquals}}
+                    <div class="mb-3">
+                        <span class="badge badge-info">ID: {{id}}</span>
+                        <span class="badge badge-info">Supply: {{supply}}</span>
+                        <span class="badge badge-info">Max. Supply: {{maxSupply}}</span>
+                        <span class="badge badge-info">You Own: {{balance}}</span>
+                    </div>
+                    <div class="dropdown">
+                        <a href="javascript:void(0);" class="btn btn-secondary btn-light dropdown-toggle mb-3" id="nftActions{{erc1155}}{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="material-icons-round">
+                            create
+                          </span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="nftActions{{erc1155}}{{id}}">
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftTransferModal" data-contract-address="{{erc1155}}" data-nft-id="{{id}}" id="nftTransferModalButton{{erc1155}}{{id}}">Transfer</a>
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftMintModal" data-contract-address="{{erc1155}}" data-nft-id="{{id}}" id="nftMintModalButton{{erc1155}}{{id}}">Mint</a>
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftBurnModal" data-contract-address="{{erc1155}}" data-nft-id="{{id}}" id="nftBurnModalButton{{erc1155}}{{id}}">Burn</a>
+                            <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftNewModal" data-edit="true" data-contract-address="{{erc1155}}" data-nft-id="{{id}}" id="nftEditModalButton{{erc1155}}{{id}}">Edit</a>
+                            <a href="javascript:void(0);" class="dropdown-item marketRoyaltiesLink" data-toggle="modal" data-target="#royaltiesModal" data-edit="true" data-contract-address="{{erc1155}}" data-nft-id="{{id}}" id="nftRoyaltiesModalButton{{erc1155}}{{id}}">Royalties</a>
+                        </div>
+                    </div>
+
+                    {{#ifNotEquals description ""}}
+                    <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                      <span class="material-icons-round">
+                        info
+                      </span>
+                    </button>
+                    {{/ifNotEquals}}
+
+                    <a class="traits btn btn-outline" data-toggle="collapse" href="#collapse{{id}}" role="button" aria-expanded="false" aria-controls="collapse{{id}}">
+                        Traits
+                    </a>
+                    <div class="collapse traits-collapse" id="collapse{{id}}">
+                        <ul class="list-group">
+                            {{#each attributes}}
+                            <li class="list-group-item">
+                                <sub>{{this.trait_type}}</sub><br />
+                                <div>{{this.value}}</div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </script>
+
+      </div>
+
+      <div class="row" id="myNftsPage" style="display: none;"></div>
+
+      <!-- MODALS BEGIN -->
+
+      <!-- Transfer Modal -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftTransferModal" tabindex="-1"
+        aria-labelledby="nftTransferModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftTransferModalLabel">Transfer NFTs</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+              <form onsubmit="return false;">
+
+                <div class="form-group">
+                  <label for="nftTransferToAddress">To Address</label>
+                  <input type="text" placeholder="Enter the address of the NFT recipient" class="form-control"
+                    id="nftTransferToAddress">
+                </div>
+
+                <div class="form-group">
+                  <label for="nftTransferAmount">Amount</label>
+                  <input type="text" placeholder="Enter the amount of NFTs to transfer" class="form-control"
+                    id="nftTransferAmount">
+                </div>
+
+                <input type="hidden" name="nftTransferNftId" id="nftTransferNftId" value="" />
+
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="nftTransferButton">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mint Modal -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftMintModal" tabindex="-1"
+        aria-labelledby="nftMintModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftMintModalLabel">Mint NFTs</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+              <form onsubmit="return false;">
+
+                <div class="form-group">
+                  <label for="nftMintAmount">Amount</label>
+                  <input type="text" placeholder="Enter the amount of NFTs to mint" class="form-control"
+                    id="nftMintAmount">
+                </div>
+
+                <div class="form-group" id="locationsGroup">
+                  <label for="nftMintLocations">Select Locations<span class="required">*</span></label>
+                  <select class="form-control" id="Location">
+                    <option>SAN FRANCISCO
+                    <option>LONDON
+                    <option>TOKYO
+                    <option>NEWYORK
+                    <option>CALIFORNIA
+                    <option>HONG KONG
+                    <option>BEIJING
+                    <option>SHANGHAI
+                    <option>SINGAPORE
+                    <option>MANILA
+                    <option>KUALA LUMPUR
+                    <option>JAKARTA
+                    <option>BATAM
+                    <option>BALI
+                    <option>SEOUL
+                    <option>BANDAR SERI BEGAWAN
+                    <option>CAMBODIA
+                    <option>MYANMAR
+                    <option>VIETNAM
+                    <option>LAOS
+                    <option>RUSSIA
+                    <option>MOSKOW
+                    <option>NORTH KOREA
+                    <option>TAIWAN
+                    <option>INDIA
+                    <option>TURKEY
+                    <option>UAE
+                    <option>PARIS
+                    <option>DUBAI
+                    <option>ABU DHABI
+                    <option>ISTANBUL
+                    <option>ANKARA
+                    <option>ABUJA
+                    <option>MELBOURNE
+                    <option>SYDNEY
+                    <option>BRISBANE
+                    <option>SWEDEN
+                    <option>STOCKHOLM
+                    <option>NEW ZEALAND
+                    <option>LIECHTENSTEIN
+                    <option>BERLIN
+                    <option>PAKISTAN
+                    <option>QATAR
+                    <option>BANGLADESH
+                    <option>AMSTERDAM
+                    <option>SWITZERLAND
+                    <option>MADRID
+                    <option>DENMARK
+                    <option>ROMA
+                    <option>ATHENS
+                    <option>CROATIA
+                    <option>HUNGARY
+                    <option>ICELAND
+                    <option>FINLAND
+                    <option>IRELAND
+                    <option>AUSTRIA
+                    <option>LISBON
+                    <option>OSLO
+                    <option>ROMANIA
+                    <option>BRASILLIA
+                    <option>PERU
+                    <option>CANADA
+                    <option>COLOMBIA
+                    <option>URUGUAY
+                    <option>JAMAICA
+                    <option>COSTA RICA
+                    <option>CUBA
+                    <option>HAVANA
+                    <option>MEXICO
+                    <option>ARGENTINA
+                    <option>CHILE
+                    <option>VENEZUELA
+                    <option>ECUADOR
+                    <option>EL SAVADOR
+                    <option>HAITI
+                    <option>BELGIUM
+                    <option>CAIRO
+                    <option>JERUSALEM
+                    <option>HANOI
+                    <option>NEW_DELHI
+                    <option>BAGHDAD
+                    <option>PRAGUE
+                    <option>SOFIA
+                    <option>LUXEMBOURG
+                    <option>ETHIOPIA
+                    <option>MONACO
+                    <option>YEREVAN
+                    <option>KUWAIT
+                    <option>BRUSSELS
+                    <option>SARAJEVO
+                    <option>OTTAWA
+                    <option>ZAGREB
+                    <option>KOBENHAVN
+                    <option>KYIV
+                    <option>AMMAN
+                    <option>HAGUE
+                    <option>CANBERA
+                    <option>POLAND
+                    <option>DOHA
+                    <option>LIMA
+                    <option>BEIRUT
+                    <option>DUBLIN
+                    <option>MALI
+                    <option>DAKAR
+                    <option>NASSAU
+                    <option>BRIDGETOWN
+                    <option>KARACHI
+                    <option>LOS ANGELES
+                    <option>CHICAGO
+                    <option>OSAKA
+                    <option>PHILADELPHIA
+                    <option>DALLAS
+                    <option>TEXAS
+                    <option>BOSTON
+                    <option>MASSACHUSETTS
+                    <option>PENNSYLVANIA
+                    <option>BUENOS ARIES
+                    <option>ATLANTA
+                    <option>HOUSTON
+                    <option>MIAMI
+                    <option>FLORIDA
+                    <option>SAO PAULO
+                    <option>TORONTO
+                    <option>DETROIT
+                    <option>MICHIGAN
+                    <option>SEATTLE
+                    <option>MINNEAPOLIS
+                    <option>MINNESOTA
+                    <option>SAN DIEGO
+                    <option>RIO DE JANEIRO
+                    <option>BARCELONA
+                    <option>CATALONIA
+                    <option>DENVER
+                    <option>COLORADO
+                    <option>MUMBAI
+                    <option>MONTREAL
+                    <option>MILAN
+                    <option>BALTIMORE
+                    <option>ST LOUIS
+                    <option>KOLKATA
+                    <option>VIENNA
+                    <option>SANTIAGO
+                    <option>CLEVELAND
+                    <option>OHIO
+                    <option>TEHRAN
+                    <option>PORTLAND
+                    <option>OREGON
+                    <option>BOGOTA
+                    <option>SAINT PETERSBURG
+                    <option>GUANGZHOU
+                    <option>PITTSBURG
+                    <option>VANCOUVER
+                    <option>JOHANNESBURG
+                    <option>MONTERREY
+                    <option>CAPE TOWN
+                    <option>BIRMINGHAM
+                    <option>FUKUOKA
+                    <option>GUADALAJARA
+                    <option>HAMBURG
+                    <option>TURIN
+                    <option>LYON
+                    <option>MUNICH
+                    <option>BAVARIA
+                    <option>LEEDS
+                    <option>WARSAW
+                    <option>TIANJIN
+                    <option>PORTO ALEGRE
+                    <option>BANGALORE
+                    <option>HELSINKI
+                    <option>NAPLES
+                    <option>NAPOLY
+                    <option>BUDAPEST
+                    <option>HUNGARY
+                    <option>AUCKLAND
+                    <option>RECIPE
+                    <option>ROTTERDAM
+                    <option>TRIPOLI
+                    <option>WEST JAVA
+                    <option>ULAANBAATAR
+                    <option>NUR SULTAN
+                    <option>SURABAYA
+                    <option>MONTEVIDEO
+                    <option>OAXACA
+                    <option>HOI AN
+                    <option>CHIANG MAI
+                    <option>FLORENCE
+                    <option>KYOTO
+                    <option>UDAIPUR
+                    <option>LUANG PRABANG
+                    <option>JAIPUR
+                    <option>SIEM REAP
+                    <option>CHARLESTON
+                    <option>CUSCO
+                    <option>PORTO
+                    <option>NEW ORLEANS
+                    <option>SEVILLE
+                    <option>ANDULISIA
+                    <option>MERIDA
+                    <option>EXTREMADURA
+                    <option>KRAKOW
+                    <option>BAKU
+                    </option>
+                  </select>
+                </div>
+
+                <input type="hidden" name="nftMintNftId" id="nftMintNftId" value="" />
+
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="nftMintButton">Mint</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Burn Modal -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftBurnModal" tabindex="-1"
+        aria-labelledby="nftBurnModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftBurnModalLabel">Burn NFTs</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+              <form onsubmit="return false;">
+
+                <div class="form-group">
+                  <label for="nftTransferAmount">Amount</label>
+                  <input type="text" placeholder="Enter the amount of NFTs to burn" class="form-control"
+                    id="nftBurnAmount">
+                </div>
+
+                <input type="hidden" name="nftMintNftId" id="nftBurnNftId" value="" />
+
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="nftBurnButton">Burn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New NFT Contract -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftContractModal" tabindex="-1"
+        aria-labelledby="nftContractModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftContractModalLabel">New Collection</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+              <div class="col">
+
+                <form id="contractForm" onsubmit="return false;">
+                  <div class="form-group">
+                    <label for="erc1155Name">Name <span class="required">*</span></label>
+                    <input type="text" placeholder="Enter a name for your NFT collection" class="form-control"
+                      id="erc1155Name">
+                  </div>
+                  <div id="collectionTicker" class="form-group">
+                    <label for="erc1155Ticker">Ticker <span class="required">*</span></label>
+                    <input type="text" placeholder="Should be a short representation of the collection name"
+                      class="form-control" id="erc1155Ticker">
+                  </div>
+                  <div class="form-group">
+                    <label for="erc1155Description">Description</label>
+                    <textarea class="form-control" id="erc1155Description" rows="3"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="erc1155ImageFile">Click to Choose Image...</label>
+                    <input type="file" class="form-control-file imageFile" id="erc1155ImageFile" accept="image/*">
+                    <div class="imageFileDisplay mt-3"></div>
+                    <input type="hidden" id="erc1155ImageUrl" value="" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="erc1155GeospatialLocations">Select Locations<span class="required">*</span></label>
+                    <select class="form-control" id="Locations">
+                      <option>SAN FRANCISCO
+                      <option>LONDON
+                      <option>TOKYO
+                      <option>NEWYORK
+                      <option>CALIFORNIA
+                      <option>HONG KONG
+                      <option>BEIJING
+                      <option>SHANGHAI
+                      <option>SINGAPORE
+                      <option>MANILA
+                      <option>KUALA LUMPUR
+                      <option>JAKARTA
+                      <option>BATAM
+                      <option>BALI
+                      <option>SEOUL
+                      <option>BANDAR SERI BEGAWAN
+                      <option>CAMBODIA
+                      <option>MYANMAR
+                      <option>VIETNAM
+                      <option>LAOS
+                      <option>RUSSIA
+                      <option>MOSKOW
+                      <option>NORTH KOREA
+                      <option>TAIWAN
+                      <option>INDIA
+                      <option>TURKEY
+                      <option>UAE
+                      <option>PARIS
+                      <option>DUBAI
+                      <option>ABU DHABI
+                      <option>ISTANBUL
+                      <option>ANKARA
+                      <option>ABUJA
+                      <option>MELBOURNE
+                      <option>SYDNEY
+                      <option>BRISBANE
+                      <option>SWEDEN
+                      <option>STOCKHOLM
+                      <option>NEW ZEALAND
+                      <option>LIECHTENSTEIN
+                      <option>BERLIN
+                      <option>PAKISTAN
+                      <option>QATAR
+                      <option>BANGLADESH
+                      <option>AMSTERDAM
+                      <option>SWITZERLAND
+                      <option>MADRID
+                      <option>DENMARK
+                      <option>ROMA
+                      <option>ATHENS
+                      <option>CROATIA
+                      <option>HUNGARY
+                      <option>ICELAND
+                      <option>FINLAND
+                      <option>IRELAND
+                      <option>AUSTRIA
+                      <option>LISBON
+                      <option>OSLO
+                      <option>ROMANIA
+                      <option>BRASILLIA
+                      <option>PERU
+                      <option>CANADA
+                      <option>COLOMBIA
+                      <option>URUGUAY
+                      <option>JAMAICA
+                      <option>COSTA RICA
+                      <option>CUBA
+                      <option>HAVANA
+                      <option>MEXICO
+                      <option>ARGENTINA
+                      <option>CHILE
+                      <option>VENEZUELA
+                      <option>ECUADOR
+                      <option>EL SAVADOR
+                      <option>HAITI
+                      <option>BELGIUM
+                      <option>CAIRO
+                      <option>JERUSALEM
+                      <option>HANOI
+                      <option>NEW_DELHI
+                      <option>BAGHDAD
+                      <option>PRAGUE
+                      <option>SOFIA
+                      <option>LUXEMBOURG
+                      <option>ETHIOPIA
+                      <option>MONACO
+                      <option>YEREVAN
+                      <option>KUWAIT
+                      <option>BRUSSELS
+                      <option>SARAJEVO
+                      <option>OTTAWA
+                      <option>ZAGREB
+                      <option>KOBENHAVN
+                      <option>KYIV
+                      <option>AMMAN
+                      <option>HAGUE
+                      <option>CANBERA
+                      <option>POLAND
+                      <option>DOHA
+                      <option>LIMA
+                      <option>BEIRUT
+                      <option>DUBLIN
+                      <option>MALI
+                      <option>DAKAR
+                      <option>NASSAU
+                      <option>BRIDGETOWN
+                      <option>KARACHI
+                      <option>LOS ANGELES
+                      <option>CHICAGO
+                      <option>OSAKA
+                      <option>PHILADELPHIA
+                      <option>DALLAS
+                      <option>TEXAS
+                      <option>BOSTON
+                      <option>MASSACHUSETTS
+                      <option>PENNSYLVANIA
+                      <option>BUENOS ARIES
+                      <option>ATLANTA
+                      <option>HOUSTON
+                      <option>MIAMI
+                      <option>FLORIDA
+                      <option>SAO PAULO
+                      <option>TORONTO
+                      <option>DETROIT
+                      <option>MICHIGAN
+                      <option>SEATTLE
+                      <option>MINNEAPOLIS
+                      <option>MINNESOTA
+                      <option>SAN DIEGO
+                      <option>RIO DE JANEIRO
+                      <option>BARCELONA
+                      <option>CATALONIA
+                      <option>DENVER
+                      <option>COLORADO
+                      <option>MUMBAI
+                      <option>MONTREAL
+                      <option>MILAN
+                      <option>BALTIMORE
+                      <option>ST LOUIS
+                      <option>KOLKATA
+                      <option>VIENNA
+                      <option>SANTIAGO
+                      <option>CLEVELAND
+                      <option>OHIO
+                      <option>TEHRAN
+                      <option>PORTLAND
+                      <option>OREGON
+                      <option>BOGOTA
+                      <option>SAINT PETERSBURG
+                      <option>GUANGZHOU
+                      <option>PITTSBURG
+                      <option>VANCOUVER
+                      <option>JOHANNESBURG
+                      <option>MONTERREY
+                      <option>CAPE TOWN
+                      <option>BIRMINGHAM
+                      <option>FUKUOKA
+                      <option>GUADALAJARA
+                      <option>HAMBURG
+                      <option>TURIN
+                      <option>LYON
+                      <option>MUNICH
+                      <option>BAVARIA
+                      <option>LEEDS
+                      <option>WARSAW
+                      <option>TIANJIN
+                      <option>PORTO ALEGRE
+                      <option>BANGALORE
+                      <option>HELSINKI
+                      <option>NAPLES
+                      <option>NAPOLY
+                      <option>BUDAPEST
+                      <option>HUNGARY
+                      <option>AUCKLAND
+                      <option>RECIPE
+                      <option>ROTTERDAM
+                      <option>TRIPOLI
+                      <option>WEST JAVA
+                      <option>ULAANBAATAR
+                      <option>NUR SULTAN
+                      <option>SURABAYA
+                      <option>MONTEVIDEO
+                      <option>OAXACA
+                      <option>HOI AN
+                      <option>CHIANG MAI
+                      <option>FLORENCE
+                      <option>KYOTO
+                      <option>UDAIPUR
+                      <option>LUANG PRABANG
+                      <option>JAIPUR
+                      <option>SIEM REAP
+                      <option>CHARLESTON
+                      <option>CUSCO
+                      <option>PORTO
+                      <option>NEW ORLEANS
+                      <option>SEVILLE
+                      <option>ANDULISIA
+                      <option>MERIDA
+                      <option>EXTREMADURA
+                      <option>KRAKOW
+                      <option>BAKU
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="nftGeospatialLocationsCoordinates">Latitude and longitude Coordinates <span
+                        class="required">*</span></label>
+                    <input type="text" placeholder="Enter a Coordinates for your NFT" class="form-control"
+                      id="nftGeospatialLocationsCoordinates">
+                  </div>
+
+                  <input type="hidden" id="collectionUpdateAddress" value="" />
+                  <input type="hidden" id="collectionIsEdit" value="0" />
+                </form>
+
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <div id="feeCollection" class="footer-description"><span id="ethFeeCollection"></span> <span
+                  class="currency"></span> developer fee per collection. <div id="paymentDescription">Unlimited
+                  collection creation if holding <span id="nifMinCollection"></span> $ONE or owning one of our <a
+                    href="https://opensea.io/assets/0x774418646555f414cbaeca6cf3c72a0613d4dab4/1" target="_blank">free
+                    pass wildcards</a>.</div> No subsequent fees on actual NFT creation as the collection is yours
+                after creation. Gas fees always apply.</div>
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary modal-cancel" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary submitNewUpdate" id="erc1155Submit">Create
+                  Collection</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New NFT Modal -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftNewModal" tabindex="-1"
+        aria-labelledby="nftNewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftNewModalLabel">New NFT</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+              <form id="nftForm" onsubmit="return false;">
+
+                <div class="form-group" id="nftSupplyGroup">
+                  <label for="nftSupply">Supply <span class="required">*</span></label>
+                  <input class="form-control" placeholder="Add an initial supply for this NFT" type="text"
+                    id="nftSupply" value="" autocomplete="off" />
+                </div>
+
+                <div class="form-group" id="nftMaxSupplyGroup">
+                  <label for="nftMaxSupply">Max. Supply <span class="required">*</span></label>
+                  <input class="form-control" placeholder="Add a maximum supply for this NFT" type="text"
+                    id="nftMaxSupply" value="" autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                  <label for="nftName">Name <span class="required">*</span></label>
+                  <input type="text" placeholder="Enter a name for your NFT" class="form-control" id="nftName">
+                </div>
+                <div class="form-group">
+                  <label for="nftDescription">Description</label>
+                  <textarea class="form-control" id="nftDescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="nftImageFile">Click to Choose Image...</label>
+                  <input type="file" class="form-control-file" id="nftImageFile" accept="image/*">
+                  <div class="imageFileDisplay mt-3"></div>
+                  <input type="hidden" id="nftImageUrl" value="" />
+                </div>
+
+
+                <div class="form-group">
+                  <label for="nftVideoFile">Click to Choose Video...</label>
+                  <input type="file" class="form-control-file" id="nftVideoFile" accept="video/mp4,video/webm">
+                  <div class="videoFileDisplay mt-3"></div>
+                  <input type="hidden" id="nftVideoUrl" value="" />
+                </div>
+
+                <div class="form-group">
+                  <label for="nftAudioFile">Click to Choose Audio...</label>
+                  <input type="file" class="form-control-file" id="nftAudioFile" accept="audio/mp3,audio/webm">
+                  <div class="audioFileDisplay mt-3"></div>
+                  <input type="hidden" id="nftAudioUrl" value="" />
+                </div>
+
+                <div class="form-group">
+                  <label for="nftInteractiveFile">Click to Choose Interactive File...(name must be index.html)</label>
+                  <input type="file" class="form-control-file" id="nftInteractiveFile" accept="text/html">
+                  <div class="interactiveFileDisplay mt-3"></div>
+                  <input type="hidden" id="nftInteractiveUrl" value="" />
+                </div>
+
+
+                <div class="form-group" id="locationsGroup">
+                  <label for="nftLocations">Select Locations<span class="required">*</span></label>
+                  <select class="form-control" id="Locations">
+                    <option>SAN FRANCISCO
+                    <option>LONDON
+                    <option>TOKYO
+                    <option>NEWYORK
+                    <option>CALIFORNIA
+                    <option>HONG KONG
+                    <option>BEIJING
+                    <option>SHANGHAI
+                    <option>SINGAPORE
+                    <option>MANILA
+                    <option>KUALA LUMPUR
+                    <option>JAKARTA
+                    <option>BATAM
+                    <option>BALI
+                    <option>SEOUL
+                    <option>BANDAR SERI BEGAWAN
+                    <option>CAMBODIA
+                    <option>MYANMAR
+                    <option>VIETNAM
+                    <option>LAOS
+                    <option>RUSSIA
+                    <option>MOSKOW
+                    <option>NORTH KOREA
+                    <option>TAIWAN
+                    <option>INDIA
+                    <option>TURKEY
+                    <option>UAE
+                    <option>PARIS
+                    <option>DUBAI
+                    <option>ABU DHABI
+                    <option>ISTANBUL
+                    <option>ANKARA
+                    <option>ABUJA
+                    <option>MELBOURNE
+                    <option>SYDNEY
+                    <option>BRISBANE
+                    <option>SWEDEN
+                    <option>STOCKHOLM
+                    <option>NEW ZEALAND
+                    <option>LIECHTENSTEIN
+                    <option>BERLIN
+                    <option>PAKISTAN
+                    <option>QATAR
+                    <option>BANGLADESH
+                    <option>AMSTERDAM
+                    <option>SWITZERLAND
+                    <option>MADRID
+                    <option>DENMARK
+                    <option>ROMA
+                    <option>ATHENS
+                    <option>CROATIA
+                    <option>HUNGARY
+                    <option>ICELAND
+                    <option>FINLAND
+                    <option>IRELAND
+                    <option>AUSTRIA
+                    <option>LISBON
+                    <option>OSLO
+                    <option>ROMANIA
+                    <option>BRASILLIA
+                    <option>PERU
+                    <option>CANADA
+                    <option>COLOMBIA
+                    <option>URUGUAY
+                    <option>JAMAICA
+                    <option>COSTA RICA
+                    <option>CUBA
+                    <option>HAVANA
+                    <option>MEXICO
+                    <option>ARGENTINA
+                    <option>CHILE
+                    <option>VENEZUELA
+                    <option>ECUADOR
+                    <option>EL SAVADOR
+                    <option>HAITI
+                    <option>BELGIUM
+                    <option>CAIRO
+                    <option>JERUSALEM
+                    <option>HANOI
+                    <option>NEW_DELHI
+                    <option>BAGHDAD
+                    <option>PRAGUE
+                    <option>SOFIA
+                    <option>LUXEMBOURG
+                    <option>ETHIOPIA
+                    <option>MONACO
+                    <option>YEREVAN
+                    <option>KUWAIT
+                    <option>BRUSSELS
+                    <option>SARAJEVO
+                    <option>OTTAWA
+                    <option>ZAGREB
+                    <option>KOBENHAVN
+                    <option>KYIV
+                    <option>AMMAN
+                    <option>HAGUE
+                    <option>CANBERA
+                    <option>POLAND
+                    <option>DOHA
+                    <option>LIMA
+                    <option>BEIRUT
+                    <option>DUBLIN
+                    <option>MALI
+                    <option>DAKAR
+                    <option>NASSAU
+                    <option>BRIDGETOWN
+                    <option>KARACHI
+                    <option>LOS ANGELES
+                    <option>CHICAGO
+                    <option>OSAKA
+                    <option>PHILADELPHIA
+                    <option>DALLAS
+                    <option>TEXAS
+                    <option>BOSTON
+                    <option>MASSACHUSETTS
+                    <option>PENNSYLVANIA
+                    <option>BUENOS ARIES
+                    <option>ATLANTA
+                    <option>HOUSTON
+                    <option>MIAMI
+                    <option>FLORIDA
+                    <option>SAO PAULO
+                    <option>TORONTO
+                    <option>DETROIT
+                    <option>MICHIGAN
+                    <option>SEATTLE
+                    <option>MINNEAPOLIS
+                    <option>MINNESOTA
+                    <option>SAN DIEGO
+                    <option>RIO DE JANEIRO
+                    <option>BARCELONA
+                    <option>CATALONIA
+                    <option>DENVER
+                    <option>COLORADO
+                    <option>MUMBAI
+                    <option>MONTREAL
+                    <option>MILAN
+                    <option>BALTIMORE
+                    <option>ST LOUIS
+                    <option>KOLKATA
+                    <option>VIENNA
+                    <option>SANTIAGO
+                    <option>CLEVELAND
+                    <option>OHIO
+                    <option>TEHRAN
+                    <option>PORTLAND
+                    <option>OREGON
+                    <option>BOGOTA
+                    <option>SAINT PETERSBURG
+                    <option>GUANGZHOU
+                    <option>PITTSBURG
+                    <option>VANCOUVER
+                    <option>JOHANNESBURG
+                    <option>MONTERREY
+                    <option>CAPE TOWN
+                    <option>BIRMINGHAM
+                    <option>FUKUOKA
+                    <option>GUADALAJARA
+                    <option>HAMBURG
+                    <option>TURIN
+                    <option>LYON
+                    <option>MUNICH
+                    <option>BAVARIA
+                    <option>LEEDS
+                    <option>WARSAW
+                    <option>TIANJIN
+                    <option>PORTO ALEGRE
+                    <option>BANGALORE
+                    <option>HELSINKI
+                    <option>NAPLES
+                    <option>NAPOLY
+                    <option>BUDAPEST
+                    <option>HUNGARY
+                    <option>AUCKLAND
+                    <option>RECIPE
+                    <option>ROTTERDAM
+                    <option>TRIPOLI
+                    <option>WEST JAVA
+                    <option>ULAANBAATAR
+                    <option>NUR SULTAN
+                    <option>SURABAYA
+                    <option>MONTEVIDEO
+                    <option>OAXACA
+                    <option>HOI AN
+                    <option>CHIANG MAI
+                    <option>FLORENCE
+                    <option>KYOTO
+                    <option>UDAIPUR
+                    <option>LUANG PRABANG
+                    <option>JAIPUR
+                    <option>SIEM REAP
+                    <option>CHARLESTON
+                    <option>CUSCO
+                    <option>PORTO
+                    <option>NEW ORLEANS
+                    <option>SEVILLE
+                    <option>ANDULISIA
+                    <option>MERIDA
+                    <option>EXTREMADURA
+                    <option>KRAKOW
+                    <option>BAKU
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="nftGeospatialLocationsCoordinates">Latitude and longitude Coordinates <span
+                      class="required">*</span></label>
+                  <input type="text" placeholder="Enter a Coordinates for your NFT" class="form-control"
+                    id="';nftGeospatialLocationsCoordinates">
+                </div>
+
+                <fieldset>
+                  <legend>Traits</legend>
+                  <div class="form-group">
+                    <label for="addAttributeKey">Key</label>
+                    <input class="form-control" placeholder="Add a trait key" type="text" id="addAttributeKey" value=""
+                      autocomplete="off" />
+                    <label for="addAttributeValue">Value</label>
+                    <input class="form-control" placeholder="Add a trait value" type="text" id="addAttributeValue"
+                      value="" autocomplete="off" />
+                    <label for="addDisplayType">Type</label>
+                    <select id="addDisplayType" class="form-control">
+                      <option value="text">Text</option>
+                      <option value="number">Number</option>
+                      <option value="boost_number">Boost Number</option>
+                      <option value="boost_percentage">Boost Percentage</option>
+                      <option value="date">Date</option>
+                    </select>
+                    <button id="addAttributeButton" class="btn btn-secondary mt-3">Add</button>
+                    <div id="addedAttributes"></div>
+                  </div>
+                </fieldset>
+
+                <input type="hidden" id="nftErc1155Address" value="" />
+                <input type="hidden" id="nftIsEdit" value="0" />
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary submitNewUpdate" id="nftSubmit">Create NFT</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Royalties -->
+
+      <div class="modal fade" style="overflow-y: scroll;" id="royaltiesModal" tabindex="-1" role="dialog"
+        aria-labelledby="royaltiesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="royaltiesModalLabel">Set Royalties</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <p>
+                If you intend to use royalties, please add them below in percent. 50% max. royalties allowed, only for
+                purchases on the NFT Market.
+              </p>
+
+              <div class="form-group">
+                <label for="nftRoyalties">Royalties in percent *</label>
+                <input value="" type="text" placeholder="Add royalties in percent" class="form-control"
+                  id="nftRoyalties">
+              </div>
+
+              <input type="hidden" id="nftRoyaltiesErc1155Address" value="" />
+              <input type="hidden" id="nftRoyaltiesId" value="" />
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="storeRoyaltiesButton">Set Royalties</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi Batch Transfer Modal -->
+      <div class="modal fade" style="overflow-y: scroll;" id="nftTransferMultiBatchModal" tabindex="-1"
+        aria-labelledby="nftTransferMultiBatchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nftTransferMultiBatchModalLabel">Multi Batch Transfer NFTs</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form onsubmit="return false;">
+
+                <div class="form-group">
+                  <label for="nftTransferMultiBatchToAddresses">To Addresses (one address per line)</label>
+                  <textarea class="form-control" rows="3" name="nftTransferToAddresses"
+                    id="nftTransferMultiBatchToAddresses"></textarea>
+                  <i class="text-muted font-weight-light" style="font-size: 0.8em;">one address per line</i>
+                </div>
+
+                <div class="form-group">
+                  <label for="nftTransferMultiBatchCollection">Collection Address</label>
+                  <input type="text" placeholder="Enter the address of your collection you want to send NFTs from."
+                    class="form-control" id="nftTransferMultiBatchCollection">
+                </div>
+
+                <div class="form-group">
+                  <label for="nftTransferMultiBatchIds">NFT IDs </label>
+                  <textarea class="form-control" rows="3" name="nftTransferMultiBatchIds"
+                    id="nftTransferMultiBatchIds"></textarea>
+                  <i class="text-muted font-weight-light" style="font-size: 0.8em;">one ID per line</i>
+                </div>
+
+                <div class="form-group">
+                  <label for="nftTransferMultiBatchAmounts">Amounts</label>
+                  <textarea class="form-control" rows="3" name="nftTransferMultiBatchAmounts"
+                    id="nftTransferMultiBatchAmounts"></textarea>
+                  <i class="text-muted font-weight-light" style="font-size: 0.8em;">one amount per line, parallel to its
+                    NFT ID</i>
+                </div>
+
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="nftTransferMultiBatchButton">Transfer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERT -->
+      <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+        aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Info</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-non-nft-content">
+
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODALS END -->
+
+      <input type="hidden" id="nftErc1155CurrName" value="" />
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" href="roadmap.html">
+          <span class="material-icons-round">
+            swap_calls
+          </span>
+          Roadmap
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="guides-faq.html">
+          <span class="material-icons-round">
+            help_outline
+          </span>
+          FAQ
+        </a>
+      </li>
+
+      <li class="nav-item" id="torus">
+        <a class="nav-link" href="javascript:enableTorus();">
+          <span class="material-icons-round">
+            account_balance_wallet
+          </span>
+          Connect Wallet
+        </a>
+      </li>
+
+      <li class="nav-item" style="display:none;" id="torusAddress">
+        <a href="javascript:void(0);" id="torusAddressPopover" type="button" class="btn btn-clipboard"
+          style="cursor: pointer;" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top"
+          title="Your Address" data-html="true" data-content="">
+          <span class="material-icons-round">
+            account_balance_wallet
+          </span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- FOOTER END -->
+
+  </div>
+  <script src="js/themeSwitch.js"></script>
+</body>
+
+</html>
