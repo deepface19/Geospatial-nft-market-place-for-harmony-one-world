@@ -4,12 +4,13 @@ https://geospatial-nft-market-place.web.app
 ## Video Demonstration
 https://youtu.be/9RzkEUPakZ0
 
-## How It Work Geospatial Market Place NFTs Select Location And Coordinate Latitude And Longtitude
-- ![Screenshot 2021-06-15 235509_LI](https://user-images.githubusercontent.com/59292798/122180855-03041880-ceb3-11eb-8ed0-18b9a2ab2eda.jpg)
-
-- ![Screenshot 2021-06-15 235555_LI](https://user-images.githubusercontent.com/59292798/122180857-04354580-ceb3-11eb-90d0-aea2fe33f252.jpg)
-
-- ![Screenshot 2021-06-15 235654_LI](https://user-images.githubusercontent.com/59292798/122180863-05667280-ceb3-11eb-815d-41443e2800a3.jpg)
+## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
+![Web capture_25-6-2021_19528_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422549-955d9800-d5e8-11eb-8efb-2e5a8824cf9d.jpeg)
+![Web capture_25-6-2021_19516_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422559-98f11f00-d5e8-11eb-82f4-2776de6bebee.jpeg)
+![Web capture_25-6-2021_1950_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422563-9a224c00-d5e8-11eb-9562-820bab57c66f.jpeg)
+![Web capture_25-6-2021_19446_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422566-9abae280-d5e8-11eb-8c74-041c830fdbad.jpeg)
+![Web capture_25-6-2021_19557_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422567-9b537900-d5e8-11eb-93ac-00b2d20320ce.jpeg)
+![Web capture_25-6-2021_19548_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422571-9bec0f80-d5e8-11eb-97f5-750201fbdd1a.jpeg)
 
 
 ## Available Connect to wallet
