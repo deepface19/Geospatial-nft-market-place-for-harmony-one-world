@@ -5,7 +5,7 @@ add all file (Asset,Contract, to Public)
 ## DEMO IN FIREBASE 
 https://geospatial-nft-market-place.web.app
 
-## Video Demonstration
+## Video Structure Demonstration
 https://youtu.be/9RzkEUPakZ0
 
 ## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
