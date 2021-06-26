@@ -18,7 +18,6 @@ https://youtu.be/9RzkEUPakZ0
 - METAMASK
 
 ## Available nfts erc1155 & hrc1155
-- ALL
 - ART
 - MUSIC
 - INTERACTIVE
@@ -42,15 +41,9 @@ https://youtu.be/9RzkEUPakZ0
 - SUPPORT SWAP NFT TO OTHER 
 
 ## Avaiable Network BlockChain
-- Ethereum
-- XDAI
-- Binance Smart Chain
-- Avalanche
-- CELO
-- POLYGON ( MATIC )
-- Harmony Chain
-- Rinkeby ( TestNet)
-- Custom RPC Network
+ - Harmony (ONEs) MAINNET
+ - Harmony (TestNet)
+ - LocalNet
 
 ## Clone & build Repo
 ```
