@@ -1,6 +1,6 @@
 ## ATTENTION
-if you want use this repo project please 
-add all file (Asset,Contract,web to Public)
+if you want use this repo project for your company or bussiness please 
+add all file (Asset,Contract, to Public)
 
 ## DEMO IN FIREBASE 
 https://geospatial-nft-market-place.web.app
