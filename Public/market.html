@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+    <title>NFT Market - Market Place NFTs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href=".png">
+    <link rel="icon" type="image/png" sizes="16x16" href=".png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="Asset/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/web3.js"></script>
+    <script type="text/javascript" src="js/harmonyExtension.js"></script>
+    <script type="text/javascript" src="js/harmony.js"></script>
+    <script type="text/javascript" src="web/init.js"></script>
+    <script type="text/javascript" src="web/userWallet.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="text/javascript" src="js/ipfs.js"></script>
+    <script type="text/javascript" src="js/buffer.js"></script>
+    <script type="text/javascript" src="js/misc.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/oneABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/erc1155ABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/multiBatchABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/erc20ABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/marketABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/swapABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/marketWrapABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/bridgeInABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/bridgeOutABI.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib-bridge.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/lib-market.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/market-dapp.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/dapp-init.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/cookie.js?v=1.9.6"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="web/wallet.js"></script>
+    <script type="text/javascript" src="web/common.js"></script>
+    <script src="web/HarmonyJs.browser.js" type="text/javascript"></script>
+    <script src="web/web3.min.js" type="text/javascript"></script>
+    <script src="Asset/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="Asset/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="Asset/js/plugins/chartist.min.js"></script>
+    <script src="Asset/js/plugins/bootstrap-notify.js"></script>
+    <script src="Asset/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            new ClipboardJS('.btn-clipboard');
+        });
+    </script>
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="web/common.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+        integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <style type="text/css">
+        .dark-edition .modal .form-control {
+            color: #8b92a9;
+        }
+
+        .dark-edition .modal .form-control,
+        .is-focused .dark-edition .modal .form-control {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        .nftListing {
+            min-width: 300px;
+        }
+
+        .btn-outline {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+        }
+
+        .btn-clipboard {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .fa-clipboard,
+        .fa-external-link {
+            font-size: 0.8rem !important;
+        }
+
+        .traits-collapse ul li {
+            border-bottom: 1px solid #8b92a9;
+        }
+
+        .traits-collapse ul li:last-child {
+            border-bottom: none;
+        }
+
+        .dark-edition .card .card-body .card-description {
+            color: #8b92a9;
+        }
+
+        .description,
+        .card-description,
+        .footer-big p {
+            color: #8b92a9;
+        }
+
+        .title,
+        .title a,
+        .card-title,
+        .card-title a,
+        .info-title,
+        .info-title a,
+        .footer-brand,
+        .footer-brand a,
+        .footer-big h5,
+        .footer-big h5 a,
+        .footer-big h4,
+        .footer-big h4 a,
+        .media .media-heading,
+        .media .media-heading a {
+            color: #8b92a9;
+        }
+
+        body {
+            color: #8b92a9;
+        }
+
+        .navbar,
+        .navbar-text a {
+            color: inherit;
+        }
+
+        #incomingSwapRequests .row,
+        #outgoingSwapRequests .row {
+            margin-right: 0 !important;
+        }
+
+        #swapRequestsModal .modal-dialog,
+        #nftSwapModal .modal-dialog,
+        #nftsView .modal-dialog {
+            max-width: 900px !important;
+        }
+
+        input[name='nftMode'] {
+            opacity: unset !important;
+            position: unset !important;
+            width: unset !important;
+            height: unset !important;
+            margin-right: -20px !important;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+    <link href="Asset/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <script src="js/themeDefault.js"></script>
+
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="https://" class="simple-text logo-normal">
+                <img src="Asset/img/" width="125" border="0" />
+                <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+                    Binance Smart Chain
+                </div>
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="material-icons-round">home</i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="nav-item active" id="marketNavLink">
+                    <a class="nav-link" href="market.html">
+                        <i class="material-icons-round">storefront</i>
+                        <p>NFT Market</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="collectibles.html">
+                        <i class="material-icons-round">account_box</i>
+                        <p>Your Wallet</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="manager.html">
+                        <i class="material-icons-round">collections</i>
+                        <p>Collection Manager</p>
+                    </a>
+                </li>
+                <li class="nav-item bridgeNav">
+                    <a class="nav-link" href="bridge.html">
+                        <i class="material-icons-round">360</i>
+                        <p>NFT Bridge</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="guides-faq.html">
+                        <i class="material-icons-round">help_center</i>
+                        <p>Guides & FAQ</p>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-text">
+                    <div class="sidebar-text icons">
+                        <span class="navbar-text">
+                            <a href="https://www.linkedin.com/company/harmony-one" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="https://t.me/harmony_one" target="_blank">
+                                <i class="fa fa-telegram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCDfuhS7xu69IhK5AJSyiF0g" target="_blank">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                            <a href="https://twitter.com/harmonyprotocol" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://github.com/harmony-one" target="_blank">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a href="https://medium.com/harmony-one" target="_blank">
+                                <i class="fa fa-medium"></i>
+                            </a>
+                            <a href="https://discord.com/invite/rdCmBpe" target="_blank">
+                                <i class="fa fa-discord"></i>
+                            </a>
+                        </span>
+                    </div>
+
+                    <div class="sidebar-text rights">
+                        <span>
+                            <i class="material-icons">copyright</i>
+                            Deepface19 Development d.o.o.<br />All rights reserved.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-panel">
+
+        <!-- NAV TOGGLER -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                    aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- NAV TOGGLER END -->
+
+        <div class="content">
+
+            <!-- HEADER -->
+            <div class="custom-header">
+                <div class="custom-header__title"></div>
+                <div class="custom-header__dropdowns">
+                    <script>
+                    // fix for initial doubleclick required upon page load
+                    // $(document).ready(function () {
+                    // $('#chainSelectionDropdown').click();
+                    // });
+                    </script>
+
+                    <div class="dropdown ml-3 mr-3 dropdown--chains">
+                        <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Harmony (ONEs)
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Harmony
+                                (ONEs)</a>
+                            <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/rinkeby/">Harmony
+                                (Testnet)</a>
+                            <a class="dropdown-item"
+                                href="https://geospatial-nft-market-place.web.app/rinkeby/">LocalNet</a>
+                        </div>
+                    </div>
+
+                    <div class="theme-toggler">
+                        <label for="themeSwitch" class="theme-options">
+                            <span class="material-icons-round light-mode">
+                                light_mode
+                            </span>
+                            <span class="material-icons-round dark-mode">
+                                dark_mode
+                            </span>
+                        </label>
+                        <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+                    </div>
+
+                </div>
+            </div>
+            <!-- HEADER END -->
+
+            <div class="content__welcome-text">
+                <p>
+                    NFT Market is a fully decentralized marketplace to buy, sell and swap NFTs. Use $ONE on
+                    swap offers to balance the values between NFTs.
+                </p>
+            </div>
+
+            <div class="container-fluid">
+
+                <h1 class="mb-5">NFT Market</h1>
+
+                <h3 id="marketProfile" class="mb-5"></h3>
+
+                <div id="marketOptions" class="row mb-5">
+
+                    <div class="dropdown mr-3">
+                        <a href="javascript:void(0)" id="categoryDropdown"
+                            class="btn btn-info dropdown-toggle dropdown-primary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" id="cat0" href="market.html">All</a>
+                            <a class="dropdown-item" id="cat1" href="market.html?category=1">Art</a>
+                            <a class="dropdown-item" id="cat2" href="market.html?category=2">Music</a>
+                            <a class="dropdown-item" id="cat3" href="market.html?category=3">Interactive</a>
+                            <a class="dropdown-item" id="cat4" href="market.html?category=4">Memes</a>
+                            <a class="dropdown-item" id="cat5" href="market.html?category=5">Utility</a>
+                            <a class="dropdown-item" id="cat6" href="market.html?category=6">Sports</a>
+                            <a class="dropdown-item" id="cat7" href="market.html?category=7">Misc.</a>
+                            <a class="dropdown-item" id="cat8" href="market.html?category=8">NSFW</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" id="walletActions"
+                            class="btn btn-info dropdown-toggle dropdown-primary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Market Options
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="walletActions">
+                            <a href="javascript:void(0);" class="dropdown-item" id="myoffers">
+                                My Offers
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item" id="sell" data-toggle="modal"
+                                data-target="#nftSellModal">
+                                Bundle Sale
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item" id="swapRequests" data-toggle="modal"
+                                data-target="#swapRequestsModal">
+                                Swap Requests
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item" id="withdrawFunds" data-toggle="modal"
+                                data-target="#withdrawFundsModal">
+                                Withdraw Funds
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script id="no-offers" type="text/x-handlebars-template">
+                <div class="container-fluid">
+                    <div style="text-align: center" class="justify-content-center content-center">
+                        No offers found. Feel free to put your NFTs on sale from within your <a href="collectibles.html">wallet</a>.
+                    </div>
+                </div>
+            </script>
+
+                <!-- Offer View -->
+                <script id="offer-template" type="text/x-handlebars-template">
+                <div class="nftListing mb-3">
+                    <div class="card card-profile">
+
+                        {{#ifNotEquals image ""}}
+                            {{#ifEquals shadowed "false"}}
+                                <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                            {{/ifEquals}}
+                            {{#ifEquals shadowed "true"}}
+                            <img class="card-avatar" loading="lazy" src="assets/img/nsfw.jpg" alt="{{name}}">
+                            {{/ifEquals}}
+                        {{/ifNotEquals}}
+
+                        {{#ifEquals checkOpenSea "Check on OpenSea"}}
+                            <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
+                        {{/ifEquals}}
+
+                        {{#ifEquals checkOpenSea "Open Details"}}
+                            <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}">{{checkOpenSea}}</a>
+                        {{/ifEquals}}
+
+
+                        <div class="card-body">
+
+                            {{#ifNotEquals animation_url ""}}
+                            <a class="btn btn-outline mb-3 video-btn-link" data-toggle="collapse" href="#collapseVideo{{erc1155}}{{id}}" role="button" aria-expanded="false" aria-controls="collapseVideo{{erc1155}}{{id}}">
+                                <span class="material-icons">
+                                  play_circle
+                                </span>
+                                Play Video
+                            </a>
+                            <div class="collapse traits-collapse" id="collapseVideo{{erc1155}}{{id}}">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <video style="width: 100%" src="{{animation_url}}" preload="metadata" muted="muted" controls="controls" loop="loop" poster="{{image}}">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals audio_url ""}}
+                                <audio class="mb-3" style="width: 90%;" controls="controls" preload="metadata" loop="loop">
+                                    <source src="{{audio_url}}" type="audio/mp3">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals interactive_url ""}}
+                            <a class="btn btn-outline mb-3 video-btn-link" style="cursor: pointer;" data-toggle="modal" data-target="#nftInteractiveModal" data-interactive-url="{{interactive_url}}">
+                                    <span class="material-icons">
+                                      play_circle
+                                    </span>
+                                RUN NFT
+                            </a>
+                            {{/ifNotEquals}}
+
+
+                            <div class="mb-3">
+                                {{#ifEquals batch ""}}
+                                    <span class="badge badge-info">In Stock: <span id="marketAmountInfo{{erc1155}}{{id}}">{{onsale}}</span></span>
+                                {{/ifEquals}}
+                                {{#ifNotEquals batch ""}}
+                                <span class="badge badge-info"><a href="javascript:void(0);" data-index="{{index}}" data-toggle="modal" data-target="#nftsView">This + {{multiplier}} more NFTs</a></span>
+                                {{/ifNotEquals}}
+                            </div>
+
+                            <h5 class="card-title text-truncate"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+
+                            <div class="collection-name">{{{collectionName}}}</div>
+
+                            {{#ifNotEquals description ""}}
+                            <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                              <span class="material-icons-round">
+                                info
+                              </span>
+                            </button>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals options ""}}
+                                <div class="dropdown">
+                                    <a href="javascript:void(0);" class="btn btn-secondary btn-light dropdown-toggle mb-3" id="walletNftActions{{erc1155}}{{id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="material-icons">
+                                            create
+                                        </span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="walletNftActions{{erc1155}}{{id}}">
+                                        <a href="javascript:void(0);" class="dropdown-item" data-toggle="modal" data-target="#nftCancelModal" data-index="{{index}}" id="nftCancel{{index}}">Cancel</a>
+                                    </div>
+                                </div>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals onsale "0"}}
+                            {{#ifNotEquals buy ""}}
+                                {{#ifNotEquals batch ""}}
+                                    <button id="nftBatchBuy{{index}}" class="btn btn-outline" style="cursor: pointer;" data-multiplier="{{multiplier}}" data-price="{{price}}" data-index="{{index}}" data-ticker="{{ticker}}" data-name="{{name}}" data-erc1155="{{erc1155}}" data-id="{{id}}">
+                                        Buy
+                                    </button>
+                                    <div class="text-muted mb-2" style="font-size: 1.2em">{{price}} <a href="{{explorer}}" target="_blank">{{ticker}}</a></div>
+                                {{/ifNotEquals}}
+                                {{#ifEquals batch ""}}
+                                    {{#ifEquals onsale "1"}}
+                                        <button class="btn btn-outline" style="cursor: pointer;" id="nftBuyButtonShortcut{{index}}" data-price="{{price}}" data-index="{{index}}" data-ticker="{{ticker}}" data-name="{{name}}" data-erc1155="{{erc1155}}" data-id="{{id}}">
+                                            Buy
+                                        </button>
+                                    {{/ifEquals}}
+                                    {{#ifNotEquals onsale "1"}}
+                                        <button id="nftBuy{{index}}" class="btn btn-outline" style="cursor: pointer;" data-toggle="modal" data-price="{{price}}" data-target="#nftBuyModal" data-index="{{index}}" data-ticker="{{ticker}}" data-name="{{name}}" data-erc1155="{{erc1155}}" data-id="{{id}}">
+                                            Buy
+                                        </button>
+                                    {{/ifNotEquals}}
+                                    <div class="text-muted mb-2" style="font-size: 1.2em">{{price}} <a href="{{explorer}}" target="_blank">{{ticker}}</a> each</div>
+                                {{/ifEquals}}
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals swap ""}}
+                                {{#ifNotEquals buy ""}}
+                                <span style="font-size: 1.4rem; display: block;">Or</span>
+
+                                {{/ifNotEquals}}
+                                <button id="nftSwap{{index}}" class="btn btn-outline mb-3" style="cursor: pointer;" data-toggle="modal" data-target="#nftSwapModal" data-index="{{index}}" data-name="{{name}}" data-erc1155="{{erc1155}}" data-id="{{id}}">
+                                    Swap
+                                </button>
+                                <div> </div>
+                            {{/ifNotEquals}}
+                            {{/ifNotEquals}}
+                            {{#ifEquals onsale "0"}}
+                            <button class="btn btn-outline mb-3">SOLD OUT</button>
+                            <div> </div>
+                            {{/ifEquals}}
+
+                            <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse2{{index}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
+                                Traits
+                            </a>
+
+                            <div class="collapse traits-collapse" id="collapse2{{index}}">
+                                <ul class="list-group">
+
+                                    {{#ifNotEquals bridgeOnBack ""}}
+                                    <li class="list-group-item">
+                                        <sub>Source Chain ID</sub><br />
+                                        <div>{{srcChainid}}</div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <sub>Source Collection</sub><br />
+                                        <div class="text-truncate">
+                                            <button class="btn btn-sm btn-clipboard btn-clipboard{{index}}" data-clipboard-text="{{srcCollection}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                                                <i class="fa fa-clipboard"></i>
+                                            </button>
+                                            <a style="font-size: 1.2rem !important;" href="{{explorer}}{{erc1155}}" target="_blank">{{srcCollection}}</a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <sub>Source NFT ID</sub><br />
+                                        <div>{{srcId}}</div>
+                                    </li>
+                                    {{/ifNotEquals}}
+
+                                    {{#each attributes}}
+                                        <li class="list-group-item">
+                                            <sub>{{this.trait_type}}</sub><br />
+                                            <div>{{this.value}}</div>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+                <div class="row" id="offersPage" style="display: none;"></div>
+
+                <!-- Swap Picker View -->
+                <script id="picker-template" type="text/x-handlebars-template">
+
+
+                    <div class="card card-profile">
+
+                        {{#ifNotEquals image ""}}
+                        <img class="card-avatar" loading="lazy" src="{{image}}" alt="{{name}}">
+                        {{/ifNotEquals}}
+
+                        <a class="opensea text-muted mt-2" style="font-size: 1.0em; width: 50%; margin: 0 auto;" href="{{opensea}}" target="_blank">{{checkOpenSea}}</a>
+                        <div class="card-body">
+
+                            {{#ifNotEquals animation_url ""}}
+                            <a class="btn btn-outline mb-3 video-btn-link" data-toggle="collapse" href="#collapseVideo2{{index}}" role="button" aria-expanded="false" aria-controls="collapseVideo{{erc1155}}{{id}}">
+                                <span class="material-icons">
+                                  play_circle
+                                </span>
+                                Play Video
+                            </a>
+                            <div class="collapse traits-collapse" id="collapseVideo2{{index}}">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <video style="width: 100%" src="{{animation_url}}" preload="metadata" muted="muted" controls="controls" loop="loop" poster="{{image}}">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </li>
+                                </ul>
+                            </div>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals audio_url ""}}
+                            <audio class="mb-3" style="width: 90%;" controls="controls" preload="metadata" loop="loop">
+                                <source src="{{audio_url}}" type="audio/mp3">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            {{/ifNotEquals}}
+
+                            {{#ifNotEquals interactive_url ""}}
+                            <a class="btn btn-outline mb-3 video-btn-link" style="cursor: pointer;" data-toggle="modal" data-target="#nftInteractiveModal" data-interactive-url="{{interactive_url}}">
+                                    <span class="material-icons">
+                                      play_circle
+                                    </span>
+                                RUN NFT
+                            </a>
+                            {{/ifNotEquals}}
+
+
+                            <div class="mb-3">
+                                {{#ifEquals batch ""}}
+                                <span class="badge badge-info">In Stock: <span id="marketAmountInfo2{{erc1155}}{{id}}">{{onsale}}</span></span>
+                                {{/ifEquals}}
+                                {{#ifNotEquals batch ""}}
+                                <span class="badge badge-info"><a href="javascript:void(0);" data-index="{{index}}" data-toggle="modal" data-target="#nftsView">This + {{multiplier}} more NFTs</a></span>
+                                {{/ifNotEquals}}
+                            </div>
+
+                            <h5 class="card-title text-truncate"><a href="{{url}}" target="_blank">{{name}}</a></h5>
+
+                            <div class="collection-name">{{{collectionName}}}</div>
+
+                            {{#ifNotEquals description ""}}
+                            <button type="button" class="popover-description btn btn-secondary" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="Description" data-html="true" data-content="{{breaklines description}}">
+                              <span class="material-icons-round">
+                                info
+                              </span>
+                            </button>
+                            {{/ifNotEquals}}
+
+                            <a {{{traitsHide}}} class="traits btn btn-outline" data-toggle="collapse" href="#collapse{{index}}" role="button" aria-expanded="false" aria-controls="collapse{{erc1155}}{{id}}">
+                                Traits
+                            </a>
+
+                            <div class="collapse traits-collapse" id="collapse{{index}}">
+                                <ul class="list-group">
+
+                                    {{#ifNotEquals bridgeOnBack ""}}
+                                    <li class="list-group-item">
+                                        <sub>Source Chain ID</sub><br />
+                                        <div>{{srcChainid}}</div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <sub>Source Collection</sub><br />
+                                        <div class="text-truncate">
+                                            <button class="btn btn-sm btn-clipboard btn-clipboard{{index}}" data-clipboard-text="{{srcCollection}}" data-toggle="tooltip" data-placement="top" title="Copied">
+                                                <i class="fa fa-clipboard"></i>
+                                            </button>
+                                            <a style="font-size: 1.2rem !important;" href="{{explorer}}{{erc1155}}" target="_blank">{{srcCollection}}</a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <sub>Source NFT ID</sub><br />
+                                        <div>{{srcId}}</div>
+                                    </li>
+                                    {{/ifNotEquals}}
+
+                                    {{#each attributes}}
+                                    <li class="list-group-item">
+                                        <sub>{{this.trait_type}}</sub><br />
+                                        <div>{{this.value}}</div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+
+                <!-- Simple Buy Modal -->
+                <div class="modal fade" style="overflow-y: scroll;" id="nftBuyModal" tabindex="-1"
+                    aria-labelledby="nftBuyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftBuyModalLabel">Buy NFTs</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content">
+
+                                <h3 id="nftBuyTitle"></h3>
+
+                                <form onsubmit="return false;">
+
+                                    <div class="form-group">
+                                        <label for="nftBuyAmount">Amount<span class="required">*</span></label>
+                                        <input value="1" type="text" placeholder="Enter the amount of NFTs to buy"
+                                            class="form-control" id="nftBuyAmount">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button class="btn btn-secondary" type="button" id="buyAddMax">Add Max.</button>
+                                    </div>
+
+                                    <input type="hidden" name="nftBuyErc1155Address" id="nftBuyErc1155Address"
+                                        value="" />
+                                    <input type="hidden" name="nftBuyNftId" id="nftBuyNftId" value="" />
+                                    <input type="hidden" name="nftBuyIndex" id="nftBuyIndex" value="" />
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <h4 id="nftBuyInfo"></h4>
+
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="nftBuyButton">Buy!</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sell Modal -->
+                <div class="modal fade" style="overflow-y: scroll;" id="nftSellModal" tabindex="-1"
+                    aria-labelledby="nftSellModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftSellModalLabel">Sell NFTs</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content">
+
+                                <form onsubmit="return false;">
+
+                                    <p>Please enter the desired amounts of NFTs from your wallet you want to offer.</p>
+                                    <p>Note: if you add more than one type of an NFT, the offer can only be purchased by
+                                        a buyer as a whole.</p>
+
+                                    <div class="container" id="nftSellWallet"
+                                        style="padding-top: 10px;  padding-left: 25px; height: 500px; overflow:auto;">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nftSellToken2">Token to sell into<span
+                                                class="required">*</span></label>
+                                        <select class="form-control" id="nftSellToken2">
+                                        </select>
+                                    </div>
+
+                                    <div id="nftSellCustomTokenAddressWrapper2" class="form-group"
+                                        style="display:none;">
+                                        <label for="nftSellCustomTokenAddress2">Custom <span class="networkStd"></span>
+                                            Token Address<span class="required">*</span></label>
+                                        <input type="text" placeholder="Enter a token address to use as sale currency"
+                                            class="form-control" id="nftSellCustomTokenAddress2">
+                                        <small id="nftSellCustomTokenAddressInfo2" class="form-text text-muted"></small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nftsellAuctiontimeduration">Auction time duration *</label>
+                                        <input type="date" placeholder="Enter the time duration of NFTs to sell"
+                                            class="form-control" id="nftsellAuctiontimeduration"> to <input type="date"
+                                            placeholder="Enter the time duration of NFTs to sell" class="form-control"
+                                            id="nftsellAuctiontimeduration">
+                                        <button class="btn btn-secondary" type="button" id="sellunlimitedtime">set
+                                            unlimited times.</button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nftSellPrice">Price<span class="required">*</span></label>
+                                        <input type="text" placeholder="Enter a price" class="form-control"
+                                            id="nftSellPrice">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nftSellCategory">Category<span class="required">*</span></label>
+                                        <select class="form-control" id="nftSellCategory">
+                                            <option value="1">Art</option>
+                                            <option value="2">Music</option>
+                                            <option value="3">Interactive</option>
+                                            <option value="4">Memes</option>
+                                            <option value="5">Utility</option>
+                                            <option value="6">Sports</option>
+                                            <option value="7">Misc.</option>
+                                            <option value="8">NSFW</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nftMode1">Type<span class="required">*</span></label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nftMode" id="nftMode1"
+                                            value="0" checked>
+                                        <label class="form-check-label" for="nftMode1">
+                                            Allow buying, only
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nftMode" id="nftMode2"
+                                            value="1">
+                                        <label class="form-check-label" for="nftMode2">
+                                            Allow buying &amp; swapping
+                                        </label>
+                                    </div>
+                                    <div class="form-check disabled">
+                                        <input class="form-check-input" type="radio" name="nftMode" id="nftMode3"
+                                            value="2">
+                                        <label class="form-check-label" for="nftMode3">
+                                            Allow swapping, only
+                                        </label>
+                                    </div>
+
+                                    <input type="hidden" name="nftSellErc1155Address" id="nftSellErc1155Address"
+                                        value="" />
+                                    <input type="hidden" name="nftSellNftId" id="nftSellNftId" value="" />
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="nftSellButton">Sell!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swap Modal -->
+                <div class="modal fade" style="overflow-y: scroll;" id="nftSwapModal" tabindex="-1"
+                    aria-labelledby="nftSwapModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftSwapModalLabel">Swap NFTs</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <h3 id="nftSwapTitle"></h3>
+
+                                <form onsubmit="return false;">
+
+                                    <p>Pick one of your existing offers to request a swap.</p>
+
+                                    <div class="container" id="nftSwapPicker"
+                                        style="padding-top: 10px;  padding-left: 25px; height: 500px; overflow:auto;">
+                                    </div>
+
+                                    <div class="form-group mt-5">
+                                        <label for="nftSwapNif">Offer additional NIF for the swap (optional)</label>
+                                        <input value="0" type="text"
+                                            placeholder="Enter the amount of NIF you'd like to offer additionally."
+                                            class="form-control" id="nftSwapNif">
+                                        <!--<button class="btn btn-secondary" type="button" id="swapAddMax">Add Max.</button>-->
+
+                                    </div>
+
+                                    <input type="hidden" name="nftSwapErc1155Address" id="nftSwapErc1155Address"
+                                        value="" />
+                                    <input type="hidden" name="nftSwapNftId" id="nftSwapNftId" value="" />
+                                    <input type="hidden" name="nftIndex0" id="nftIndex0" value="" />
+                                    <input type="hidden" name="nftIndex1" id="nftIndex1" value="" />
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="nftSwapButton">Swap!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cancel -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="nftCancelModal" tabindex="-1" role="dialog"
+                    aria-labelledby="nftCancelModallLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftCancelModalLabel">Info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content">
+
+                                <p>Please click the cancel button below to confirm the cancellation and to remove your
+                                    offer from the market.</p>
+
+                                <input type="hidden" name="nftCancelIndex" id="nftCancelIndex" value="" />
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="nftCancelButton">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Withdraw Funds -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="withdrawFundsModal" tabindex="-1" role="dialog"
+                    aria-labelledby="withdrawFundsLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="withdrawFundsLabel">Withdraw Funds</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content">
+
+                                <p>Here you can lookup and withdraw funds for tokens you sold your NFTs into.</p>
+
+                                <form onsubmit="return false;">
+
+                                    <div class="form-group">
+                                        <label for="lookupToken">Token to lookup</label>
+                                        <select class="form-control" id="lookupToken">
+                                        </select>
+                                    </div>
+
+                                    <div id="lookupTokenWrapper" class="form-group" style="display:none;">
+                                        <label for="lookupTokenAddress">Custom <span class="networkStd"></span> Token
+                                            Address *</label>
+                                        <input type="text"
+                                            placeholder="Enter a token address to lookup your current balance"
+                                            class="form-control" id="lookupTokenAddress">
+                                    </div>
+
+                                    <small id="lookupInfo" class="form-text text-muted"></small>
+
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" id="lookupButton">Lookup</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="withdrawFundsButton"
+                                        style="display:none;">Withdraw</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swap Requests Modal -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="swapRequestsModal" tabindex="-1" role="dialog"
+                    aria-labelledby="swapRequestsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="swapRequestsModalLabel">Swap Requests</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <h3>Incoming</h3>
+
+                                <div class="container" id="incomingSwapRequests"
+                                    style="padding-top: 10px; padding-left: 25px; height: 500px; overflow:auto;"></div>
+
+                                <h3>Outgoing</h3>
+
+                                <div class="container" id="outgoingSwapRequests"
+                                    style="padding-top: 10px; padding-left: 25px; height: 500px; overflow:auto;"></div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NFTs view -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="nftsView" tabindex="-1" role="dialog"
+                    aria-labelledby="nftsViewLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftsViewLabel">NFTs In This Offer</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="container" id="nftsViewContainer"
+                                    style="padding-top: 10px; padding-left: 25px; height: 500px; overflow:auto;"></div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="nftInteractiveModal" tabindex="-1" role="dialog"
+                    aria-labelledby="nftInteractiveModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="nftInteractiveModalLabel">Run NFT</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content" id="interactiveBody">
+
+                                Click the run button below to start this interactive NFT.<br /><br />
+                                Only run this if you trust the NFT creator.<br /><br />
+                                In doubts, please ask the creator of this NFT about potential risks prior running
+                                it.<br /><br />
+                                <button class="btn btn-primary" type="button" id="runNftNewTab">Run NFT</button>
+
+
+                                <input type="hidden" name="nftInteractiveUrl" id="nftInteractiveUrl" value="" />
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        id="closeInteractive">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive END -->
+
+                <!-- ALERT -->
+
+                <div class="modal fade" style="overflow-y: scroll;" id="alertModal" tabindex="-1" role="dialog"
+                    aria-labelledby="alertModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="alertModalLabel">Info</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body modal-non-nft-content">
+
+                            </div>
+                            <div class="modal-footer">
+                                <div class="buttons-container">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODALS END -->
+
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <ul style="margin: unset;">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="roadmap.html">
+                        <span class="material-icons-round">
+                            swap_calls
+                        </span>
+                        Roadmap
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="guides-faq.html">
+                        <span class="material-icons-round">
+                            help_outline
+                        </span>
+                        FAQ
+                    </a>
+                </li>
+
+                <div id="tools">
+                    <div id="links">
+                        <li>
+                            <a noref id="menu-account" onclick="onAccount()">Connect Wallet</a>
+                        </li>
+                    </div>
+                </div>
+
+
+            </ul>
+
+        </div>
+        <!-- FOOTER END -->
+        <div id="popup-wallets" class="popup" style="display:none">
+            <x onclick="hideBuyDirectPopup()"></x>
+            <h2 id="wallet-title">Connect your wallet</h2>
+            <li><button class="wallet-pick" onclick="onWallet('metamask')"><img src="Asset/img/metamask.png">
+                    METAMASK</button>
+            </li>
+            <li><button class="wallet-pick" onclick="onWallet('harmony')"><img src="Asset/img/harmony.png"> HARMONY
+                    ONE</button>
+            </li>
+            <p>We do not own your private keys and cannot access your funds without your confirmation</p>
+            <p>You need to add ONE Harmony Network on Metamask, please follow our <a
+                    href="https://docs.harmony.one/home/network/wallets/browser-extensions-wallets/metamask-wallet">documentation</a>,
+                using other
+                networks will result in permanent loss</p>
+            <p>By using This you agree to have read and accepted the <br> <a href="/terms" target="_blank">Terms of
+                    Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a></p>
+        </div>
+
+
+        <script src="web/userWallet.js"></script>
+        <script src="web/init.js"></script>
+        <script src="js/themeSwitch.js"></script>
+</body>
+
+</html>

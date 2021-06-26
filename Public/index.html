@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+  <title> Geospatial NFTs - market place </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href=".png">
+  <link rel="icon" type="image/png" sizes="16x16" href=".png">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="Asset/css/material-dashboard.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
+  <script type="text/javascript" src="js/buffer.js"></script>
+  <script type="text/javascript" src="js/misc.js?v=1.9.10"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="web/wallet.js"></script>
+  <script type="text/javascript" src="web/common.js"></script>
+  <script src="web/HarmonyJs.browser.js" type="text/javascript"></script>
+  <script src="web/web3.min.js" type="text/javascript"></script>
+  <script src="Asset/js/core/popper.min.js" type = "text/javascript"></script>
+  <script src="Asset/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="Asset/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="Asset/js/plugins/chartist.min.js"></script>
+  <script src="Asset/js/plugins/bootstrap-notify.js"></script>
+  <script src="assets/js/material-dashboard.js?v=2.1.0" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css" href="web/common.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+  <style type="text/css">
+    .dark-edition .modal a {
+      color: #8b92a9;
+      font-weight: 700;
+    }
+
+    .main-timeline {
+      position: relative
+    }
+
+    .main-timeline:before {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0
+    }
+
+    .main-timeline .timeline {
+      margin-bottom: 40px;
+      position: relative
+    }
+
+    .main-timeline .timeline:after {
+      content: "";
+      display: block;
+      clear: both
+    }
+
+    .main-timeline .icon {
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: none;
+    }
+
+    .main-timeline .icon:before,
+    .main-timeline .icon:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.33s ease-out 0s
+    }
+
+    .main-timeline .icon:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -3px
+    }
+
+    .main-timeline .icon:after {
+      border: 2px solid #25b1c3;
+      left: 3px
+    }
+
+    .main-timeline .timeline:hover .icon:before {
+      left: 3px
+    }
+
+    .main-timeline .timeline:hover .icon:after {
+      left: -3px
+    }
+
+    .main-timeline .date-content {
+      width: 50%;
+      float: left;
+      margin-top: 22px;
+      position: relative
+    }
+
+    .main-timeline .date-content:before {
+      content: "";
+      width: 36.5%;
+      height: 2px;
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      bottom: 0
+    }
+
+    .main-timeline .date-outer {
+      width: 125px;
+      height: 125px;
+      font-size: 16px;
+      text-align: center;
+      margin: auto;
+      z-index: 1
+    }
+
+    .main-timeline .date-outer:before,
+    .main-timeline .date-outer:after {
+      content: "";
+      width: 125px;
+      height: 125px;
+      margin: 0 auto;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.33s ease-out 0s
+    }
+
+    .main-timeline .date-outer:before {
+      background: linear-gradient(60deg, #029eb1, #25b1c3);
+      border: 2px solid #232323;
+      left: -6px
+    }
+
+    .main-timeline .date-outer:after {
+      border: 2px solid #25b1c3;
+      left: 6px
+    }
+
+    .main-timeline .timeline:hover .date-outer:before {
+      left: 6px
+    }
+
+    .main-timeline .timeline:hover .date-outer:after {
+      left: -6px
+    }
+
+    .main-timeline .date {
+      width: 100%;
+      margin: auto;
+      position: absolute;
+      top: 27%;
+      left: 0
+    }
+
+    .main-timeline .month {
+      font-size: 18px;
+      font-weight: 700
+    }
+
+    .main-timeline .month {
+      color: #232323;
+    }
+
+    .main-timeline .year {
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+      color: #232323;
+      line-height: 36px
+    }
+
+    .main-timeline .timeline-content {
+      width: 50%;
+      padding: 20px 0 20px 50px;
+      float: right
+    }
+
+    .main-timeline .title {
+      font-size: 19px;
+      line-height: 24px;
+      margin: 0 0 15px 0
+    }
+
+    .main-timeline .description {
+      margin-bottom: 0
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content {
+      float: right
+    }
+
+    .main-timeline .timeline:nth-child(2n) .date-content:before {
+      left: 10px
+    }
+
+    .main-timeline .timeline:nth-child(2n) .timeline-content {
+      padding: 20px 50px 20px 0;
+      text-align: right
+    }
+
+    @media only screen and (max-width: 991px) {
+      .main-timeline .date-content {
+        margin-top: 35px
+      }
+
+      .main-timeline .date-content:before {
+        width: 22.5%
+      }
+
+      .main-timeline .timeline-content {
+        padding: 10px 0 10px 30px
+      }
+
+      .main-timeline .title {
+        font-size: 17px
+      }
+
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        padding: 10px 30px 10px 0
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .main-timeline:before {
+        margin: 0;
+        left: 7px
+      }
+
+      .main-timeline .timeline {
+        margin-bottom: 20px
+      }
+
+      .main-timeline .timeline:last-child {
+        margin-bottom: 0
+      }
+
+      .main-timeline .icon {
+        margin: auto 0
+      }
+
+      .main-timeline .date-content {
+        width: 95%;
+        float: right;
+        margin-top: 0
+      }
+
+      .main-timeline .date-content:before {
+        display: none
+      }
+
+      .main-timeline .date-outer {
+        width: 110px;
+        height: 110px
+      }
+
+      .main-timeline .date-outer:before,
+      .main-timeline .date-outer:after {
+        width: 110px;
+        height: 110px
+      }
+
+      .main-timeline .date {
+        top: 30%
+      }
+
+      .main-timeline .year {
+        font-size: 24px
+      }
+
+      .main-timeline .timeline-content,
+      .main-timeline .timeline:nth-child(2n) .timeline-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0
+      }
+
+      .main-timeline .title {
+        margin-bottom: 10px
+      }
+    }
+
+    .dark-edition .card .card-body .card-description {
+      color: #8b92a9;
+    }
+
+    .description,
+    .card-description,
+    .footer-big p {
+      color: #8b92a9;
+    }
+
+    .title,
+    .title a,
+    .card-title,
+    .card-title a,
+    .info-title,
+    .info-title a,
+    .footer-brand,
+    .footer-brand a,
+    .footer-big h5,
+    .footer-big h5 a,
+    .footer-big h4,
+    .footer-big h4 a,
+    .media .media-heading,
+    .media .media-heading a {
+      color: #8b92a9;
+    }
+
+    body {
+      color: #8b92a9;
+    }
+
+    .navbar,
+    .navbar-text a {
+      color: inherit;
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Round" rel="stylesheet">
+  <link href="Asset/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <script src="js/themeDefault.js"></script>
+
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <a href="https://harmony.com" class="simple-text logo-normal">
+        <img src="_" width="125" border="0" />
+        <div id="bscLogo" class="text-muted" style="display: none; font-size: 0.7em;">
+          Binance Smart Chain
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="material-icons-round">home</i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item" id="marketNavLink">
+          <a class="nav-link" href="market.html">
+            <i class="material-icons-round">storefront</i>
+            <p>NFT Market</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="collectibles.html">
+            <i class="material-icons-round">account_balance_wallet</i>
+            <p>Your Wallet</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager.html">
+            <i class="material-icons-round">collections</i>
+            <p>Collection Manager</p>
+          </a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bridge.html">
+            <i class="material-icons-round">360</i>
+            <p>NFT Bridge</p>
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-text">
+          <div class="sidebar-text icons">
+            <span class="navbar-text">
+              <a href="https://www.linkedin.com/company/harmony-one" target="blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              <a href="https://t.me/harmony_one" target="_blank">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCDfuhS7xu69IhK5AJSyiF0g" target="blank">
+                <i class="fa fa-youtube"></i>
+              </a>
+              <a href="https://twitter.com/harmonyprotocol" target="blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="https://github.com/harmony-one" target="blank">
+                <i class="fa fa-github"></i>
+              </a>
+              <a href="https://medium.com/harmony-one" target="blank">
+                <i class="fa fa-medium"></i>
+              </a>
+              <a href="https://discord.com/invite/rdCmBpe" target="blank">
+                <i class="fa fa-discord"></i>
+              </a>
+            </span>
+          </div>
+
+          <div class="sidebar-text rights">
+            <span>
+              <i class="material-icons">copyright</i>
+              Deepface19 Development <br />All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- SIDEBAR END -->
+
+  <div class="main-panel">
+
+    <!-- NAV TOGGLER -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+          aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+          <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- NAV TOGGLER END -->
+
+    <div class="content">
+
+      <!-- HEADER -->
+      <div class="custom-header">
+        <div class="custom-header__title"></div>
+        <div class="custom-header__dropdowns">
+          <script>
+            // fix for initial doubleclick required upon page load
+            $(document).ready(function () {
+              $('#chainSelectionDropdown').click();
+            });
+          </script>
+
+          <div class="dropdown ml-3 mr-3 dropdown--chains">
+            <button id="chainSelectionDropdown" class="btn btn-info dropdown-toggle" type="button"
+              id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Harmony (ONEs)
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/">Harmony (ONEs)</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/rinkeby/">Harmony (Testnet)</a>
+              <a class="dropdown-item" href="https://geospatial-nft-market-place.web.app/rinkeby/">LocalNet</a>
+            </div>
+          </div>
+
+          <div class="theme-toggler">
+            <label for="themeSwitch" class="theme-options">
+              <span class="material-icons-round light-mode">
+                light_mode
+              </span>
+              <span class="material-icons-round dark-mode">
+                dark_mode
+              </span>
+            </label>
+            <input type="checkbox" id="themeSwitch" name="themeSwitch" />
+          </div>
+
+        </div>
+      </div>
+      <!-- HEADER END -->
+
+      <div class="content__welcome-text">
+        <p>
+          Here is home page market place NFTs.
+        </p>
+      </div>
+
+      <div class="container-fluid home"></div>
+
+      <h1>HOME PAGE</h1>
+
+      <div class="home-container">
+
+        <div>
+
+        </div>
+
+        <!-- MODALS END -->
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" href="roadmap.html">
+          <span class="material-icons-round">
+            swap_calls
+          </span>
+          Roadmap
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="faq.html">
+          <span class="material-icons-round">
+            help_outline
+          </span>
+          FAQ
+        </a>
+      </li>
+      <div id="tools">
+        <div id="links">
+          <li>
+            <a noref id="menu-account" onclick="onAccount()">Connect Wallet</a>
+
+          </li>
+        </div>
+      </div>
+
+    </ul>
+
+  </div>
+  <!-- FOOTER END -->
+  <div id="popup-wallets" class="popup" style="display:none">
+    <x onclick="hideBuyDirectPopup()"></x>
+    <h2 id="wallet-title">Connect your wallet</h2>
+    <li><button class="wallet-pick" onclick="onWallet('metamask')"><img src="Asset/img/metamask.png"> METAMASK</button>
+    </li>
+    <li><button class="wallet-pick" onclick="onWallet('harmony')"><img src="Asset/img/harmony.png"> HARMONY ONE</button>
+    </li>
+    <p>We do not own your private keys and cannot access your funds without your confirmation</p>
+    <p>You need to add ONE Harmony Network on Metamask, please follow our <a href="https://docs.harmony.one/home/network/wallets/browser-extensions-wallets/metamask-wallet">documentation</a>, using other
+      networks will result in permanent loss</p>
+    <p>By using This you agree to have read and accepted the <br> <a href="/terms" target="_blank">Terms of
+        Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a></p>
+  </div>
+
+  <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCw4puzn50u9ytrhZsHX3eK_kKk5n9jyZg",
+        authDomain: "geospatial-nft-market-place.firebaseapp.com",
+        databaseURL: "https://geospatial-nft-market-place-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "geospatial-nft-market-place",
+        storageBucket: "geospatial-nft-market-place.appspot.com",
+        messagingSenderId: "211981458262",
+        appId: "1:211981458262:web:b3d7f40d3da7ce354614f7"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      var bigOne = document.getElementById('bigOne');
+      var dbref = firebase.database().ref().child('text');
+      dbref.on('value', snap => bigOne.innerText = sanp.val());
+
+    </script>
+    <script> src = "App.js"</script>
+    <script src = "web/userWallet.js"></script>
+    <script src = "web/init.js"></script>
+    <script src="js/themeSwitch.js"></script>
+  </body>
+
+</html>
