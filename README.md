@@ -54,18 +54,9 @@ https://youtu.be/9RzkEUPakZ0
  - Harmony (TestNet)
  - LocalNet
 
-## Clone & build Repo
+## Test
 ```
-git clone https://github.com/deepface19/Geospatial-nft-market-place-for-harmony-one-world.git
-cd Geospatial-nft-market-place-for-harmony-one-world
-```
-```
-npm install
-npm run dev
-```
-```
-npm install
-npm run build
+Firebase or heroku
 ```
 ## Demo 
 ```
