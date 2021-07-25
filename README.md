@@ -28,9 +28,6 @@ https://youtu.be/p6RiaISARWE
 ## Available Connect to wallet
 - ONE WALLET
 - METAMASK
-
-- https://user-images.githubusercontent.com/59292798/123518738-7850c400-d6d1-11eb-8b8c-ba1096aa3319.mp4
-
 - ![Web capture_26-6-2021_222620_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123518745-87377680-d6d1-11eb-996e-ce7ac26e33ca.jpeg)
 
 
