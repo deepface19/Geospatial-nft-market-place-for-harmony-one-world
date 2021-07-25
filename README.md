@@ -1,9 +1,6 @@
-## ATTENTION
-if you want use this repo project for your company or bussiness please 
-add all file (Asset,Contract, to Public)
-
 ## DEMO IN FIREBASE 
 https://geospatial-nft-market-place.web.app
+Respond hosting so slowly 
 
 ## Video Structure Demonstration
 https://youtu.be/9RzkEUPakZ0
@@ -54,9 +51,9 @@ https://youtu.be/9RzkEUPakZ0
  - Harmony (TestNet)
  - LocalNet
 
-## Test
+## Hosting on
 ```
-Firebase or heroku
+Firebase
 ```
 ## Demo 
 ```
