@@ -13,7 +13,7 @@ https://youtu.be/p6RiaISARWE
 # Create Nfts
 ![Web capture_25-6-2021_19516_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422559-98f11f00-d5e8-11eb-82f4-2776de6bebee.jpeg)
 # Connect your wallet and collection NFTs
-![Web capture_25-6-2021_1950_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422563-9a224c00-d5e8-11eb-9562-820bab57c66f.jpeg)
+![Web capture_25-7-2021_92756_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885659-e8e07605-f7f8-41cb-bf8f-c06d0a66ef27.jpeg)
 # Home page display
 ![Web capture_25-6-2021_19446_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422566-9abae280-d5e8-11eb-8c74-041c830fdbad.jpeg)
 # option in market Buy, Sell, swap, and withdraw fund 
