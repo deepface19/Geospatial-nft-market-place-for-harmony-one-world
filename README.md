@@ -8,11 +8,17 @@ https://youtu.be/9RzkEUPakZ0
 https://youtu.be/p6RiaISARWE
 
 ## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
+# Transfer multi NFTs 
 ![Web capture_25-6-2021_19528_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422549-955d9800-d5e8-11eb-8efb-2e5a8824cf9d.jpeg)
+# Mint Nfts
 ![Web capture_25-6-2021_19516_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422559-98f11f00-d5e8-11eb-82f4-2776de6bebee.jpeg)
+# Connect your wallet and collection NFTs
 ![Web capture_25-6-2021_1950_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422563-9a224c00-d5e8-11eb-9562-820bab57c66f.jpeg)
+# Home page display
 ![Web capture_25-6-2021_19446_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422566-9abae280-d5e8-11eb-8c74-041c830fdbad.jpeg)
+# option in market Buy, Sell, swap, and withdraw fund 
 ![Web capture_25-6-2021_19557_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422567-9b537900-d5e8-11eb-93ac-00b2d20320ce.jpeg)
+# option Type NFTs 
 ![Web capture_25-6-2021_19548_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422571-9bec0f80-d5e8-11eb-97f5-750201fbdd1a.jpeg)
 
 
