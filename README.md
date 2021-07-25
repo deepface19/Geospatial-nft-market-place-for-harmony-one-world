@@ -17,10 +17,12 @@ https://youtu.be/p6RiaISARWE
 ![Web capture_25-7-2021_92756_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885659-e8e07605-f7f8-41cb-bf8f-c06d0a66ef27.jpeg)
 # Home page display
 ![Web capture_25-6-2021_19446_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422566-9abae280-d5e8-11eb-8c74-041c830fdbad.jpeg)
-# option in market Buy, Sell, swap, and withdraw fund 
+# Option in market Buy, Sell, swap, and withdraw fund 
 ![Web capture_25-6-2021_19557_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422567-9b537900-d5e8-11eb-93ac-00b2d20320ce.jpeg)
-# option Type NFTs 
+# Option Type NFTs 
 ![Web capture_25-6-2021_19548_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422571-9bec0f80-d5e8-11eb-97f5-750201fbdd1a.jpeg)
+# Options Sell
+![Web capture_25-7-2021_92914_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885694-8b5439a0-1afd-4893-bb70-5bd589e01f04.jpeg)
 
 
 ## Available Connect to wallet
