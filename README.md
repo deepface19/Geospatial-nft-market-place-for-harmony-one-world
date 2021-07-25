@@ -4,6 +4,8 @@ Respond hosting so slowly
 
 ## Video Structure Demonstration
 https://youtu.be/9RzkEUPakZ0
+## Video Demo connect to harmony one wallet
+https://youtu.be/p6RiaISARWE
 
 ## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
 ![Web capture_25-6-2021_19528_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422549-955d9800-d5e8-11eb-8efb-2e5a8824cf9d.jpeg)
