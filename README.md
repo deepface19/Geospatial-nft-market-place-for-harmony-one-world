@@ -10,7 +10,7 @@ https://youtu.be/p6RiaISARWE
 ## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
 # Transfer multi NFTs 
 ![Web capture_25-6-2021_19528_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422549-955d9800-d5e8-11eb-8efb-2e5a8824cf9d.jpeg)
-# Mint Nfts
+# Create Nfts
 ![Web capture_25-6-2021_19516_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422559-98f11f00-d5e8-11eb-82f4-2776de6bebee.jpeg)
 # Connect your wallet and collection NFTs
 ![Web capture_25-6-2021_1950_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422563-9a224c00-d5e8-11eb-9562-820bab57c66f.jpeg)
