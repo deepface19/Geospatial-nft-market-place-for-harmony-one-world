@@ -1,0 +1,37 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/GeospatialNFT1.sol": "OwnableDelegateProxy"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/GeospatialNFT1.sol": {
+			"keccak256": "0x6e4a76be47628629226e1c2d5194331944d6af9435f5ade139a1129af7d2bdb7",
+			"urls": [
+				"bzz-raw://274562593507cd9edaf65d8c49cfebafea4b950f684b80af740316520a52cab7",
+				"dweb:/ipfs/QmdDp28vXVJCcW6NGZERcd5dwtaxcfZpTrdUm6uwp4S5tz"
+			]
+		}
+	},
+	"version": 1
+}

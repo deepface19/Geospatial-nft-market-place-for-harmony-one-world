@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "locations",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "nameOfLocation",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "latitude",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "longitude",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/geospatial_locations.sol": "GeospatialLocations"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/geospatial_locations.sol": {
+			"keccak256": "0xc3f71ba6ae1e473116639950bf8204e8686f5948eeaa89a9d0aa04ad41217db5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f9fcc4601cfa5f721eea0bca1c9406ac00fbd4d030b070655b332801641bdce",
+				"dweb:/ipfs/QmaDVm7EHyTtVre7fddEk2yk6yvnxyVVmQgX8dGWtr9zGC"
+			]
+		}
+	},
+	"version": 1
+}
