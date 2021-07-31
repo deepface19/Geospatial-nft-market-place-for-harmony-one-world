@@ -25,9 +25,9 @@ https://youtu.be/p6RiaISARWE
 ![Web capture_25-7-2021_92914_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885694-8b5439a0-1afd-4893-bb70-5bd589e01f04.jpeg)
 
 
-## Available Connect to wallet
-# ONE WALLET
-# METAMASK
+# Available Connect to wallet
+## ONE WALLET
+## METAMASK
 https://user-images.githubusercontent.com/59292798/127740459-d78847b3-7e25-4318-b6be-2daebce8c771.mp4
 
 
