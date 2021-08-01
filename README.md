@@ -11,7 +11,7 @@ Respond hosting so slowly
 # Connect your wallet and collection NFTs
 ![Web capture_25-7-2021_92756_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885659-e8e07605-f7f8-41cb-bf8f-c06d0a66ef27.jpeg)
 # Option in market Buy, Sell, swap, and withdraw fund 
-![Web capture_25-6-2021_19557_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422567-9b537900-d5e8-11eb-93ac-00b2d20320ce.jpeg)
+![Web capture_1-8-2021_154632_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/127765072-165413b1-b861-4641-a5a8-5822ec33801b.jpeg)
 # Options Sell
 ![Web capture_1-8-2021_154455_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/127765030-3bf5cccc-3df8-44fc-8693-41f5e968749d.jpeg)
 
