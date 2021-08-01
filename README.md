@@ -3,11 +3,6 @@ https://geospatial-nft-market-place.web.app
 
 Respond hosting so slowly 
 
-## Video Structure Demonstration
-https://youtu.be/9RzkEUPakZ0
-## Video Demo connect to harmony one wallet
-https://youtu.be/p6RiaISARWE
-
 ## How It Work Geospatial Market Place NFTs UI DISPLAY Select Location And Coordinate Latitude And Longtitude
 # Transfer multi NFTs 
 ![Web capture_25-6-2021_19528_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/123422549-955d9800-d5e8-11eb-8efb-2e5a8824cf9d.jpeg)
@@ -24,6 +19,8 @@ https://youtu.be/p6RiaISARWE
 # Options Sell
 ![Web capture_25-7-2021_92914_geospatial-nft-market-place web app](https://user-images.githubusercontent.com/59292798/126885694-8b5439a0-1afd-4893-bb70-5bd589e01f04.jpeg)
 
+# Market Place NFTs Page 
+https://user-images.githubusercontent.com/59292798/127764729-f300e534-2b31-4af2-b957-c7270c7b4d80.mp4
 
 # Available Connect to wallet
 ## ONE WALLET
