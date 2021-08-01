@@ -24,16 +24,7 @@ https://user-images.githubusercontent.com/59292798/127764729-f300e534-2b31-4af2-
 https://user-images.githubusercontent.com/59292798/127740459-d78847b3-7e25-4318-b6be-2daebce8c771.mp4
 
 
-## Available nfts erc1155 & hrc1155
-- ART
-- MUSIC
-- INTERACTIVE
-- MEMES
-- SPORTS
-- MISC
-- NFSW
-- ANIME
-- COSTUM
+## Support nfts erc1155 & hrc1155
 
 ## FEATURES
 - SUPPORT GEOSPATIAL LOCATION THE MOST POPPULER 201 CITY IN THE WORLD FOR CREATE,MINT,SELL AND BUY
